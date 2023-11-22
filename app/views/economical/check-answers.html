@@ -53,6 +53,36 @@ Supplier`s information - GOV.UK
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
+                        Financial information type:
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['financialType'] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="one-doc-type">
+                            Change<span class="govuk-visually-hidden">
+                                the type of documentation</span>
+                        </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Date of financial year end:
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['financialsDay'] }} / {{ data['financialsMonth'] }} / {{ data['financialsYear'] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="one-doc-date">
+                            Change<span class="govuk-visually-hidden">
+                                the date of documentation</span>
+                        </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
                         Documentation:
                     </dt>
                     <dd class="govuk-summary-list__value">
@@ -88,19 +118,48 @@ Supplier`s information - GOV.UK
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Documentation:
+                            Financial information type:
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{ data['fileUpload1'] }}
+                            {{ data['financialType'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="one-doc">
+                            <a class="govuk-link" href="two-or-more-type">
                                 Change<span class="govuk-visually-hidden">
                                     the type of documentation</span>
                             </a>
                         </dd>
                     </div>
 
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Date of financial year end:
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['financialsDay'] }} / {{ data['financialsMonth'] }} / {{ data['financialsYear'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="two-or-more-date">
+                                Change<span class="govuk-visually-hidden">
+                                    the date of documentation</span>
+                            </a>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Documentation:
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['fileUpload1'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="two-or-more">
+                                Change<span class="govuk-visually-hidden">
+                                    the type of documentation</span>
+                            </a>
+                        </dd>
+                    </div>
 
                 </dl>
 

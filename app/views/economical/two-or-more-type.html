@@ -34,28 +34,40 @@ Supplier`s information - GOV.UK
         <h2 class="govuk-heading-m" style="color: #1d70b8;">
             Economic and Financial Standing
         </h2>
+        <span class="govuk-caption-l">
+            Upload the latest financial accounts for the last 2 years
+        </span>
 
         <form class="form" method="post">
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" data-required data-error="Upload the latest accounts"
+                <fieldset class="govuk-fieldset" data-required data-error="Select the type of file you are uploading"
                     aria-required="true">
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-fieldset__heading">
-                            Upload the latest financial accounts for the last 2 years
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-top-6">
+                            What type of financial information are you uploading?
                         </h1>
                     </legend>
-                    <div id="file-hint" class="govuk-hint">
-                        Give the file a descriptive name. For example, financial-accounts-2020-2021.pdf
+
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="financialType" name="financialType" type="radio"
+                                value="Accounts">
+                            <label class="govuk-label govuk-radios__label" for="financialType">
+                                Accounts
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="financialType-2" name="financialType" type="radio"
+                                value="Financial statements">
+                            <label class="govuk-label govuk-radios__label" for="financialType-2">
+                                Financial statements
+                            </label>
+                        </div>
                     </div>
-
-                    <label class="govuk-label govuk-!-margin-top-6" for="fileUpload1">
-                        Upload a file
-                    </label>
-                    <input class="govuk-file-upload" id="file-Upload1" name="fileUpload1" type="file">
-
                 </fieldset>
             </div>
+
 
             <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
 

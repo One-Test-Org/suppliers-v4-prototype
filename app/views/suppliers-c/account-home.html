@@ -393,7 +393,7 @@ Supplier`s information - GOV.UK
 
                         <!-- Economic and Financial Standing -->
 
-                        {% if data['financialStandIn'] | length != "0" %}
+                        {% if data['financialsYear'] | length != "0" %}
                         <li class="app-task-list__item">
                             <span class="app-task-list__task-name">
                                 <a href="/economical/check-answers"
@@ -409,7 +409,7 @@ Supplier`s information - GOV.UK
                                 Completed
                             </span>
                         </li>
-                        {% elif data['financialStandIn'] | length == "0" and data['financialStand'] | length != "0" %}
+                        {% elif data['financialStandIn'] | length != "0" and data['financialsYear'] | length == "0" %}
                         <li class="app-task-list__item">
                             <span class="app-task-list__task-name">
                                 <a href="/economical/financial-question"

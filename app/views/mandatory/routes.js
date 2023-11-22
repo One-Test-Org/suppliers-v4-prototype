@@ -325,7 +325,7 @@ router.post('/find-subject-uk-address', function (req, res) {
 
         if (regex.test(postcodeLookup) === true) {
 
-            axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + "CS48P3ceaHollIQFsIMoP4oXLjvlbqp2")
+            axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
                 .then(response => {
                     var addresses = response.data.results.map(result => result.DPA.ADDRESS);
 

@@ -31,7 +31,7 @@ Supplier`s information - GOV.UK
 
         <form class="form" method="post">
 
-            {% if (data['fileUpload1'] | length == "0") %}
+            {% if (data['fileUpload1'] | length != "0") %}
 
             <h1 class="govuk-heading-l">Check your answers</h1>
             <dl class="govuk-summary-list govuk-!-margin-bottom-3">
@@ -86,7 +86,7 @@ Supplier`s information - GOV.UK
                         Documentation:
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        Not applicable
+                        {{ data['fileUpload1'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="one-doc">
@@ -151,7 +151,7 @@ Supplier`s information - GOV.UK
                             Documentation:
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{ data['fileUpload1'] }}
+                            {{ data['fileUpload2'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="two-or-more">

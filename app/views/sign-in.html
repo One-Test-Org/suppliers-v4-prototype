@@ -1,0 +1,101 @@
+{% extends "layout-moj.html" %}
+
+{% block pageTitle %}
+GOV.UK  – {{ serviceName }} – 
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  
+<div class="govuk-notification-banner" role="region"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Terms of use
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      The terms of use for the Public Procurement Gateway have changed. 
+      <a class="govuk-notification-banner__link" href="https://test.identify.crowncommercial.gov.uk/terms-of-use">Read the updated terms of use.</a>.
+    </p>
+  </div>
+</div>
+
+</div>
+
+<form class="form" method="post">
+ <fieldset class="govuk-fieldset" data-required data-error="Enter you sign in details" aria-required="true">
+  <div class="govuk-form-group">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-column-three-quarters">
+         <h2 class="govuk-heading-l">Sign in</h2>
+         <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+              Email address
+          </label>
+          <span id="email-hint" class="govuk-hint">
+            Sign in to the Public Procurement Gateway
+          </span>
+          <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint">
+         </div>
+         <div class="govuk-form-group">
+          <label class="govuk-label" for="password">
+              Password
+          </label>
+          <span id="email-hint" class="govuk-hint">
+              Sign in using your previously created password
+          </span>
+          <input class="govuk-input" id="password" name="password" type="password" aria-describedby="email-hint">
+          </div>
+          <div class="govuk-button-group govuk-!-margin-top-3">
+
+            <div class="govuk-button-group">
+              <button class="govuk-button" data-module="govuk-button">
+                Sign in
+              </button>
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Create an account
+              </button>
+            </div>
+
+          </div>
+           <a href="password-reset.html" class="govuk-link">Forgotten your password?</a>
+         </div>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+      <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+        <section class="moj-ticket-panel__content moj-ticket-panel__content" aria-label="guides section">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Guides</h2>
+          <p class="govuk-body"><a href="https://www.crowncommercial.gov.uk/public-procurement-gateway-guides" class="govuk-link">Learn about the Public Procurement Gateway, and how to set up an account.</a></p>
+        </section>
+      
+      </article>
+      
+
+    </div>
+</div>
+</fieldset>
+</form>
+{% endblock %}

@@ -1,0 +1,449 @@
+{
+  "id": "1",
+  "name": "Technical Innovators Ltd",
+  "email": "contact@technicalinnovators.co.uk",
+  "website": "www.technicalinnovators.co.uk",
+  "correspondence_id": "b910088b-960a-4548-9f4f-948ebf31fa07",
+  "created_at": "2023-09-05T09:47:57.938Z",
+  "updated_at": "2023-09-05T09:49:47.022Z",
+  "supplier_id": {
+    "id": "247686fa-e660-4813-afea-77fd9c61f1a8",
+    "org_id": "ORG002",
+    "vat_number": "GB12345678",
+    "comp_reg_date": "2010-09-05T09:48:03.592Z",
+    "legal_form": "LimitedCompany",
+    "classification": "SmallToMediumEnterprise",
+    "supplier_id": "1",
+    "created_at": "2023-09-05T09:50:44.440Z",
+    "updated_at": "2023-09-05T11:15:55.973Z"
+  },
+  "correspondence": {
+    "id": "b910088b-960a-4548-9f4f-948ebf31fa07",
+    "address_line1": "105 High St.",
+    "address_line2": null,
+    "town_city": "London",
+    "county_state": null,
+    "post_zipcode": "L14 2AB",
+    "phone_number": "+442081234567",
+    "country": "United Kingdom",
+    "created_at": "2023-09-05T09:48:03.592Z",
+    "updated_at": "2023-09-05T10:17:45.882Z"
+  },
+  "qualifications": [
+    {
+      "id": "5c9ab16e-9ced-4a3d-96a6-1d51fde0f540",
+      "authority": "University of Gunthorpe",
+      "date_awarded": "2020-01-15T12:00:00.000Z",
+      "name": "Bachelor's Degree Science",
+      "supplier_id": "1",
+      "created_at": "2023-09-15T12:07:57.030Z",
+      "updated_at": "2023-09-15T12:18:07.649Z"
+    }
+  ],
+  "trade_assurances": [
+    {
+      "id": "6598ac8d-e259-41ca-a738-2180cd04e27d",
+      "authority": "UK Trade Assurance Group",
+      "date_awarded": "2018-05-10T12:00:00.000Z",
+      "reference_number": "AGB4450LL",
+      "supplier_id": "1",
+      "created_at": "2023-09-15T12:18:25.943Z",
+      "updated_at": "2023-09-15T12:08:07.189Z"
+    },
+    {
+      "id": "63871569-734b-48a1-ae30-79e5f75cda79",
+      "authority": "Global Tech Trade Federation",
+      "date_awarded": "1970-01-01T00:00:00.000Z",
+      "reference_number": "5171726 774267642",
+      "supplier_id": "1",
+      "created_at": "2023-09-15T12:18:42.040Z",
+      "updated_at": "2023-09-15T12:18:24.393Z"
+    }
+  ],
+  "mandatory_exclusions": [
+    {
+      "id": "460956fc-e6ff-4be1-b64d-6569472fefaf",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_conviction": "Slavery",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:52:44.739Z",
+      "updated_at": "2023-09-05T09:54:04.274Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "6acdd997-ef40-49a3-9ccb-68a14ca71353",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_conviction": "CorporateHomicide",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:51:59.531Z",
+      "updated_at": "2023-09-05T09:54:04.274Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "712a0777-2b1c-4766-9685-c3e578df5f01",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_conviction": "Terrorism",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:52:16.408Z",
+      "updated_at": "2023-09-05T09:54:04.274Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "81c81bc1-9890-4c43-8d2c-a4ea97308b12",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_conviction": "Fraud",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:52:28.765Z",
+      "updated_at": "2023-09-05T09:54:04.274Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "857fe8ce-58cc-4ae7-83e2-e90fdc10fb9c",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_conviction": "LabourMarket",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:52:40.014Z",
+      "updated_at": "2023-09-05T09:54:04.274Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "a73222d5-2f30-4b56-b4b6-7cfc7e644615",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_conviction": "HumanTrafficking",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:52:48.846Z",
+      "updated_at": "2023-09-05T09:54:04.274Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "b00ba18f-d088-48e2-bd85-2132abbf1b6a",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_conviction": "CorporateManslaughter",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:52:10.821Z",
+      "updated_at": "2023-09-05T09:54:04.274Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "f3df2ea7-164a-41a0-818a-059289c70caf",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_conviction": "Theft",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:52:22.033Z",
+      "updated_at": "2023-09-05T09:54:04.274Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "f60202a5-24bf-4625-8f26-4a1c48bee5b4",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_conviction": "Bribery",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:52:35.603Z",
+      "updated_at": "2023-09-05T09:54:04.274Z",
+      "exclusion_persons": [
+        
+      ]
+    }
+  ],
+  "discretionary_exclusions": [
+    {
+      "id": "3efd7b81-7d04-4555-95b3-b51d60a39581",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_offense": "LabourMarketMisconduct",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:52:55.512Z",
+      "updated_at": "2023-09-05T09:54:23.586Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "e362b9d4-4a3e-404d-bbe5-9675ef58319f",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_offense": "EnvironmentMisconduct",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:53:00.251Z",
+      "updated_at": "2023-09-05T09:54:23.586Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "9a046b9b-21fe-4967-99ab-13ece6a28c9b",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_offense": "Insolvency",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:53:04.122Z",
+      "updated_at": "2023-09-05T09:54:23.586Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "5e0d6242-5297-43f8-a889-ffd807f11c74",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_offense": "Bankruptcy",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:53:09.620Z",
+      "updated_at": "2023-09-05T09:54:23.586Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "055db043-312a-4902-b2f2-d5670213cad1",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_offense": "ProfessionalMisconduct",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:53:41.454Z",
+      "updated_at": "2023-09-05T09:54:23.586Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "dc413fd7-f953-49e8-b033-f0a0403ed473",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_offense": "CompetitionInfringment",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:53:14.934Z",
+      "updated_at": "2023-09-05T09:54:23.586Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "400d2559-b5a3-4ec2-a07f-91aabdc0ee7b",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_offense": "ImproperProcurement",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:53:41.454Z",
+      "updated_at": "2023-09-05T09:54:23.586Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "63669a2e-3f9e-476b-9081-7080fe6546e6",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_offense": "NationalSecurity",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:53:41.454Z",
+      "updated_at": "2023-09-05T09:54:23.586Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "0d987c44-77a3-47d8-9c78-82efecc6868b",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_offense": "ForcedOrganHarvesting",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:53:41.454Z",
+      "updated_at": "2023-09-05T09:54:23.586Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "bb7cc964-72e5-41c1-b5d5-0a045188645e",
+      "exclusion_conviction_date": null,
+      "exclusion_decision_url": null,
+      "exclusion_commit": false,
+      "exclusion_prevent": null,
+      "exclusion_circum": null,
+      "exclusion_offense": "ExcludedMatters",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:53:41.454Z",
+      "updated_at": "2023-09-05T09:54:23.586Z",
+      "exclusion_persons": [
+        
+      ]
+    },
+    {
+      "id": "ed253b8b-662c-46d5-8c77-15d00100e982",
+      "exclusion_conviction_date": "2020-09-05T09:53:41.454Z",
+      "exclusion_decision_url": "www.example.com",
+      "exclusion_commit": true,
+      "exclusion_prevent": "Hr new management",
+      "exclusion_circum": "Breach of contract with employee",
+      "exclusion_offense": "BreachOfContract",
+      "supplier_id": "1",
+      "created_at": "2023-09-05T09:53:41.454Z",
+      "updated_at": "2023-09-05T09:55:17.407Z",
+      "exclusion_persons": [
+        {
+          "id": "4f654248-9c63-49c1-8911-9ee50bfd70af",
+          "first_name": "John",
+          "last_name": "Doe",
+          "email": "johndoe@exampleemail.com",
+          "correspondence_id": "75f2ad01-39b2-45d2-bf09-c89072a995b1",
+          "supplier_id": "1",
+          "created_at": "2023-09-05T09:56:40.306Z",
+          "updated_at": "2023-09-05T09:55:21.095Z",
+          "correspondence": {
+            "id": "75f2ad01-39b2-45d2-bf09-c89072a995b1",
+            "address_line1": "1015 Portland Ave.",
+            "address_line2": null,
+            "town_city": "Coventry",
+            "county_state": null,
+            "post_zipcode": "CO5 12EB",
+            "phone_number": "+441204231251",
+            "country": "United Kingdom",
+            "created_at": "2023-09-05T09:56:30.534Z",
+            "updated_at": "2023-09-05T10:17:45.882Z"
+          }
+        }
+      ]
+    }
+  ],
+  "connected_persons_individual": [
+    {
+      "id": "f2e9d094-f463-41f2-947a-f5dd30b272f1",
+      "first_name": "Jane",
+      "last_name": "Smith",
+      "nationality": "British",
+      "dob": "1970-01-01T00:00:00.000Z",
+      "insolve_date": null,
+      "supplier_id": "1",
+      "correspondence_id": "b910088b-960a-4548-9f4f-948ebf31fa07",
+      "control": "50% or more",
+      "connected_person_individual_type": "DirectorOrShadowDirector",
+      "psc_register": null,
+      "psc_register_date": null,
+      "created_at": "2023-09-05T09:57:52.363Z",
+      "updated_at": "2023-09-05T09:57:24.895Z",
+      "correspondence": {
+        "id": "b910088b-960a-4548-9f4f-948ebf31fa07",
+        "address_line1": "105 High St.",
+        "address_line2": null,
+        "town_city": "London",
+        "county_state": null,
+        "post_zipcode": "L14 2AB",
+        "phone_number": "+442081234567",
+        "country": "United Kingdom",
+        "created_at": "2023-09-05T09:48:03.592Z",
+        "updated_at": "2023-09-05T10:17:45.882Z"
+      }
+    },
+    {
+      "id": "5328e25f-1c21-48bf-ae3c-e7cc39490784",
+      "first_name": "Dave",
+      "last_name": "Smith",
+      "nationality": "British",
+      "dob": "1970-01-01T00:00:00.000Z",
+      "insolve_date": null,
+      "supplier_id": "1",
+      "correspondence_id": "b910088b-960a-4548-9f4f-948ebf31fa07",
+      "control": "50% or more",
+      "connected_person_individual_type": "Predecessor",
+      "psc_register": null,
+      "psc_register_date": null,
+      "created_at": "2023-09-05T10:00:33.694Z",
+      "updated_at": "2023-09-05T09:59:46.425Z",
+      "correspondence": {
+        "id": "b910088b-960a-4548-9f4f-948ebf31fa07",
+        "address_line1": "105 High St.",
+        "address_line2": null,
+        "town_city": "London",
+        "county_state": null,
+        "post_zipcode": "L14 2AB",
+        "phone_number": "+442081234567",
+        "country": "United Kingdom",
+        "created_at": "2023-09-05T09:48:03.592Z",
+        "updated_at": "2023-09-05T10:17:45.882Z"
+      }
+    }
+  ],
+  "connected_persons_organisation": [
+    
+  ]
+}

@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Mandatory exclusion grounds
+        </h2>
+
+        <span class="govuk-caption-l">
+            {{ data['mandatory'] }}
+          </span>
+
+        <form class="form" method="post">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            What type of documentation can you provide?
+                        </h1>
+                    </legend>
+
+                    <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Help with documentation
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            Where such a conviction has been publicly recorded, please provide a link to the website
+                            that holds this decision or upload the decision document. </div>
+                    </details>
+
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="documents" name="documents" type="checkbox"
+                                value="Link" data-aria-controls="conditional-documents">
+                            <label class="govuk-label govuk-checkboxes__label" for="documents">
+                                Link
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                            id="conditional-documents">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="documents-by-web">
+                                    Website address
+                                </label>
+                                <input class="govuk-input" id="documents-by-web" name="documents-by-web" type="text"
+                                    spellcheck="false" autocomplete="web">
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="documents-2" name="documents-2" type="checkbox"
+                                value="File upload" data-aria-controls="conditional-documents-2">
+                            <label class="govuk-label govuk-checkboxes__label" for="documents-2">
+                                Document upload
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                            id="conditional-documents-2">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="file-upload-1">
+                                    Upload a file
+                                </label>
+                                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="govuk-checkboxes__divider">or</div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="cannotProve" name="cannotProve" type="checkbox"
+                            value="No, I cannot provide any documentation" data-behaviour="exclusive">
+                        <label class="govuk-label govuk-checkboxes__label" for="cannotProve">
+                            No, I cannot provide any documentation
+                        </label>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-6" type="submit">Save and continue</button>
+
+        </form>
+
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

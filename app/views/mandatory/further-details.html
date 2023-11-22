@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-ful-width">
+
+    <h1 class="govuk-heading-m" style="color: #1d70b8;">
+        Mandatory exclusion grounds
+    </h1>
+
+    <span class="govuk-caption-l">
+        {{ data['mandatory'] }}
+      </span>
+
+    <form class="form" method="post">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" data-required data-error="Provide further details" aria-required="true">
+                
+                <h1 class="govuk-heading-l"> Provide further details and the reasons for the conviction.</h1>
+
+                <textarea class="govuk-textarea" id="mandatory-detail" name="mandatory-detail" rows="6"
+                    aria-describedby="mandatory-detail-hint"></textarea>
+
+            </fieldset>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+    </form>
+
+    {% endblock %}

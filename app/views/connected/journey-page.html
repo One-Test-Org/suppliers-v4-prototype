@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Connected persons
+        </h2>
+
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+            data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Work in Progress
+                </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+                <p class="govuk-notification-banner__heading">
+                    This part of the journey is under development. Please choose one of the 7 options below.
+                </p>
+            </div>
+        </div>
+
+        <a class="govuk-link govuk-heading-m" href="psc-individual">PSC Individual</a>.<br>
+        <a class="govuk-link govuk-heading-m" href="gov-organisation">Gov/Public authority</a>.<br>
+        <a class="govuk-link govuk-heading-m" href="director-individual">Director or Shadow Director</a>.
+        <a class="govuk-link govuk-heading-m" href="psc-individual-ni">PSC not individual or Public Authority</a>.
+        <a class="govuk-link govuk-heading-m" href="parent-sub">Parent undertaking or a subsidiary undertaking</a>.
+        <a class="govuk-link govuk-heading-m" href="predecessor">Predecessor</a>.<br>
+        <a class="govuk-link govuk-heading-m" href="director-individual-ni">Director not individual</a>.
+
+
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

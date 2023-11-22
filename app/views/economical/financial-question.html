@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Economic and Financial Standing
+        </h2>
+
+        <form class="form" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" data-required data-error="Select the connected person"
+                    aria-required="true">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Which of the following statements applies to your accounts or financial statements?
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="financialStandIn" name="financialStandIn"
+                                type="radio" value="A copy of the most recent two financial years accounts"
+                                aria-describedby="financialStandIn-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold"
+                                for="financialStandIn">
+                                Accounts submitted for our last two financial years were required to be audited.
+                            </label>
+                            <div id="financialStandIn-1-item-hint" class="govuk-hint govuk-radios__hint">
+                                In accordance with Part 16 of the Companies Act 2006 (or an overseas equivalent)
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="financialStandIn-2" name="financialStandIn"
+                                type="radio" value="A copy of the most recent financial year accounts"
+                                aria-describedby="financialStandIn-2-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold"
+                                for="financialStandIn-2">
+                                Accounts submitted for only our most recent financial years were required to be audited.
+                            </label>
+                            <div id="financialStandIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+                                In accordance with Part 16 of the Companies Act 2006 (or an overseas equivalent)
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="financialStandIn-3" name="financialStandIn"
+                                type="radio" value="A copy of the most recent two financial years accounts"
+                                aria-describedby="financialStandIn-3-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold"
+                                for="financialStandIn-3">
+                                Our financial information did not require an audit, but we can supply accounts or other
+                                information which is equivalent to information contained in accounts audited.
+                            </label>
+                            <div id="financialStandIn-3-item-hint" class="govuk-hint govuk-radios__hint">
+                                In accordance with Part 16 of the Companies Act 2006.
+                            </div>
+                        </div>
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+    </div>
+    </form>
+
+
+</div>
+</div>
+
+{% endblock %}

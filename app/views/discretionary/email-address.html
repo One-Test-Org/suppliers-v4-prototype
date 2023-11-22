@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Prototype
+      </strong>
+      <span class="govuk-phase-banner__text">
+          This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" data-required data-error="Enter the email address"
+          aria-required="true">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-heading-l">Enter their email address</h1>
+          </legend>
+
+          <input class="govuk-input govuk-input--width-20" name="emailAddressDis" id="emailAddress"
+            type="email" aria-describedby="emailAddress" value="{{ data['emailAddressDis'] }}">
+        </fieldset>
+      </div>
+      <button class="govuk-button" type="submit">Save and continue</button>
+    </form>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

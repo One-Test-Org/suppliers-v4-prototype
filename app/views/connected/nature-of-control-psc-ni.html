@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <form class="form" method="post">
+
+            <h2 class="govuk-heading-m" style="color: #1d70b8;">
+                Connected persons
+            </h2>
+            <span class="govuk-caption-l">Person of significant control, not individual or Public Authority</span>
+
+            <fieldset class="govuk-fieldset" data-required data-error="Enter the nature of control"
+                aria-required="true">
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="controlNaturePscNi-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                What is the nature of control?
+                            </h1>
+                        </legend>
+                        <div id="controlNaturePscNi-hint" class="govuk-hint">
+                            Select which of the specified conditions in Part 1 of Schedule 1A to the Companies Act 2006
+                            applies
+                            <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="controlNaturePscNi" name="controlNaturePscNi"
+                                        type="radio" value="Ownership of shares"
+                                        aria-describedby="controlNaturePscNi-item-hint">
+                                    <label class="govuk-label govuk-radios__label" for="controlNaturePscNi">
+                                        Ownership of shares:
+                                    </label>
+                                    <div id="controlNaturePscNi-item-hint" class="govuk-hint govuk-radios__hint">
+                                        holds, directly or indirectly, more than 25% of the shares in company
+                                    </div>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="controlNaturePscNi-2"
+                                        name="controlNaturePscNi" type="radio" value="Ownership of voting rights"
+                                        aria-describedby="controlNaturePscNi-2-item-hint">
+                                    <label class="govuk-label govuk-radios__label" for="controlNaturePscNi-2">
+                                        Ownership of voting rights:
+                                    </label>
+                                    <div id="controlNaturePscNi-2-item-hint" class="govuk-hint govuk-radios__hint">
+                                        holds, directly or indirectly, more than 25% of the voting rights in company
+                                    </div>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="controlNaturePscNi-3"
+                                        name="controlNaturePscNi" type="radio"
+                                        value="Ownership of right to appoint or remove directors"
+                                        aria-describedby="controlNaturePscNi-3-item-hint">
+                                    <label class="govuk-label govuk-radios__label" for="controlNaturePscNi-3">
+                                        Ownership of right to appoint or remove directors:
+                                    </label>
+                                    <div id="controlNaturePscNi-3-item-hint" class="govuk-hint govuk-radios__hint">
+                                        holds the right, directly or indirectly, to appoint or remove a majority of the
+                                        board of directors of company
+                                    </div>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="controlNaturePscNi-4"
+                                        name="controlNaturePscNi" type="radio" value="Significant influence or control"
+                                        aria-describedby="controlNaturePscNi-4-item-hint">
+                                    <label class="govuk-label govuk-radios__label" for="controlNaturePscNi-2">
+                                        Significant influence or control:
+                                    </label>
+                                    <div id="controlNaturePscNi-4-item-hint" class="govuk-hint govuk-radios__hint">
+                                        has the right to exercise, or actually exercises, significant influence or
+                                        control
+                                        over company
+                                    </div>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="controlNaturePscNi-5"
+                                        name="controlNaturePscNi" type="radio" value="Trusts partnerships etc"
+                                        aria-describedby="controlNaturePscNi-5-item-hint">
+                                    <label class="govuk-label govuk-radios__label" for="controlNaturePscNi-5">
+                                        Trusts partnerships etc:
+                                    </label>
+                                    <div id="controlNaturePscNi-2-item-hint" class="govuk-hint govuk-radios__hint">
+                                        (a)the trustees of a trust or the members of a firm that, under the law by which
+                                        it
+                                        is governed, is not a legal person meet any of the other specified conditions
+                                        (in
+                                        their capacity as such) in relation to company Y, or would do so if they were
+                                        individuals, <br>
+                                        and (b) X has the right to exercise, or actually exercises, significant
+                                        influence or
+                                        control over the activities of that trust or firm.
+                                    </div>
+                                </div>
+                            </div>
+                    </fieldset>
+                </div>
+
+                <!-- Older free text version
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h2 class="govuk-heading-l">What is the nature of control?</h2>
+                    </legend>
+                    <div id="controlNaturedPscNiHint" class="govuk-hint">
+                        For example, 50% or more of the voting rights
+                    </div>
+                    <input class="govuk-input" name="controlNaturePscNi" id="controlNaturePscNi" type="text"
+                        aria-describedby="controlNaturePscNi">
+                </div>
+
+                 -->
+                <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+        </form>
+
+        </fieldset>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+<!--  Unused code from this file:    
+    
+    
+             <fieldset class="govuk-fieldset" data-required data-error="Select the connected person`s relationship?"
+                    aria-required="true">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            What is the connected person`s relationship?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="relationPersons" name="relationPersons" type="radio" value="PSC Individual">
+                            <label class="govuk-label govuk-radios__label" for="relationPersons">
+                                Directors spouse
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-2Dis" name="relationPersons" type="radio" value="Director individual">
+                            <label class="govuk-label govuk-radios__label" for="relationPersons">
+                                Directors civil partner
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-3Dis" name="relationPersons" type="radio" value="Director not individual">
+                            <label class="govuk-label govuk-radios__label" for="relationPersons">
+                                A person with whom the director lives as a partner
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="relationPersons" name="relationPersons" type="radio" value="Gov/Public Authority">
+                            <label class="govuk-label govuk-radios__label" for="relationPersons">
+                                Directors child / or stepchild
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            -->

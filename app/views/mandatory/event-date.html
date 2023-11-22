@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m" style="color: #1d70b8;">
+      Mandatory exclusion grounds
+    </h2>
+
+    <span class="govuk-caption-l">
+      {{ data['mandatory'] }}
+    </span>
+
+    <form class="form" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" data-required data-error="Enter the date the circumstance last occurred"
+          aria-required="true">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            Enter the date the circumstance last occurred
+          </legend>
+
+          <div id="convictionHint" class="govuk-hint">
+            For example, 27 3 2007
+          </div>
+          <div class="govuk-date-input" id="conviction">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="convictionDay">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="convictionDay"
+                  name="convictionDay" type="text" inputmode="numeric" value="{{ data['convictionDay'] }}">>
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="convictionMonth">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="convictionMonth"
+                  name="convictionMonth" type="text" inputmode="numeric" value="{{ data['convictionMonth']}}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="convictionYear">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="convictionYear"
+                  name="convictionYear" type="text" inputmode="numeric" value="{{ data['convictionYear']}}">
+              </div>
+            </div>
+
+        </fieldset>
+      </div>
+      <button class="govuk-button" type="submit">Save and continue</button>
+    </form>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

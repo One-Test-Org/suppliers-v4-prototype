@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Mandatory exclusion grounds
+        </h2>
+
+        <span class="govuk-caption-l">
+            {{ data['mandatory'] }}
+        </span>
+
+        <form class="form" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" data-required data-error="Select the subject of the event"
+                    aria-required="true">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Who has been the subject of the event?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub" name="eventSub" type="radio"
+                                value="Supplier">
+                            <label class="govuk-label govuk-radios__label" for="eventSub">
+                                The supplier
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-3" name="eventSub" type="radio"
+                                value="Connected person">
+                            <label class="govuk-label govuk-radios__label" for="eventSub">
+                                A connected person
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-5" name="eventSub" type="radio"
+                                value="Connected organisation">
+                            <label class="govuk-label govuk-radios__label" for="eventSub">
+                                A connected organisation
+                            </label>
+                        </div>
+
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+    </div>
+    </form>
+
+
+</div>
+</div>
+
+{% endblock %}

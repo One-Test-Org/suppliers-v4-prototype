@@ -1,0 +1,458 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/">Prototype Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="account-home">Account home</a>
+        </li>
+    </ol>
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-width">
+
+
+        <h2 class="govuk-heading-l" style="color: #1d70b8;">
+            Tech Innovators Ltd
+        </h2>
+
+        <section class="moj-ticket-panel__content moj-ticket-panel__content" aria-label="title section">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Unique identifier for the supplier:</h2>
+
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__value">
+                        Charity Commission for Northern Ireland number:
+                    </dt>
+                    <dt class="govuk-summary-list__value">
+                        09984562
+                    </dt>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                        </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__value">
+                        Companies House registration number:
+                    </dt>
+                    <dt class="govuk-summary-list__value">
+                        04443000
+                    </dt>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                        </a>
+                    </dd>
+                </div>
+            </dl>
+        </section>
+
+        <div class="govuk-inset-text">
+            <p class="govuk-body">Ensure your supplier information is complete and up to date.</p>
+        </div>
+
+        <!-- New Task list Account Home -->
+
+        <section>
+
+
+            <ol class="app-task-list">
+
+                <li>
+
+                    <ul class="app-task-list__items">
+
+
+                        <!-- Basic Information -->
+
+
+                        {% if data['legalForm'] | length != "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="non-individual-core-data" aria-describedby="basic-information-completed">Basic
+                                    information</a>
+                            </span>
+                            <span class="app-task-list__items">
+
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green"
+                                id="basic-information-completed">
+                                Completed
+                            </span>
+                        </li>
+                        {% elif data['addressTypeBasic'] | length != "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="non-individual-core-data" aria-describedby="basic-information-in-progress">
+                                    Basic information</a>
+                            </span>
+                            <span class="app-task-list__items">
+
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--blue"
+                                id="basic-information-in-progress">
+                                In progress
+                            </span>
+                        </li>
+                        {% else %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="non-individual-core-data" aria-describedby="basic-information-not-started">
+                                    Basic information</a>
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--grey"
+                                id="basic-information-not-started">
+                                Not started
+                            </span>
+                        </li>
+                        {% endif %}
+
+
+                        <!-- connected persons -->
+
+                        {% if data['connectedPsc'] | length != "0" and data['connectedPersons'] | length == "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/connected/connected-question" aria-describedby="connected-none">Connected
+                                    persons</a>
+                            </span>
+                            <span class="app-task-list__items">
+
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="app-task-list__items">
+                                0 connected persons
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="connected-none">
+                                Completed
+                            </span>
+                        </li>
+
+                        {% elif data['addAnotherConnectedPerson'] | length != "0" and data['connectedPersons'] | length
+                        != "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/connected/add-another-connected-person"
+                                    aria-describedby="connected-completed">
+                                    Connected persons</a>
+                            </span>
+                            <span class="app-task-list__items">
+
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="app-task-list__items">
+                                {{ data ['connectedPersonCount'] }} connected persons
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="connected-completed">
+                                Completed
+                            </span>
+                        </li>
+
+                        {% elif data['connectedPsc'] | length != "0" and data['connectedPersons'] | length != "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/connected/connected-question" aria-describedby="connected-in-progress">
+                                    Connected persons</a>
+                            </span>
+                            <span class="app-task-list__items">
+
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="connected-in-progress">
+                                In progress
+                            </span>
+                        </li>
+                        {% else %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/connected/connected-question"
+                                    aria-describedby="connected-not-started">Connected persons</a>
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="connected-not-started">
+                                Not started
+                            </span>
+                        </li>
+                        {% endif %}
+
+
+
+                        <!-- mandatory exclusions -->
+
+                        {% if data['addAnotherExclusionMan'] | length != "0" and data['exclusionManArray'] | length >=
+                        "2" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/mandatory/add-another-exclusion" aria-describedby="mandatory-completed">
+                                    Mandatory exclusions</a>
+                            </span>
+                            <span class="app-task-list__items">
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="app-task-list__items">
+                                {{ data ['exclusionManCount'] }} mandatory exclusions
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="mandatory-completed">
+                                Completed
+                            </span>
+                        </li>
+                        {% elif data['addAnotherExclusionMan'] | length != "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/mandatory/add-another-exclusion" aria-describedby="mandatory-completed">
+                                    Mandatory exclusions</a>
+                            </span>
+                            <span class="app-task-list__items">
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="app-task-list__items">
+                                {{ data ['exclusionManCount'] }} mandatory exclusion
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="mandatory-completed">
+                                Completed
+                            </span>
+                        </li>
+                        {% elif data['exclusionMan1'] == '' and data['exclusionMan2'] == '' and data ['exclusionMan3']
+                        == '' and data
+                        ['exclusionMan4'] == '' and data ['exclusionMan5'] == '' and data['exclusionMan6'] == '' and
+                        data
+                        ['exclusionMan7'] == '' and data ['exclusionMan8'] == '' and data ['exclusionMan9'] == '' and
+                        data
+                        ['exclusionMan10'] == '' and data ['exclusionMan11'] == '' and data ['exclusionMan12'] == '' and
+                        data
+                        ['exclusionMan13'] == '' %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/mandatory/exclusion-grounds" aria-describedby="mandatory-completed">
+                                    Mandatory exclusions</a>
+                            </span>
+                            <span class="app-task-list__items">
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="app-task-list__items">
+                                0 mandatory exclusions
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="mandatory-completed">
+                                Completed
+                            </span>
+                        </li>
+                        {% elif data['eventSub'] | length != "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/mandatory/check-answers" aria-describedby="mandatory-in-progress">
+                                    Mandatory exclusions</a>
+                            </span>
+                            <span class="app-task-list__items">
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="mandatory-in-progress">
+                                In progress
+                            </span>
+                        </li>
+                        {% else %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/mandatory/exclusion-grounds" aria-describedby="mandatory-not-started">
+                                    Mandatory exclusions</a>
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="mandatory-not-started">
+                                Not started
+                            </span>
+                        </li>
+                        {% endif %}
+
+                        <!-- Add discretionary exclusions -->
+
+
+
+                        {% if data['addAnotherExclusion'] | length != "0" and data['exclusionArray'] | length >= "2" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/discretionary/add-another-exclusion"
+                                    aria-describedby="discretionary-completed">
+                                    Discretionary exclusions</a>
+                            </span>
+                            <span class="app-task-list__items">
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="app-task-list__items">
+                                {{ data ['exclusionCount'] }} discretionary exclusions
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="discretionary-completed">
+                                Completed
+                            </span>
+                        </li>
+                        {% elif data['addAnotherExclusion'] | length != "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/discretionary/add-another-exclusion"
+                                    aria-describedby="discretionary-completed">
+                                    Discretionary exclusions</a>
+                            </span>
+                            <span class="app-task-list__items">
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="app-task-list__items">
+                                {{ data ['exclusionCount'] }} discretionary exclusion
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="discretionary-completed">
+                                Completed
+                            </span>
+                        </li>
+                        {% elif data['exclusionDis1'] == '' and data['exclusionDis2'] == '' and data ['exclusionDis3']
+                        == '' and data
+                        ['exclusionDis4'] == '' and data ['exclusionDis5'] == '' and data['exclusionDis6'] == '' and
+                        data
+                        ['exclusionDis7'] == '' and data ['exclusionDis8'] == '' %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/discretionary/exclusion-grounds" aria-describedby="discretionary-completed">
+                                    Discretionary exclusions</a>
+                            </span>
+                            <span class="app-task-list__items">
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="app-task-list__items">
+                                0 discretionary exclusions
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="discretionary-completed">
+                                Completed
+                            </span>
+                        </li>
+                        {% elif data['eventSubDis'] | length != "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/discretionary/check-answers" aria-describedby="discretionary-in-progress">
+                                    Discretionary exclusions</a>
+                            </span>
+                            <span class="app-task-list__items">
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="discretionary-in-progress">
+                                In progress
+                            </span>
+                        </li>
+                        {% else %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/discretionary/exclusion-grounds" aria-describedby="discretionary-not-started">
+                                    Discretionary exclusions</a>
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="discretionary-not-started">
+                                Not started
+                            </span>
+                        </li>
+
+
+                        {% endif %}
+
+                        <!-- Economic and Financial Standing -->
+
+                        {% if data['financialStandIn'] | length != "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/economical/check-answers"
+                                    aria-describedby="economic-and-financial-standing-completed">
+                                    Economic and Financial Standing</a>
+                            </span>
+                            <span class="app-task-list__items">
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green"
+                                id="economic-and-financial-standing-completed">
+                                Completed
+                            </span>
+                        </li>
+                        {% elif data['financialStandIn'] | length == "0" and data['financialStand'] | length != "0" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/economical/financial-question"
+                                    aria-describedby="economic-and-financial-standing-in-progress">
+                                    Economic and Financial Standing</a>
+                            </span>
+                            <span class="app-task-list__items">
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--blue"
+                                id="economic-and-financial-standing-in-progress">
+                                In progress
+                            </span>
+                        </li>
+                        {% else %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/economical/financial-question"
+                                    aria-describedby="economic-and-financial-standing-not-started">
+                                    Economic and Financial Standing</a>
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--grey"
+                                id="economic-and-financial-standing-not-started">
+                                Not started
+                            </span>
+                        </li>
+                        {% endif %}
+
+                    </ul>
+                </li>
+            </ol>
+
+        </section>
+
+        <a href="../download/download" role="button" draggable="false" class="govuk-button govuk-button--start"
+            data-module="govuk-button">
+            Share my data
+            <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+                viewBox="0 0 33 40" aria-hidden="true" focusable="false" style="rotate: 270deg;">
+                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+            </svg></a>
+
+    </div>
+</div>
+{% endblock %}

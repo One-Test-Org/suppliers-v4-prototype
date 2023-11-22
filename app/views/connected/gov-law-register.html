@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Connected persons
+        </h2>
+        <span class="govuk-caption-xl">Government / Public authority</span>
+
+        <fieldset class="govuk-fieldset" data-required data-error="Enter the legal form of the organisation"
+            aria-required="true">
+
+            <form class="form" method="post">
+
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h2 class="govuk-heading-l">What is {{ data['connectedPerson'] }}`s Legal formation?</h2>
+                    </legend>
+                    <div id="govPublicLegalFormdHint" class="govuk-hint">
+                        For example, Public Limited Company
+                    </div>
+                    <input class="govuk-input" name="govPublicLegalForm" id="govPublicLegalForm" type="text"
+                        aria-describedby="govPublicLegalForm">
+                </div>
+
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h2 class="govuk-heading-l">Which Law it is covered by?</h2>
+                    </legend>
+                    <div id="govPublicLawdHint" class="govuk-hint">
+                        For example, Companies Act 2006
+                    </div>
+                    <input class="govuk-input" name="govPublicLaw" id="govPublicLaw" type="text"
+                        aria-describedby="govPublicLaw">
+                </div>
+                <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+            </form>
+
+        </fieldset>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

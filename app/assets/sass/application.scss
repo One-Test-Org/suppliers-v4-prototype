@@ -1,0 +1,71 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import ".tmp/sass/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/contents-list";
+@import "patterns/mainstream-guide";
+@import "patterns/pagination";
+@import "patterns/related-items";
+@import "patterns/task-list";
+
+// @import "components/card";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+/* ==========================================================================
+   #MASTHEAD
+   ========================================================================== */
+
+.moj-mast-small {
+  background-color: govuk-colour("blue");
+  color: govuk-colour("white");
+  height: 140px;
+}
+
+.moj-mast-small__container {
+
+  font-size: 0; // Hide whitespace between elements
+  text-align: justify; // Trick to remove the need for floats
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+}
+
+.moj-mast-small__content {
+  display: inline-block;
+  font-size: 46px;
+  text-align: left;
+  vertical-align: middle;
+  width: 100%;
+  font-family: "GDS Transport", Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.ros-add-to-a-list .govuk-summary-list__key,
+.ros-add-to-a-list .govuk-summary-list__value {
+  width: auto
+}
+
+.ros-add-to-a-list .govuk-summary-list__actions {
+  width: 40%
+}
+
+.ros-add-to-a-list .govuk-summary-list__key,
+.ros-add-to-a-list .govuk-summary-list__value {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto
+}
+

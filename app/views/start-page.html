@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <form class="form" method="post">
+
+            <h1 class="govuk-heading-xl" style="color: #1d70b8;">
+                Supplier Information Service prototype
+            </h1>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading" id="Section-A">
+                    What is the Supplier Information Service?
+                </h2>
+            </legend>
+
+            <p class="govuk-body">
+                The Supplier Information Service was established by the Procurement Act 2024 with the aim of reducing
+                the
+                duplication of information submitted by suppliers when bidding for public sector work.</p>
+
+            <p class="govuk-body">Contracting authorities must obtain core information about a supplier from the
+                Supplier
+                Information Service for any above threshold procurement.
+                This service enables suppliers to update their core information and share it with contracting
+                authorities by
+                generating a code that can be shared with them,
+                or by allowing you to download your data and send it to them manually.</p>
+
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-9">
+                <h2 class="govuk-fieldset__heading" id="Section-B">
+                    When to use it
+                </h2>
+            </legend>
+
+            <p class="govuk-body">
+                When bidding on an above-threshold procurement, you must submit your core information using the Supplier
+                Information Service.</p>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-9">
+                <h2 class="govuk-fieldset__heading" id="Section-C">
+                    Updating your information
+                </h2>
+            </legend>
+
+            <p class="govuk-body">
+                You must first register on the central platform. Once registered, you can access the Supplier
+                Information
+                Service.
+                The 2024 Procurement Act describes the “mandatory core” information as the data that is required (and is
+                relatively unchanged) in every procurement. This is equivalent to parts 1 and 2 in the current standard
+                questionnaire (SQ).</p>
+
+            <p class="govuk-body">Contracting authorities must obtain core information about a supplier from the
+                Supplier
+                This information includes supplier name and identifiers, economic & financial standing, connected
+                persons and
+                exclusion criteria.</p>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-9">
+                <h2 class="govuk-fieldset__heading" id="Section-D">
+                    Bidding for a procurement opportunity
+                </h2>
+            </legend>
+
+            <p class="govuk-body">
+                Check your core data. You should ensure that it is up-to-date and correct any errors or expired
+                information.
+                Click ‘share’ on the home page. This will give you the option to create:</p>
+
+
+            <ol class="govuk-list govuk-list--number">
+                <li>A code that can be shared with eSender portals to give them access via an API to the specific
+                    dataset that
+                    you have authorised.</li>
+                <li>An extract of your data. This will download a copy of the data in machine-readable (JSON) and
+                    human-readable
+                    (PDF) formats to your computer. This can be used when the contracting authority is not using an
+                    eSender for
+                    the procurement, or where they have specified a manual data upload.</li>
+                <li>Both a code and an extract.</li>
+                <li>Complete the declaration with your details. Once complete, your code will be displayed or your
+                    download can
+                    be accessed</li>
+                <li>Share your code with the contracting authority’s eSender or upload the data file.</li>
+                <p><strong>Note -</strong>to complete your bid, you must also submit your bid-specific information by
+                    whatever
+                    method the contracting authority specifies.</p>
+            </ol>
+
+
+            <div class="govuk-form-group">
+
+
+                <button class="govuk-button govuk-button--start govuk-!-margin-top-4" type="submit">Start<svg
+                        class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+                        viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                    </svg></button>
+
+
+
+            </div>
+        </form>
+    </div>
+
+    <div class="govuk-grid-column-one-quarter" style="border-top: 2px solid #1d70b8;">
+        <h3 class="govuk-heading-m" style="margin-top:1em">Related content</h3>
+        <p class="govuk-body">
+            <a class="" href="https://www.gov.uk/government/collections/transforming-public-procurement"> Transforming
+                Public Procurement - overview</a>
+        </p>
+        <p class="govuk-body">
+            <a class="" href="https://bills.parliament.uk/bills/3159/publications">Procurement Act
+                2023</a>
+        </p>
+    </div>
+
+
+    </form>
+
+
+</div>
+
+
+
+</div>
+
+{% endblock %}

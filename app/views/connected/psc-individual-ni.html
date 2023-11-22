@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m" style="color: #1d70b8;">
+      Connected persons
+    </h2>
+    <span class="govuk-caption-l">Person of significant control, not individual or Public Authority</span>
+
+    <fieldset class="govuk-fieldset" data-required data-error="Enter the PSC individual details" aria-required="true">
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-heading-l">Enter the PSC individual details</h1>
+          </legend>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
+            <h2 class="govuk-heading-m">Enter the organisation name</h2>
+          </legend>
+          <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="connectedPerson" type="text"
+            aria-describedby="connectedPerson">
+
+        </div>
+  </div>
+</div>
+<button class="govuk-button" type="submit">Save and continue</button>
+</form>
+
+</fieldset>
+
+
+{% endblock %}

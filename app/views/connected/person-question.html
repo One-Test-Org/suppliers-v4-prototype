@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" data-required
+                    data-error="Select organisation, person or an equivalent Stand in." aria-required="true">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Is the connected person an organisation or a individual?
+                        </h1>
+                    </legend>
+                    <!--
+          <div id="connected-hint" class="govuk-hint">
+           
+          </div>
+          -->
+                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="personQuestion" name="personQuestion" type="radio"
+                                value="organisation">
+                            <label class="govuk-label govuk-radios__label" for="personQuestion">
+                                Organisation
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="personQuestion-2" name="personQuestion" type="radio"
+                                value="person">
+                            <label class="govuk-label govuk-radios__label" for="personQuestion">
+                                Individual
+                            </label>
+                        </div>
+                        <!--
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="personQuestion" name="personQuestion" type="radio"
+                                value="standInOrganisation">
+                            <label class="govuk-label govuk-radios__label" for="personQuestion">
+                                Stand in - Organisation
+                            </label>
+                            <div id="connected-hint" class="govuk-hint">
+                                A Stand in a connected person who can reasonably be considered to a stand in equivalent
+                                position in relation to the suppliers as a connected person.
+                            </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="personQuestion-2" name="personQuestion" type="radio"
+                                value="standInPerson">
+                            <label class="govuk-label govuk-radios__label" for="personQuestion">
+                                Stand in - Individual
+                            </label>
+                            <div id="connected-hint" class="govuk-hint">
+                                A Stand in a connected person who can reasonably be considered to a stand in equivalent
+                                position in relation to the suppliers as a connected person.
+                            </div>
+                        </div>
+
+                        -->
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Continue</button>
+    </div>
+    </form>
+
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,497 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-ful-width">
+
+  <h1 class="govuk-heading-l" style="color: #1d70b8;">
+    Discretionary exclusion grounds
+  </h1>
+
+  <span class="govuk-caption-l">
+    {{ data['discretionary'] }}
+  </span>
+
+  <section class="moj-ticket-panel__content moj-ticket-panel__content" aria-label="title section">
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Regulations 57(1) and (2) <br></strong>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        <br>Please indicate if, within the past five years you, your organisation or any other person who has powers of
+        representation, decision or control in the organisation has been convicted anywhere in the world of any of the
+        offences within the summary below and listed on the webpage.
+      </strong>
+    </div>
+  </section>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  </hr>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" data-required data-error="Select yes or no" aria-required="true">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h2 class="govuk-fieldset__heading">
+                Has your organisation or any of its connected persons been involved with an event mentioned in Parts 1
+                or
+                2 of Schedule 6 in the Procurement Act 2023
+              </h2>
+            </legend>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
+              <h2 class="govuk-fieldset__heading">
+                Labour market misconduct
+              </h2>
+            </legend>
+
+            <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+              Select all the options, stating either yes or no.
+            </div>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
+              <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Exclusion details
+                  </span>
+                </summary>
+            </legend>
+            <div class="govuk-details__text">
+              1 A discretionary exclusion ground applies to a supplier if any of the
+              following orders has been made against the supplier or a connected
+              person:<br><br>
+              (a) a slavery and trafficking prevention order, an interim slavery and
+              trafficking prevention order, a slavery and trafficking risk order or
+              an interim slavery and trafficking risk order under Part 2 of the
+              Modern Slavery Act 2015;<br>
+              (b) a trafficking and exploitation prevention order, an interim
+              trafficking and exploitation prevention order, a trafficking and
+              exploitation risk order or an interim trafficking and exploitation risk
+              order under Part 4 of the Human Trafficking and Exploitation
+              (Scotland) Act 2015 (asp 12);<br>
+              (c) a slavery and trafficking prevention order or an interim slavery and
+              trafficking prevention order under Schedule 3 to the Human
+              Trafficking and Exploitation (Criminal Justice and Support for
+              Victims) Act (Northern Ireland) 2015 (c.2 (N.I.));
+              (d) a labour market enforcement order under section 18 of the
+              Immigration Act 2016.<br><br>
+              2 A discretionary exclusion ground applies to a supplier if the supplier or a
+              connected person has engaged in conduct outside the United Kingdom that
+              the decision-maker considers could result in any such order being made if
+              the conduct occurred in the United Kingdom.<br><br>
+              3 A discretionary exclusion ground applies to a supplier if the decision-maker
+              considers that there is sufficient evidence that the supplier or a connected
+              person has engaged in conduct (whether in or outside the United Kingdom)
+              constituting (or that would, if it occurred in the United Kingdom, constitute)
+              an offence referred to in:<br><br>
+              (a) section 1, 2, 4 or 30 of the Modern Slavery Act 2015,<br>
+              (b) section 1, 4 or 32 of the Human Trafficking and Exploitation
+              (Scotland) Act 2015, or<br>
+              (c) section 1, 2 or 4 of the Human Trafficking and Exploitation (Criminal
+              Justice and Support for Victims) Act (Northern Ireland) 2015, or
+              paragraph 16 of Schedule 3 to that Act.
+            </div>
+            </details>
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis1" name="exclusionDis1" type="radio"
+                  value="Labour market misconduct">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis1">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis1" name="exclusionDis1" type="radio" value="">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis1">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
+              <h2 class="govuk-fieldset__heading">
+                Environmental misconduct
+              </h2>
+              <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Exclusion details
+                  </span>
+                </summary>
+            </legend>
+            <div class="govuk-details__text">
+              A discretionary exclusion ground applies to a supplier if:<br><br>
+              (a) the supplier or a connected person has been convicted of an offence
+              (whether in or outside the United Kingdom), and<br>
+              (b) the conduct constituting the offence caused, or had the potential to
+              cause, significant harm to the environment, including the life and
+              health of plants and animals.
+            </div>
+            </details>
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis2" name="exclusionDis2" type="radio"
+                  value="Environmental misconduct">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis2">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis2" name="exclusionDis2" type="radio" value="">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis2">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
+              <h2 class="govuk-fieldset__heading">
+                Insolvency, bankruptcy, etc
+              </h2>
+              <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Exclusion details
+                  </span>
+                </summary>
+            </legend>
+            <div class="govuk-details__text">
+              A discretionary exclusion ground applies to a supplier if the supplier or a
+              connected person has:<br><br>
+              (a) become bankrupt (or, in Scotland, its estate has been sequestrated),<br>
+              (b) become subject to insolvency or winding-up proceedings,<br>
+              (c) had its assets subject to administration or receivership, including by
+              a liquidator or court,<br>
+              (d) entered into an arrangement with its creditors,<br>
+              (e) become subject to a petition or application for any such procedures
+              or arrangements, or<br>
+              (f) in any jurisdiction, been subject to a procedure or an application the
+              decision-maker considers to correspond to any procedure or
+              application mentioned in paragraphs (a) to (e).<br><br>
+              A discretionary exclusion ground applies to a supplier if the supplier or a
+              connected person is:<br><br>
+              (a) in the case of a company, unable to pay its debts within the meaning
+              given by section 123 of the Insolvency Act 1986 or Article 103 of the
+              Insolvency (Northern Ireland) Order 1989 (S.I. 1989/2405) (N.I. 19),<br>
+              (b) in the case of an individual:<br>
+              (i) unable to pay their debts or with no reasonable prospects of
+              paying their debts, each within the meaning given by section
+              268 of that Act or Article 242 of that Order, or<br>
+              (ii) apparently insolvent within the meaning of section 16 of the
+              Bankruptcy (Scotland) Act 2016 (asp 21), or<br>
+              (c) in a corresponding position in any jurisdiction in the opinion of the
+              decision-maker.<br>
+              A discretionary exclusion ground applies to a supplier if the supplier or a
+              connected person has suspended or ceased carrying on all or a substantial
+              part of its business.
+            </div>
+            </details>
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis3" name="exclusionDis3" type="radio"
+                  value="Insolvency, bankruptcy, etc">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis3">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis3" name="exclusionDis3" type="radio" value="">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis3">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
+              <h2 class="govuk-fieldset__heading">
+                Potential competition infringements
+              </h2>
+              <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Exclusion details
+                  </span>
+                </summary>
+            </legend>
+            <div class="govuk-details__text">
+              A discretionary exclusion ground applies to a supplier if the decision-maker
+              considers that an agreement or concerted practice to which the supplier or a
+              connected person is party has infringed:<br><br>
+              (a) the Chapter I prohibition (within the meaning given by section 2 of
+              the Competition Act 1998), or<br>
+              (b) any substantially similar prohibition applicable in a jurisdiction
+              outside the United Kingdom.<br>
+              (2) Sub-paragraph (1) does not apply where the supplier or connected person
+              is:<br>
+              (a) an immunity recipient (within the meaning given by paragraph 14 of
+              Schedule 8A to that Act), or<br>
+              (b) a regulator or other authority outside the United Kingdom has
+              granted the supplier or connected person immunity from penalties
+              in respect of the infringement.<br>
+              A discretionary exclusion ground applies to a supplier if the decision-maker
+              considers that the supplier or a connected person has infringed:<br><br>
+              (a) the Chapter II prohibition (within the meaning given by section 18 of
+              the Competition Act 1998), or<br>
+              (b) any substantially similar prohibition applicable in a jurisdiction
+              outside the United Kingdom.<br>
+              A discretionary exclusion ground applies to a supplier if:<br><br>
+              (a) the CMA has made a decision under the Competition Act 1998 that
+              the supplier or a connected person has infringed the Chapter II
+              prohibition, or<br>
+              (b) a regulator or other authority outside the United Kingdom has made
+              a decision that the supplier or a connected person has infringed any
+              substantially similar prohibition.<br>
+              (2) In this paragraph the reference to the CMA includes a reference to a
+              regulator referred to in section 54(1) of the Competition Act 1998 in
+              circumstances where it exercises functions concurrently with the CMA in
+              accordance with that Act.<br>
+              A discretionary exclusion ground applies to a supplier if the decision-maker
+              considers that the supplier or a connected person has engaged in conduct
+              constituting:<br><br>
+              (a) an offence under section 188 of the Enterprise Act 2002 (cartel
+              offence), or<br>
+              (b) a substantially similar offence under the law of a country or territory
+              outside the United Kingdom.<br>
+              (2) Sub-paragraph (1) does not apply if:<br>
+              (a) the CMA has given written notice to the supplier or connected
+              person under section 190(4) of the Enterprise Act 2002 (immunity
+              from prosecution for cartel offences) in connection with the conduct,
+              or<br>
+              (b) a regulator or other authority outside the United Kingdom has
+              determined that the supplier or connected person is immune from
+              prosecution in respect of the conduct.
+            </div>
+            </details>
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis4" name="exclusionDis4" type="radio"
+                  value="Potential competition infringements">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis4">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis4" name="exclusionDis4" type="radio" value="">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis4">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
+              <h2 class="govuk-fieldset__heading">
+                Professional misconduct
+              </h2>
+              <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Exclusion details
+                  </span>
+                </summary>
+            </legend>
+            <div class="govuk-details__text">
+              A discretionary exclusion ground applies to a supplier if the decision-maker
+              considers that the supplier or a connected person has engaged in
+              professional misconduct which brings into question the supplier’s integrity.<br><br>
+              A discretionary exclusion ground applies to a supplier if a court, regulator
+              or other authority has ruled that the supplier or connected person has
+              engaged in such professional misconduct.<br>
+              “Professional misconduct” includes conduct involving:<br>
+              (a) dishonesty;<br>
+              (b) impropriety;<br>
+              (c) a serious breach of ethical or professional standards applicable to the
+              supplier (whether those standards are mandatory or not).
+            </div>
+            </details>
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis5" name="exclusionDis5" type="radio"
+                  value="Professional misconduct">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis5">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis5" name="exclusionDis5" type="radio" value="">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis5">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
+              <h2 class="govuk-fieldset__heading">
+                Breach of contract and poor performance
+              </h2>
+              <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Exclusion details
+                  </span>
+                </summary>
+            </legend>
+            <div class="govuk-details__text">
+              A discretionary exclusion ground applies to a supplier if:<br><br>
+              (a) the supplier has breached a relevant contract, and<br>
+              (b) the breach was sufficiently serious.<br><br>
+              A discretionary exclusion ground applies to a supplier if:<br>
+              (a) a court has ruled that the supplier breached a relevant contract, and<br>
+              (b) the breach was sufficiently serious.<br><br>
+
+              A discretionary exclusion ground applies to a supplier if the supplier:<br><br>
+              (a) has not performed a relevant contract to the regulated authority’s
+              satisfaction,<br>
+              (b) was given proper opportunity to improve performance, and
+              (c) failed to do so.<br><br>
+
+              A discretionary exclusion ground applies to a supplier if a contracting
+              authority has published information under section 66(5) in respect of the
+              supplier (information concerning either breach or poor performance).<br><br>
+              For the purposes of this paragraph, a breach of a contract is “sufficiently
+              serious” if it results in:<br>
+              (a) termination (or partial termination) of the contract,<br>
+              (b) the award of damages,<br>
+              (c) a settlement agreement between the supplier and the regulated
+              authority.<br>
+              (6) In this paragraph—“regulated authority” means:<br>
+              (a) a contracting authority,<br>
+              (b) another public authority, or<br>
+              (c) an authority outside the United Kingdom that the decisionmaker considers to be equivalent;
+              “relevant contract” means a contract to which a regulated authority is party.
+            </div>
+            </details>
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis6" name="exclusionDis6" type="radio"
+                  value="Breach of contract and poor performance">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis6">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis6" name="exclusionDis6" type="radio" value="">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis6">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
+              <h2 class="govuk-fieldset__heading">
+                Acting improperly in procurement
+              </h2>
+              <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Exclusion details
+                  </span>
+                </summary>
+            </legend>
+            <div class="govuk-details__text">
+              A discretionary exclusion ground applies to a supplier if a decision-maker
+              considers that:<br><br>
+              (a) the supplier has acted improperly in relation to any procurement,
+              and<br>
+              (b) in so doing, the supplier put itself at an unfair advantage in relation
+              to the award of a public contract.<br>
+              A supplier might act improperly in relation to a procurement by:<br><br>
+              (a) failing to provide information requested by the contracting
+              authority;<br>
+              (b) providing information that is incomplete, inaccurate or misleading;<br>
+              (c) accessing confidential information;<br>
+              (d) unduly influencing the contracting authority’s decision-making
+            </div>
+            </details>
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis7" name="exclusionDis7" type="radio"
+                  value="Acting improperly in procurement">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis7">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis7" name="exclusionDis7" type="radio" value="">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis7">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
+              <h2 class="govuk-fieldset__heading">
+                National security
+              </h2>
+              <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Exclusion details
+                  </span>
+                </summary>
+            </legend>
+            <div class="govuk-details__text">
+              A discretionary exclusion ground applies to a supplier if a decision-maker
+              determines that the supplier or a connected person poses a threat to the
+              national security of the United Kingdom.
+            </div>
+            </details>
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis8" name="exclusionDis8" type="radio"
+                  value="National security">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis8">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionDis8" name="exclusionDis8" type="radio" value="">
+                <label class="govuk-label govuk-radios__label" for="exclusionDis8">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">
+              Save and continue
+            </button>
+        </div>
+        </fieldset>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

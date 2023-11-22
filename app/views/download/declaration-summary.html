@@ -1,0 +1,662 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l" style="color: #1d70b8;">
+      Declaration summary
+    </h1>
+
+
+    <p class="govuk-body">You can save your declaration and come back later. You have 30 days left to complete it before
+      your answers are deleted.</p>
+
+    <!-- 
+        New task list pattern
+      -->
+
+    <ol class="app-task-list">
+
+      <li>
+        <h2 class="app-task-list__section">
+          Declaration details
+        </h2>
+
+        <ul class="app-task-list__items">
+
+
+          <!-- New general information p5 -->
+
+          {% if data['declarationType'] == "TIR" %}
+          <!-- Simplified procedure - Take the user straight to "What is the principal's EORI?"-->
+
+          {% if data['consigneeName'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="trader-details/check-answers" aria-describedby="trader-details-completed">Edit general
+                information</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="trader-details-completed">
+              Completed
+            </span>
+          </li>
+          {% elif data['holderName'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="trader-details/transit-holder/tir-holder-id" aria-describedby="trader-details-in-progress">Add
+                general information</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="trader-details-in-progress">
+              In progress
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="trader-details/transit-holder/add-tir-holder-id"
+                aria-describedby="trader-details-not-started">Add
+                trader
+                details</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="trader-details-not-started">
+              Not started
+            </span>
+          </li>
+          {% endif %}
+
+          {% else %}
+
+
+          {% if data['contactName'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="trader-details/check-answers" aria-describedby="trader-details-completed">Edit general
+                information</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="trader-details-completed">
+              Completed
+            </span>
+          </li>
+          {% elif data['holderName'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="trader-details/transit-holder/eori-tin" aria-describedby="trader-details-in-progress">Add general
+                information</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="trader-details-in-progress">
+              In progress
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="trader-details/transit-holder/add-eori-tin" aria-describedby="trader-details-not-started">Add
+                general information</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="trader-details-not-started">
+              Not started
+            </span>
+          </li>
+          {% endif %}
+
+          {% endif %}
+
+          <!-- Route -->
+
+          {% if data['addAnotherOfficeOfTransit'] == "No" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if data['placeOfLoadingExtraInfo'] | length != "0" %}
+              <a href="route-details/confirm-change" aria-describedby="route-completed">Edit mandatory exclusions</a>
+              {% else %}
+              <a href="route-details/transit-route/country-of-destination" aria-describedby="route-completed">Edit
+                mandatory exclusions</a>
+              {% endif%}
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="route-completed">
+              Completed
+            </span>
+          </li>
+          {% elif data['bindingItinerary'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="route-details/transit-route/country-of-destination" aria-describedby="route-in-progress">Add
+                mandatory exclusions</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="route-in-progress">
+              In progress
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="route-details/transit-route/country-of-destination" aria-describedby="route-not-started">Add
+                mandatory exclusions</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="route-not-started">
+              Not started
+            </span>
+          </li>
+          {% endif %}
+
+
+
+          <!-- Transport -->
+
+          {% if data['changeAtBorder'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if data['addSafetySecurityResponse'] == "ENS" or data['addSafetySecurityResponse'] == "EXS" or
+              data['addSafetySecurityResponse'] == "Both" %}
+              {% if (data['addACarrierResponse'] | length != "0") %}
+              <a href="transport-details/apply-ucr-to-all-items" aria-describedby="transport-completed">Edit
+                discretionary exclusions</a>
+              {% else %}
+              <a href="transport-details/apply-ucr-to-all-items" aria-describedby="transport-completed">Edit
+                discretionary exclusions</a>
+              {% endif %}
+              {% else %}
+              <a href="transport-details/apply-ucr-to-all-items" aria-describedby="transport-completed">Edit
+                discretionary exclusions</a>
+              {% endif %}
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="transport-completed">
+              Completed
+            </span>
+          </li>
+          {% elif data['addTransportDetails'] == "Yes" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="transport-details/apply-ucr-to-all-items" aria-describedby="transport-in-progress">Add
+                discretionary exclusions</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="transport-in-progress">
+              In progress
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="transport-details/apply-ucr-to-all-items" aria-describedby="transport-not-started">Add
+                discretionary exclusions</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="transport-not-started">
+              Not started
+            </span>
+          </li>
+
+          {% endif %}
+          <!--   
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Transport
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--red" id="transport-not-started">
+              Cannot start yet
+            </span>
+          </li>
+        -->
+
+
+          <!-- Consignments   -->
+
+
+          {# {% if data['declarationType'] == "TIR" %}
+
+          {% if data['addAnotherHouse'] == "No" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="cons/how-many-consignments" aria-describedby="trader-details-completed">Edit house
+                consignment</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="trader-details-completed">
+              Completed
+            </span>
+          </li>
+          {% elif data['transportMeans'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="cons/how-many-consignments" aria-describedby="trader-details-in-progress">House consignment
+              </a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="trader-details-in-progress">
+              In progress
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="cons/how-many-consignments" aria-describedby="trader-details-not-started">House consignment</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="trader-details-not-started">
+              Not started
+            </span>
+          </li>
+          {% endif %}
+
+          {% else %}
+
+
+          {% if data['addAnotherHouse'] == "No" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="cons/how-many-consignments" aria-describedby="trader-details-completed">Edit house consignment
+              </a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="trader-details-completed">
+              Completed
+            </span>
+          </li>
+          {% elif data['inlandModeOfTransport'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="cons/how-many-consignments" aria-describedby="trader-details-in-progress">House consignment </a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="trader-details-in-progress">
+              In progress
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="cons/how-many-consignments" aria-describedby="trader-details-not-started">
+                House consignment</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="trader-details-not-started">
+              Not started
+            </span>
+          </li>
+          {% endif %}
+
+          {% endif %} #}
+
+
+          <!-- Safety & Security Summary -->
+
+
+          {% if data['addSafetySecurityResponse'] == "Entry summary declaration (ENS)" or
+          data['addSafetySecurityResponse'] == "Exit summary declaration (EXS)" or data['addSafetySecurityResponse'] ==
+          "Both entry and exit summary declarations (ENS and EXS)" %}
+          {% if (data['addACarrierResponse'] | length != "0") %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="security/add-circumstance-indicator"
+                aria-describedby="safety-and-security-details-completed">Edit connected persons</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="safety-and-security-details-completed">
+              Completed
+            </span>
+          </li>
+          {% elif (data['addCircumstanceIndicatorResponse'] | length != "0") %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="security/add-circumstance-indicator"
+                aria-describedby="safety-and-security-details-in-progress">Add connected persons</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="safety-and-security-details-in-progress">
+              In progress
+            </span>
+          </li>
+          {% elif data['changeAtBorder'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="security/add-circumstance-indicator"
+                aria-describedby="safety-and-security-details-not-started">Add connected persons</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="safety-and-security-details-not-started">
+              Not started
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              connected persons
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--red" id="safety-and-security-details-not-started">
+              Cannot start yet
+            </span>
+          </li>
+          {% endif %}
+          {% endif %}
+
+          <!-- Connected persons -->
+
+
+
+
+          <!-- Add economic and Financial Standing -->
+
+          {% if data['addAnotherItem'] == "No" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="add-items/item-warning" aria-describedby="add-items-completed">Edit economic and Financial
+                Standing</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="add-items-completed">
+              Completed
+            </span>
+          </li>
+          {% elif (data['itemDescription'] | length != "0") %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="add-items/item-warning" aria-describedby="add-items-in-progress">Add economic and Financial
+                Standing</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="goods-summary-in-progress">
+              In progress
+            </span>
+          </li>
+          {% else %}
+          {% if data['addSafetySecurityResponse'] == "ENS" or data['addSafetySecurityResponse'] == "EXS" or
+          data['addSafetySecurityResponse'] == "Both" %}
+          {% if data['onBehalfOfSomeoneElse'] | length != "0" and data['isThereAConsignee'] | length != "0" and
+          data['addAnotherOfficeOfTransit'] == "No" and data['addACarrierResponse'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="add-items/item-warning" aria-describedby="add-items-not-started">Add economic and Financial
+                Standing</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+              Not started
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              economic and Financial Standing
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--red" id="goods-summary-not-started">
+              Cannot start yet
+            </span>
+          </li>
+          {% endif %}
+          {% else %}
+          {% if data['onBehalfOfSomeoneElse'] | length != "0" and data['isThereAConsignee'] | length != "0" and
+          data['addAnotherOfficeOfTransit'] == "No" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="add-items/item-warning" aria-describedby="add-items-not-started">Add economic and Financial
+                Standing</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+              Not started
+            </span>
+          </li>
+          {% else %}
+          {#economic and Financial Standing Journey Link P5 #}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="items/description">Economic and Financial Standing</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--red" id="goods-summary-not-started">
+              Cannot start yet
+            </span>
+          </li>
+          {% endif %}
+          {% endif %}
+          {% endif %}
+
+          <!-- economic and Financial Standing LINK THINGY -->
+
+          <!-- Goods summary 
+
+
+
+
+
+          {% if data['do-you-need-seals-info'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if data['addSafetySecurityResponse'] == "Entry summary declaration (ENS)" or data['addSafetySecurityResponse'] == "Exit summary declaration (EXS)" or data['addSafetySecurityResponse'] == "Both entry and exit summary declarations (ENS and EXS)" %}
+              <a href="goods-summary/loading-place" aria-describedby="goods-summary-completed">Edit goods summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Simplified" %}
+              <a href="goods-summary/authorised-location-code" aria-describedby="goods-summary-completed">Edit goods
+                summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Normal" %}
+              <a href="goods-summary/add-customs-approved-location" aria-describedby="goods-summary-completed">Edit
+                goods summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Normal" and data['departuresPreLodge'] == "Yes" %}
+              <a href="goods-summary/add-agreed-goods-location" aria-describedby="goods-summary-completed">Edit goods
+                summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Normal" and data['departuresPreLodge'] == "No" %}
+              <a href="goods-summary/add-customs-approved-location" aria-describedby="goods-summary-completed">Edit
+                goods summary</a>
+              {% endif %}
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="goods-summary-completed">
+              Completed
+            </span>
+          </li>
+          {% elif data['total-number-of-items'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if data['addSafetySecurityResponse'] == "Entry summary declaration (ENS)" or data['addSafetySecurityResponse'] == "Exit summary declaration (EXS)" or data['addSafetySecurityResponse'] == "Both entry and exit summary declarations (ENS and EXS)" %}
+              <a href="goods-summary/loading-place" aria-describedby="goods-summary-in-progress">Add goods summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Simplified" %}
+              <a href="goods-summary/authorised-location-code" aria-describedby="goods-summary-in-progress">Add goods
+                summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Normal" %}
+              <a href="goods-summary/add-customs-approved-location" aria-describedby="goods-summary-in-progress">Add
+                goods summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Normal" and data['departuresPreLodge'] == "Yes" %}
+              <a href="goods-summary/add-agreed-goods-location" aria-describedby="goods-summary-in-progress">Add goods
+                summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Normal" and data['departuresPreLodge'] == "No" %}
+              <a href="goods-summary/add-customs-approved-location" aria-describedby="goods-summary-in-progress">Add
+                goods summary</a>
+              {% endif %}
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="goods-summary-in-progress">
+              In progress
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            
+            <span class="app-task-list__task-name">
+              {% if data['addSafetySecurityResponse'] == "Entry summary declaration (ENS)" or data['addSafetySecurityResponse'] == "Exit summary declaration (EXS)" or data['addSafetySecurityResponse'] == "Both entry and exit summary declarations (ENS and EXS)" %}
+              <a href="goods-summary/loading-place" aria-describedby="goods-summary-not-started">Add goods summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Simplified" %}
+              <a href="goods-summary/authorised-location-code" aria-describedby="goods-summary-not-started">Add goods
+                summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Normal" %}
+              <a href="goods-summary/add-customs-approved-location" aria-describedby="goods-summary-not-started">Add
+                goods summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Normal" and data['departuresPreLodge'] == "Yes" %}
+              <a href="goods-summary/add-agreed-goods-location" aria-describedby="goods-summary-not-started">Add goods
+                summary</a>
+              {% elif data['addSafetySecurityResponse'] == "No Security" and data['procedureType'] == "Normal" and data['departuresPreLodge'] == "No" %}
+              <a href="goods-summary/add-customs-approved-location" aria-describedby="goods-summary-not-started">Add
+                goods summary</a>
+              {% endif %}
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+              Not started
+            </span>
+          </li>
+          {% endif %}
+
+          <!-- Guarantee WIP    loadingPlace
+
+          {% if data['liabilityAmount'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="guarantee/guarantee-type" aria-describedby="guarantee-completed">Edit guarantee</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="guarantee-completed">
+              Completed
+            </span>
+          </li>
+          {% elif data['guaranteeType'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="guarantee/guarantee-type" aria-describedby="guarantee-in-progress">Add guarantee</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="guarantee-in-progress">
+              In progress
+            </span>
+          </li>
+          {% elif data['addAnotherOfficeOfTransit'] == "No" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="guarantee/guarantee-type" aria-describedby="guarantee-not-started">Add guarantee</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="guarantee-not-started">
+              Not started
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Guarantee
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--red" id="guarantee-not-started">
+              Cannot start yet
+            </span>
+          </li>
+          {% endif %}
+-->
+
+          {% if data['guaranteeType'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="guarantee-details/guarantee-type" aria-describedby="guarantee-completed">Edit connected
+                persons</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="guarantee-completed">
+              Completed
+            </span>
+          </li>
+          {% elif data['carnetNumber'] | length != "0" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="guarantee-details/guarantee-added-tir" aria-describedby="guarantee-in-progress">View connected
+                persons</a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="guarantee-not-started">
+              Not started
+            </span>
+          </li>
+          {% elif data['officeOfDeparture'] == "Belfast EPU XI000142" or data['officeOfDeparture'] == "Warrenpoint
+          XI005160" or data['officeOfDeparture'] == "Larne XI005220" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="guarantee-details/guarantee-type-xi" aria-describedby="guarantee-not-started">Add connected
+                persons<details></details></a>
+            </span>
+            <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="guarantee-not-started">
+              Not started
+            </span>
+          </li>
+          {% elif data['addSafetySecurityResponse'] == "Entry summary declaration (ENS)" or
+          data['addSafetySecurityResponse'] == "Exit summary declaration (EXS)" or data['addSafetySecurityResponse'] ==
+          "Both entry and exit summary declarations (ENS and EXS)" %}
+          <span class="app-task-list__task-name">
+            <a href="guarantee-details/guarantee-type" aria-describedby="guarantee-not-started">Add connected
+              persons</a>
+          </span>
+          <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="guarantee-not-started">
+            Not started
+          </span>
+      </li>
+      {% else %}
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="guarantee-details/guarantee-type" aria-describedby="guarantee-completed">Connected persons</a>
+        </span>
+        <span class="govuk-tag app-task-list__tag govuk-tag--red" id="guarantee-not-started">
+          Cannot start yet
+        </span>
+      </li>
+      {% endif %}
+      </ul>
+      </li>
+    </ol>
+
+
+    <!--
+      Check all sections are complete and process = NORMAL, then display pre-lodged and submit
+      Check all sections are complete and process = SIMPLIFIED, then only display submit
+    -->
+
+    <!--
+      Snippet to add in to if statement once "addeconomic and Financial Standing" journey is uncommented
+      and (data['addAnotherItem'] == "No")
+    -->
+
+    {% if (data['onBehalfOfSomeoneElse'] | length != "0")
+    and (data['addAnotherOfficeOfTransit'] == "No")
+    and (data['changeAtBorder'] | length != "0")
+    and (data['isThereAConsignee'] | length != "0")
+    and (data['liabilityAmount'] | length != "0")
+    and (data['departuresPreLodge'] == "Yes")
+    %}
+
+    <h2 class="govuk-heading-m">Now pre-lodge your departure declaration</h2>
+
+    <p class="govuk-body">
+      By sending this you are confirming that the details you are providing
+      are correct, to the best of your knowledge.
+    </p>
+
+    {{ govukButton({ text: "Pre-lodge declaration", href: "pre-lodged-confirmation" }) }}
+
+    <!--
+      Snippet to add in to if statement once "addeconomic and Financial Standing" journey is uncommented
+      and (data['addAnotherItem'] == "No")
+    -->
+
+    {% elif (data['onBehalfOfSomeoneElse'] | length != "0")
+    and (data['addAnotherOfficeOfTransit'] == "No")
+    and (data['changeAtBorder'] | length != "0")
+    and (data['isThereAConsignee'] | length != "0")
+    and (data['liabilityAmount'] | length != "0")
+    %}
+
+    {# and (data['procedureType'] == "Simplified") #}
+
+    <h2 class="govuk-heading-m">Now send your departure declaration</h2>
+
+    <p class="govuk-body">
+      By sending this you are confirming that the details you are providing
+      are correct, to the best of your knowledge.
+    </p>
+
+    {{ govukButton({ text: "Confirm and send", href: "confirmation" }) }}
+
+    {% endif %}
+
+
+
+  </div>
+</div>
+
+{% endblock %}

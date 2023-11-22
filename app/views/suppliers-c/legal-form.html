@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="legalForm-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is your organisation’s registered legal form?
+            </h1>
+          </legend>
+          <div id="legalForm-hint" class="govuk-hint govuk-!-margin-bottom-6">
+            Legal form is the organisation type as defined in the Companies Act.
+          </div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm" name="legalForm" type="radio" value="Sole Trader"
+                data-aria-controls="conditional-legalForm">
+              <label class="govuk-label govuk-radios__label" for="legalForm">
+                Sole Trader
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Partnership"
+                data-aria-controls="conditional-legalForm-2">
+              <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                Partnership
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio"
+                value="Limited liability partnership" data-aria-controls="conditional-legalForm-2">
+              <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                Limited liability partnership
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Limited company"
+                data-aria-controls="conditional-legalForm-2">
+              <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                Limited company
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-3" name="legalForm" type="radio" value="Other :"
+                data-aria-controls="conditional-legalForm-3">
+              <label class="govuk-label govuk-radios__label" for="legalForm-3">
+                Other
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-legalForm-3">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="legalForm-by-text">
+                  Provide more detail
+                </label>
+                <input class="govuk-input" id="legalForm-by-text" name="legalFormByText"
+                  value="{{ data['legalFormByText'] }}" type="tel" autocomplete="tel">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      <button class="govuk-button" type="submit">Save and continue</button>
+    </form>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

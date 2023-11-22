@@ -1,0 +1,306 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+
+    <h2 class="govuk-heading-m" style="color: #1d70b8;">
+      Mandatory exclusion grounds
+    </h2>
+
+    <span class="govuk-caption-l">
+      {{ data['exclusionMan1'] }}
+      {{ data['exclusionMan2'] }}
+      {{ data['exclusionMan3'] }}
+      {{ data['exclusionMan4'] }}
+      {{ data['exclusionMan5'] }}
+      {{ data['exclusionMan6'] }}
+      {{ data['exclusionMan7'] }}
+      {{ data['exclusionMan8'] }}
+      {{ data['exclusionMan9'] }}
+      {{ data['exclusionMan10'] }}
+      {{ data['exclusionMan11'] }}
+      {{ data['exclusionMan12'] }}
+      {{ data['exclusionMan13'] }}
+    </span>
+
+    <form class="form" method="post">
+
+      <h1 class="govuk-heading-l">Check your answers</h1>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Event subject:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['eventSub'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="event-subject">
+              Change<span class="govuk-visually-hidden">
+                the event subject</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if data['startQuestion'] == "Individual" and data['eventSub'] == "Associated person" or data['eventSub'] ==
+        "Connected person" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Subject Name:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['subName'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="subject-name">
+              Change<span class="govuk-visually-hidden">
+                subject name</span>
+            </a>
+          </dd>
+        </div>
+
+        {% elif data['startQuestion'] == "Individual" and data['eventSub'] == "Supplier" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Subject Name:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            John Smith
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="subject-name">
+              Change<span class="govuk-visually-hidden">
+                subject name</span>
+            </a>
+          </dd>
+        </div>
+
+        {% elif data['startQuestion'] == "Company" and data['eventSub'] == "Supplier" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation Name:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Tech Innovators Ltd
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="subject-name">
+              Change<span class="govuk-visually-hidden">
+                subject name</span>
+            </a>
+          </dd>
+        </div>
+
+        {% else %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Subject Name:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['subName'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="subject-name">
+              Change<span class="govuk-visually-hidden">
+                subject name</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['emailAddressMan'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="email-address">
+              Change<span class="govuk-visually-hidden">
+                event date</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if data['addressType'] == "Yes" and data['address'] | length == "0" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Subject address:
+          </dt>
+          {% if data['subject-uk-address-line-2'] | length != "0" and data['subject-uk-address-county'] | length != "0"
+          %}
+          <dd class="govuk-summary-list__value">
+            {{ data['subject-uk-address-line-1'] }} </br>
+            {{ data['subject-uk-address-line-2'] }} </br>
+            {{ data['subject-uk-address-town'] }} </br>
+            {{ data['subject-uk-address-county'] }} </br>
+            {{ data['subject-uk-address-postcode'] }} </br>
+          </dd>
+          {% else %}
+          <dd class="govuk-summary-list__value">
+            {{ data['subject-uk-address-line-1'] }} </br>
+            {{ data['subject-uk-address-town'] }} </br>
+            {{ data['subject-uk-address-postcode'] }} </br>
+          </dd>
+          {% endif %}
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="address-type">
+              Change<span class="govuk-visually-hidden"> Change</span>
+            </a>
+          </dd>
+        </div>
+
+        {% elif data['addressType'] == "Yes" and data['address'] | length != "0" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Subject address:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['address'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="address-type">
+              Change<span class="govuk-visually-hidden"> Change</span>
+            </a>
+          </dd>
+        </div>
+
+        {% else %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Subject address:
+          </dt>
+          {% if data['subject-address-line-2'] | length != "0" and data['subject-address-county'] | length != "0" %}
+          <dd class="govuk-summary-list__value">
+            {{ data['subject-address-line-1'] }} </br>
+            {{ data['subject-address-line-2'] }} </br>
+            {{ data['subject-address-town'] }} </br>
+            {{ data['subject-address-postcode'] }} </br>
+            {{ data['subject-address-county'] }} </br>
+            {{ data['selectData'] }} </br>
+          </dd>
+          {% else %}
+          <dd class="govuk-summary-list__value">
+            {{ data['subject-address-line-1'] }} </br>
+            {{ data['subject-address-town'] }} </br>
+            {{ data['subject-address-postcode'] }} </br>
+          </dd>
+          {% endif %}
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="address-type">
+              Change<span class="govuk-visually-hidden"> Change</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type of documentation:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['documents'] }} <br>
+            {{ data['documents-by-web'] }}
+            {{ data['documents-2'] }} <br>
+            {{ data['file-upload-1'] }}
+            {{ data['cannotProve'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="event-documents">
+              Change<span class="govuk-visually-hidden">
+                the type of documentation</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Mitigating details:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['more-detail1'] }} <br>
+            {{ data['more-detail2'] }} <br>
+            {{ data['more-detail3'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="event-mitigation">
+              Change<span class="govuk-visually-hidden">
+                the type of documentation</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Event date:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['convictionDay'] }} / {{ data['convictionMonth'] }} / {{ data['convictionYear'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="event-date">
+              Change<span class="govuk-visually-hidden">
+                event date</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Now submit your Mandatory exclusions</h3>
+
+    <p class="govuk-body">
+      By submitting this data you are confirming that, to the best of your knowledge, the details you are providing are
+      correct.
+    </p>
+
+    <div class="govuk-button-group govuk-!-margin-top-9">
+      <button class="govuk-button" data-module="govuk-button">
+        Confirm and submit
+      </button>
+    </div>
+
+  </div>
+
+
+  </form>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-ful-width">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <h2 class="govuk-heading-m" style="color: #1d70b8;">
+                Share your information and associated declaration
+            </h2>
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" data-required data-error="Select the type of download you require"
+                        aria-required="true">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                How would you like to share your supplier information?
+                            </h1>
+                        </legend>
+                        <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="download" name="download" type="radio"
+                                    value="Download code">
+                                <label class="govuk-label govuk-radios__label" for="download">
+                                    Generate a code
+                                </label>
+                                <div id="download-item-hint" class="govuk-hint govuk-radios__hint">
+                                    - A unique code that can be shared with eSender portals, in order to
+                                    give them access to the data you have authorised.
+                                </div>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="download-2" name="download" type="radio"
+                                    value="Download extract">
+                                <label class="govuk-label govuk-radios__label" for="download">
+                                    Share a copy of my data
+                                </label>
+                                <div id="download-item-hint" class="govuk-hint govuk-radios__hint">
+                                    - Download a copy of my data in both PDF (readable) and JSON (machine-readable)
+                                    formats, which can then be sent to contracting authorities.
+                                </div>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="download-3" name="download" type="radio"
+                                    value="Download code and extract">
+                                <label class="govuk-label govuk-radios__label" for="download">
+                                    Generate a code and create a copy
+                                </label>
+                                <div id="download-item-hint" class="govuk-hint govuk-radios__hint">
+                                    - Generate a share-code and Download a copy of my data
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+                <h3 class="govuk-heading-m">
+                    Before you can share your data</h3>
+
+                <p class="govuk-body">
+                    You must submit a declaration. The system will require your person, role, organisation
+                    data and a time stamp to be added to the declaration.
+                </p>
+
+                <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+                    Select and continue
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

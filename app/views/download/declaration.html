@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-ful-width">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+
+          <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Share your information and associated declaration
+          </h2>
+
+
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="declarationStatement">
+              Statements
+            </label>
+          </h1>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li> I declare that to the best of my knowledge the answers submitted and information contained is
+              correct and accurate.</li>
+            <li> I declare that, upon request and without delay I will provide the certificates or
+              documentary evidence referred to in this information except where this documentation can be accessed
+              by the contracting authority via a national database in any EU Member State free of charge or the
+              contracting authority already possesses the documentation.</li>
+            <li>I understand that the information will be used in the selection process to assess my suitability to
+              participate further in this procurement.</li>
+            <li>I understand that the authority may reject this submission in its entirety if there is a failure to
+              answer all the relevant questions fully, or if false/misleading information or content is provided in any
+              section.</li>
+            <li> I am aware of the consequences of serious misrepresentation.</li>
+          </ul>
+
+          <fieldset class="govuk-fieldset" data-required data-error="Check the box to agree to the above statements"
+            aria-required="true">
+
+            <div class="govuk-checkboxes__item govuk-!-margin-bottom-6">
+              <input class="govuk-checkboxes__input" id="declarationStatement" name="declarationStatement"
+                type="checkbox" value="I understand and agree to the declaration statements">
+              <label class="govuk-label govuk-checkboxes__label" for="declarationStatement">
+                I understand and agree to the above statements
+              </label>
+            </div>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+
+    <h2 class="govuk-heading-m" style="color: #1d70b8;">
+      Connected persons
+    </h2>
+    <span class="govuk-caption-l">Person of significant control, individual</span>
+
+
+    <form class="form" method="post">
+
+      <h1 class="govuk-heading-l">Check your answers</h1>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            PSC details:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Name: </br>
+            Date of birth: </br>
+            Nationality: </br>
+          </dd>
+          <dd class="govuk-summary-list__value">
+            {{ data['connectedPerson'] }} </br>
+            {{ data['individualDay'] }} /  {{ data['individualMonth'] }} /  {{ data['individualYear'] }} </br>
+            {{ data['selectNationality'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="psc-individual">
+              Change<span class="govuk-visually-hidden">
+                the PSC details</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if data['addressType'] == "Yes" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Service address:
+          </dt>
+          <dd class="govuk-summary-list__value">
+          </dd>
+          <dd class="govuk-summary-list__value">
+            {{ data['connectedPersonsUk-address-line-1'] }} </br>
+            {{ data['connectedPersonsUk-address-line-2'] }} </br>
+            {{ data['connectedPersonsUk-address-town'] }} </br>
+            {{ data['connectedPersonsUk-address-postcode'] }} </br>
+            {{ data['connectedPersonsUk-address-county'] }} </br>
+            {{ data['selectData'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="address-type.html">
+              Change<span class="govuk-visually-hidden">
+                the Organisation`s address</span>
+            </a>
+          </dd>
+        </div>
+
+        {% else %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Service address:
+          </dt>
+          <dd class="govuk-summary-list__value">
+          </dd>
+          <dd class="govuk-summary-list__value">
+            {{ data['connectedPersons-address-line-1'] }} </br>
+              {{ data['connectedPersons-address-line-2'] }} </br>
+              {{ data['connectedPersons-address-town'] }} </br>
+              {{ data['connectedPersons-address-postcode'] }} </br>
+              {{ data['connectedPersons-address-county'] }} </br>
+              {{ data['selectData'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="address-type">
+              Change<span class="govuk-visually-hidden">
+                the person`s address</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nature of Control:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__value">
+            {{ data['controlNaturePsc'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="nature-of-control">
+              Change<span class="govuk-visually-hidden">
+                the nature of control</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registered date:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__value">
+            {{ data['dateRegisteredDay'] }} / {{ data['dateRegisteredMonth'] }} / {{ data['dateRegisteredYear'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="date-registered">
+              Change<span class="govuk-visually-hidden">
+                the registered date</span>
+            </a>
+          </dd>
+        </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Register Name:
+            </dt>
+            <dd class="govuk-summary-list__value">
+            
+            </dd>
+            <dd class="govuk-summary-list__value">
+              {{ data['nameRegister'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="psc-register">
+                Change<span class="govuk-visually-hidden">
+                  the type of documentation</span>
+              </a>
+            </dd>
+          </div>
+
+
+      </dl>
+
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+      
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Now submit your connected person</h3>
+
+      <p class="govuk-body">
+        By submitting this data you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <div class="govuk-button-group govuk-!-margin-top-9">
+        <button class="govuk-button" data-module="govuk-button">
+          Confirm and submit
+        </button>
+      </div>
+
+      </div>
+
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

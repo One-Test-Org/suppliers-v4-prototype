@@ -1,0 +1,22 @@
+<!-- Javascript -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+<script src="/public/javascripts/validation.js"></script>
+
+<script src="/public/javascripts/script.js"></script>
+
+<script src="/public/javascripts/data.js"></script>
+
+<script src="/public/javascripts/nations.js"></script>
+
+<script src="/public/javascripts/card.js"></script>
+
+{% for scriptUrl in extensionConfig.scripts %}
+  <script src="{{scriptUrl}}"></script>
+{% endfor %}
+
+<script src="/public/javascripts/application.js"></script>
+
+{% if useAutoStoreData %}
+  <script src="/public/javascripts/auto-store-data.js"></script>
+{% endif %}

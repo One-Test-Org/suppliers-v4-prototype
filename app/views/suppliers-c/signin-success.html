@@ -1,0 +1,45 @@
+{% extends "layout-moj.html" %}
+
+{% block pageTitle %}
+GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" method="post" action="account-home">
+
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+    aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        You are now signed in and able to continue.
+      </h3>
+    </div>
+  </div>
+
+  <div class="govuk-button-group govuk-!-margin-top-3">
+    <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+  </div>
+</form>
+{% endblock %}

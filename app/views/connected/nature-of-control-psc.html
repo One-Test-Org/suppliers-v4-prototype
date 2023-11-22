@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Prototype
+      </strong>
+      <span class="govuk-phase-banner__text">
+          This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+             <form class="form" method="post">
+
+                <h2 class="govuk-heading-m" style="color: #1d70b8;">
+                    Connected persons
+                  </h2>
+                  <span class="govuk-caption-l">Person of significant control, individual</span>
+ 
+                <fieldset class="govuk-fieldset" data-required data-error="Enter the nature of control" aria-required="true">
+      
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h2 class="govuk-heading-l">What is the nature of control?</h2>
+                    </legend>
+                    <div id="controlNaturedGovHint" class="govuk-hint">
+                        For example, 50% or more of the voting rights
+                      </div>
+                    <input class="govuk-input" name="controlNaturePsc" id="controlNaturePsc" type="text"
+                        aria-describedby="controlNaturePsc" >
+                </div>
+                <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+            </form>
+
+        </fieldset>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+ <!--  Unused code from this file:    
+    
+    
+             <fieldset class="govuk-fieldset" data-required data-error="Select the connected person`s relationship?"
+                    aria-required="true">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            What is the connected person`s relationship?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="relationPersons" name="relationPersons" type="radio" value="PSC Individual">
+                            <label class="govuk-label govuk-radios__label" for="relationPersons">
+                                Directors spouse
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-2Dis" name="relationPersons" type="radio" value="Director individual">
+                            <label class="govuk-label govuk-radios__label" for="relationPersons">
+                                Directors civil partner
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-3Dis" name="relationPersons" type="radio" value="Director not individual">
+                            <label class="govuk-label govuk-radios__label" for="relationPersons">
+                                A person with whom the director lives as a partner
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="relationPersons" name="relationPersons" type="radio" value="Gov/Public Authority">
+                            <label class="govuk-label govuk-radios__label" for="relationPersons">
+                                Directors child / or stepchild
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            -->

@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <fieldset class="govuk-fieldset" data-required data-error="Enter the registered address" aria-required="true">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    Enter a UK postcode
+                </h1>
+            </legend>
+
+            <form class="form" method="post" action="/connected/find-address-dir">
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="postcode">
+                        Post code
+                    </label>
+                    <div id="postcodeHint" class="govuk-hint">
+                        For example, WA4 1AB
+                    </div>
+                    <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text"
+                        autocomplete="postcode">
+                </div>
+
+                <div class="govuk-form-group">
+                    <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+                        Continue
+                    </button>
+                </div>
+
+            </form>
+        </fieldset>
+
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/script.js"></script>
+<script src="/public/javascripts/data.js"></script>
+{% endblock %}

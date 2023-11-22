@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <fieldset class="govuk-fieldset" data-required data-error="Select an address" aria-required="true">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    Select an address
+                </h1>
+            </legend>
+
+            <p>{{ data['addresses'] | length }} {% if (data['addresses'] | length > 1) %}addresses{% else %}address{%
+                endif %} found for {{ data['postcode'] }}. <a href="find-address-dir">Search again</a></p>
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+
+                    <div class="govuk-radios">
+                        {# Note: this line was previously `for address in addresses` #}
+                        {% for address in data['addresses'] %}
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="address-{{ loop.index }}" name="address" type="radio"
+                                value="{{ address }}">
+                            <label class="govuk-label govuk-radios__label" for="address-{{ loop.index }}">
+                                {{ address }}
+                            </label>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <div class="govuk-form-group">
+                    <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+                        Continue
+                    </button>
+                </div>
+
+            </form>
+        </fieldset>
+
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/script.js"></script>
+<script src="/public/javascripts/data.js"></script>
+{% endblock %}

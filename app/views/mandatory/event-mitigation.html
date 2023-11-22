@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-ful-width">
+
+    <h1 class="govuk-heading-m" style="color: #1d70b8;">
+        Mandatory exclusion grounds
+    </h1>
+
+    <span class="govuk-caption-l">
+        {{ data['mandatory'] }}
+      </span>
+
+    <form class="form" method="post">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" data-required data-error="Provide mitigating actions" aria-required="true">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--l" for="more-detail">
+                        Mitigating actions
+                    </label>
+                </h1>
+                <h3 class="govuk-heading-s">
+                    Provide evidence on how you have taken the circumstances seriously.
+                </h3>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail1" rows="6"
+                    aria-describedby="more-detail-hint"></textarea>
+                
+                    <h3 class="govuk-heading-s">
+                        Provide evidence on what steps you have taken to prevent the circumstances occurring again.
+                    </h3>
+                
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail2" rows="6"
+                    aria-describedby="more-detail-hint"></textarea>
+
+                    <h3 class="govuk-heading-s">
+                        Tell us what commitments were made, information or access to allow verification or monitoring of such steps.
+                    </h3>
+                
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail3" rows="6"
+                    aria-describedby="more-detail-hint"></textarea>
+
+            </fieldset>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+    </form>
+
+    {% endblock %}

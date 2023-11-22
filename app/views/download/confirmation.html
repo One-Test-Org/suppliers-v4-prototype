@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-column-ful-width">
+
+  {% if data['download'] == 'Download code and extract' %}
+
+  <div class="govuk-panel govuk-panel--confirmation" style="background-color: #1d70b8;">
+    <h1 class="govuk-panel__title">
+      Declaration submitted
+    </h1>
+    <div class="govuk-panel__body">
+      Your download code is:<br><strong>HDJ2123F</strong>
+    </div>
+  </div>
+  <p class="govuk-body">We have sent you a confirmation email.</p>
+  <h2 class="govuk-heading-m">You can now download the file.</h2>
+
+  <form class="form" method="post">
+
+    <button role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+      Download file
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+        viewBox="0 0 33 40" aria-hidden="true" focusable="false" style="rotate: 90deg;">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>
+    </button>
+
+  </form>
+
+  <h2 class="govuk-heading-m">What happens next</h2>
+  <p class="govuk-body">
+    Your declaration has been successfully submitted. You can now download the file, or go back to the start to submit
+    another declaration.
+  </p>
+
+  <p class="govuk-body">
+    <a href="/" class="govuk-link">Prototype </a> start page
+  </p>
+</div>
+</div>
+
+{% elif data['download'] == "Download code" %}
+
+<div class="govuk-panel govuk-panel--confirmation" style="background-color: #1d70b8;">
+  <h1 class="govuk-panel__title">
+    Declaration submitted
+  </h1>
+  <div class="govuk-panel__body">
+    Your download code is:<br><strong>HDJ2123F</strong>
+  </div>
+</div>
+<p class="govuk-body">We have sent you a confirmation email.</p>
+
+<h2 class="govuk-heading-m">What happens next</h2>
+<p class="govuk-body">
+  Your declaration has been successfully submitted. Or go back to the start to submit
+  another declaration.
+</p>
+
+<p class="govuk-body">
+  <a href="/" class="govuk-link">Prototype </a> start page
+</p>
+</div>
+</div>
+</div>
+
+{% else %}
+
+<p class="govuk-body">We have sent you a confirmation email.</p>
+<h2 class="govuk-heading-m">You can now download the file.</h2>
+
+<form class="form" method="post">
+
+  <button role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+    Download file
+    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+      viewBox="0 0 33 40" aria-hidden="true" focusable="false" style="rotate: 90deg;">
+      <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+    </svg>
+  </button>
+
+</form>
+
+<h2 class="govuk-heading-m">What happens next</h2>
+<p class="govuk-body">
+  Your declaration has been successfully submitted. You can now download the file, or go back to the start to submit
+  another declaration.
+</p>
+
+<p class="govuk-body">
+  <a href="/" class="govuk-link">Prototype </a> start page
+</p>
+</div>
+</div>
+
+{% endif %}
+
+{% endblock %}
+
+
+<!--
+{% block pageScripts %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Find the "Download now" button by its ID
+    const downloadButton = document.getElementById("downloadButton");
+  
+    // Add a click event listener to the button
+    downloadButton.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent the default link behavior
+  
+      // Make an AJAX request to trigger the '/download' route
+      fetch('/download', {
+        method: 'POST',
+      })
+      .then(function(response) {
+        if (response.ok) {
+          // Redirect to the 'declaration' page if the request was successful
+          window.location.href = '/declaration';
+        } else {
+          // Handle any errors that may occur during the request
+          console.error('Error triggering download:', response.statusText);
+        }
+      })
+      .catch(function(error) {
+        // Handle network or other errors
+        console.error('Error:', error);
+      });
+    });
+  });
+  </script>
+  
+
+
+{% endblock %}
+
+-->

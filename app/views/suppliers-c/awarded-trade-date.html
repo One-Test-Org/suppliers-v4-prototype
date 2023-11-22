@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" data-required data-error="Enter the date the trade assurance was awarded"
+          aria-required="true">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-heading-l">When was the trade assurance awarded?</h1>
+          </legend>
+
+          <div id="awardIssuedTradeHint" class="govuk-hint">
+            For example, 27 3 2007
+          </div>
+          <div class="govuk-date-input" id="awardIssuedTrade">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="awardIssuedTradeDay">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="awardIssuedTradeDay"
+                  name="awardIssuedTradeDay" type="text" inputmode="numeric" value="{{ data['awardIssuedTradeDay'] }}">>
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="awardIssuedTradeMonth">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="awardIssuedTradeMonth"
+                  name="awardIssuedTradeMonth" type="text" inputmode="numeric" value="{{ data['awardIssuedTradeMonth']}}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="awardIssuedTradeYear">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="awardIssuedTradeYear"
+                  name="awardIssuedTradeYear" type="text" inputmode="numeric" value="{{ data['awardIssuedTradeYear']}}">
+              </div>
+            </div>
+
+        </fieldset>
+      </div>
+      <button class="govuk-button" type="submit">Save and continue</button>
+    </form>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" data-required data-error="Enter the Companies House number"
+                    aria-required="true">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-heading-l">What is the registered Companies House number?</h1>
+                    </legend>
+                    <div id="Companies-House-registration-number-hint" class="govuk-hint">
+                        CRNs are always 8 characters long. These can be either 8 digits or 2 letters followed by 6
+                        digits. English and Welsh companies have 8-digit CRNs beginning with 0 or 1.
+                    </div>
+                    <input class="govuk-input govuk-input--width-20" name="parentHouseNumber" id="parentHouseNumber"
+                        type="text" aria-describedby="parentHouseNumber">
+                </fieldset>
+            </div>
+            <button class="govuk-button" type="submit">Save and exit</button>
+        </form>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

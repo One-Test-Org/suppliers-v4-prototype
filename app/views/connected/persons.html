@@ -1,0 +1,227 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Connected persons
+        </h2>
+
+        <form class="form" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" data-required data-error="Select the connected person"
+                    aria-required="true">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            What is the connected person`s function?
+                        </h1>
+                    </legend>
+
+                    {% if data['companiesQuestion'] == 'Yes' and data['personQuestion'] == 'organisation' %}
+
+                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
+                                value="Gov/Public Authority">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                PSC Public Authority
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
+                                value="PSC not individual or Public Authority">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                PSC not individual or Public Authority
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
+                                value="Director not individual">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Director or Shadow Director (not an individual)
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
+                                value="Parent / subsidiary">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Parent undertaking or subsidiary undertaking
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="connectedPersons" name="connectedPersons"
+                                type="radio" value="Predecessor">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Predecessor company
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
+                                value="Stand in">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Stand in - equivalent to:
+                            </label>
+                            <div id="connectedPersons-hint" class="govuk-hint">
+                                b. PSC Public Authority <br>
+                                c. PSC (not an individual or Public Authority) <br>
+                                d. Director or Shadow Director (not an individual) <br>
+                                e. Parent undertaking or subsidiary undertaking <br>
+                                f. Predecessor company
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
+                                value="Right to exercise control">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Right to exercise control
+                            </label>
+                        </div>
+                    </div>
+
+                    {% elif data['companiesQuestion'] == 'Yes' and data['personQuestion'] == 'person' %}
+
+
+                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="connectedPersons" name="connectedPersons"
+                                type="radio" value="PSC Individual">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                PSC Individual
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
+                                value="Director individual">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Director or Shadow Director (individual)
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
+                                value="Stand in">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Stand in - equivalent to:
+                            </label>
+                            <div id="connectedPersons-hint" class="govuk-hint">
+                                a. PSC Individual <br>
+                                b. Director or Shadow Director (individual) <br>
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
+                                value="Right to exercise control">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Right to exercise control
+                            </label>
+                        </div>
+                    </div>
+
+                    {% elif data['companiesQuestion'] == 'No' and data['personQuestion'] == 'person' %}
+
+
+                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
+                                value="Stand in">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Stand in - equivalent to:
+                            </label>
+                            <div id="connectedPersons-hint" class="govuk-hint">
+                                a. PSC Individual <br>
+                                b. Director or Shadow Director (individual) <br>
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
+                                value="Right to exercise control">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Right to exercise control
+                            </label>
+                        </div>
+                    </div>
+
+
+                    {% else %}
+
+                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
+                                value="Stand in">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Stand in - equivalent to:
+                            </label>
+                            <div id="connectedPersons-hint" class="govuk-hint">
+                                b. PSC Public Authority <br>
+                                c. PSC (not an individual or Public Authority) <br>
+                                d. Director or Shadow Director (not an individual) <br>
+                                e. Parent undertaking or subsidiary undertaking <br>
+                                f. Predecessor company
+                            </div>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
+                                value="Right to exercise control">
+                            <label class="govuk-label govuk-radios__label" for="connectedPersons">
+                                Right to exercise control
+                            </label>
+                        </div>
+                    </div>
+
+                    {% endif %}
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+    </div>
+    </form>
+
+
+</div>
+</div>
+
+{% endblock %}

@@ -31,43 +31,10 @@ router.post('/exclusion-grounds', function (req, res) {
 })
 
 router.post('/event-subject', function (req, res) {
-    res.redirect('subject-name');
-})
-
-router.post('/subject-name', function (req, res) {
     res.redirect('email-address');
 })
 
 router.post('/email-address', function (req, res) {
-    res.redirect('address-type');
-})
-
-router.post('/address-type', function (req, res) {
-
-    let addressTypeDis = req.session.data.addressTypeDis;
-
-    if (addressTypeDis == "Yes") {
-        res.redirect('find-subject-uk-address');
-    } else {
-        res.redirect('subject-address');
-    }
-})
-
-router.get('/subject-address', function (req, res) {
-    res.render(path.resolve(__dirname, 'subject-address'), {
-        countries: require('../../data/data').countries
-    })
-})
-
-router.post('/subject-uk-address', function (req, res) {
-    res.redirect('event-documents');
-})
-
-router.post('/subject-uk-address', function (req, res) {
-    res.redirect('event-documents');
-})
-
-router.post('/subject-address', function (req, res) {
     res.redirect('event-documents');
 })
 

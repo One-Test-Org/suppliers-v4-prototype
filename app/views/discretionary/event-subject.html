@@ -53,24 +53,26 @@ Supplier`s information - GOV.UK
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSubDis" name="eventSubDis" type="radio"
                                 value="Supplier">
+                            {% if data['startQuestion'] != "Individual" %}
                             <label class="govuk-label govuk-radios__label" for="eventSubDis">
-                                The Supplier
+                                Tech Innovators Ltd
                             </label>
+                            {% else %}
+                            <label class="govuk-label govuk-radios__label" for="eventSubDis">
+                                John Smith
+                            </label>
+                            {% endif %}
                         </div>
+                        {% for connectedPerson in data['connectedPersonArray'] %}
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSub-3Dis" name="eventSubDis" type="radio"
                                 value="Connected person">
                             <label class="govuk-label govuk-radios__label" for="eventSubDis">
-                                A connected person
+                                {{ connectedPerson['connectedPerson'] }}
                             </label>
                         </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="eventSub-5Dis" name="eventSubDis" type="radio"
-                                value="Connected organisation">
-                            <label class="govuk-label govuk-radios__label" for="eventSubDis">
-                                A connected organisation
-                            </label>
-                        </div>
+
+                        {% endfor %}
                     </div>
 
                 </fieldset>

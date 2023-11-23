@@ -14,7 +14,7 @@ Supplier`s information - GOV.UK
       Prototype
     </strong>
     <span class="govuk-phase-banner__text">
-      This is a prototype of a service in development.
+      This is a prototype of a Subject in development.
   </p>
 </div>
 
@@ -53,7 +53,7 @@ Supplier`s information - GOV.UK
             Event subject:
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['eventSubDis'] }}
+            {{ data['connectedPersons'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="event-subject">
@@ -70,7 +70,7 @@ Supplier`s information - GOV.UK
             Subject name:
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['subNameDis'] }}
+            {{ data['connectedPerson'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="subject-name">
@@ -122,7 +122,7 @@ Supplier`s information - GOV.UK
             Organisation name:
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['subNameDis'] }}
+            {{ data['connectedPerson'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="subject-name">
@@ -134,46 +134,66 @@ Supplier`s information - GOV.UK
 
         {% endif %}
 
-        {% if data['addressTypeDis'] == "Yes" and data['address'] | length == "0" %}
+        {% if data['addressTypeRight'] == "No" %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Subject address:
           </dt>
-          {% if data['subjectDis-uk-address-line-2'] | length != "0" and data['subjectDis-uk-address-county'] | length
-          != "0" %}
+          {% if data['connectedPersonsRight-address-line-2'] | length != "0" and
+          data['connectedPersonsRight-address-county'] | length != "0" %}
           <dd class="govuk-summary-list__value">
-            {{ data['subjectDis-uk-address-line-1'] }} </br>
-            {{ data['subjectDis-uk-address-line-2'] }} </br>
-            {{ data['subjectDis-uk-address-town'] }} </br>
-            {{ data['subjectDis-uk-address-county'] }} </br>
-            {{ data['subjectDis-uk-address-postcode'] }} </br>
+            {{ data['connectedPersonsRight-address-line-1'] }} </br>
+            {{ data['connectedPersonsRight-address-line-2'] }} </br>
+            {{ data['connectedPersonsRight-address-town'] }} </br>
+            {{ data['connectedPersonsRight-address-postcode'] }} </br>
+            {{ data['connectedPersonsRight-address-county'] }} </br>
+            {{ data['selectData'] }}
           </dd>
           {% else %}
-          {{ data['subjectDis-uk-address-line-1'] }} </br>
-          {{ data['subjectDis-uk-address-town'] }} </br>
-          {{ data['subjectDis-uk-address-postcode'] }} </br>
+          <dd class="govuk-summary-list__value">
+            {{ data['connectedPersonsRight-address-line-1'] }} </br>
+            {{ data['connectedPersonsRight-address-town'] }} </br>
+            {{ data['connectedPersonsRight-address-postcode'] }} </br>
+            {{ data['selectData'] }}
           </dd>
           {% endif %}
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="address-type">
-              Change<span class="govuk-visually-hidden"> Change</span>
+            <a class="govuk-link" href="right-address-type">
+              Change<span class="govuk-visually-hidden">
+                the person`s address</span>
             </a>
           </dd>
         </div>
 
-        {% elif data['addressTypeDis'] == "Yes" and data['address'] | length != "0" %}
+        {% elif data['addressTypeRight'] == "Yes" and data['address'] | length == "0" %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Subject address:
           </dt>
+          {% if data['connectedPersonsUkRight-address-line-2'] | length != "0" and
+          data['connectedPersonsUkRight-address-county'] | length != "0" %}
           <dd class="govuk-summary-list__value">
-            {{ data['address'] }}
+            {{ data['connectedPersonsUkRight-address-line-1'] }} </br>
+            {{ data['connectedPersonsUkRight-address-line-2'] }} </br>
+            {{ data['connectedPersonsUkRight-address-town'] }} </br>
+            {{ data['connectedPersonsUkRight-address-county'] }} </br>
+            {{ data['connectedPersonsUkRight-address-postcode'] }} </br>
+            {{ data['selectData'] }}
           </dd>
+          {% else %}
+          <dd class="govuk-summary-list__value">
+            {{ data['connectedPersonsUkRight-address-line-1'] }} </br>
+            {{ data['connectedPersonsUkRight-address-town'] }} </br>
+            {{ data['connectedPersonsUkRight-address-postcode'] }} </br>
+            {{ data['selectData'] }}
+          </dd>
+          {% endif %}
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="address-type">
-              Change<span class="govuk-visually-hidden"> Change</span>
+            <a class="govuk-link" href="right-address-type">
+              Change<span class="govuk-visually-hidden">
+                the Organisation`s address</span>
             </a>
           </dd>
         </div>
@@ -184,31 +204,18 @@ Supplier`s information - GOV.UK
           <dt class="govuk-summary-list__key">
             Subject address:
           </dt>
-          {% if data['subjectDis-address-line-2'] | length != "0" and data['subjectDis-address-county'] | length != "0"
-          %}
           <dd class="govuk-summary-list__value">
-            {{ data['subjectDis-address-line-1'] }} </br>
-            {{ data['subjectDis-address-line-2'] }} </br>
-            {{ data['subjectDis-address-town'] }} </br>
-            {{ data['subjectDis-address-postcode'] }} </br>
-            {{ data['subjectDis-address-county'] }} </br>
-            {{ data['selectData'] }} </br>
+            {{ data['address'] }}
           </dd>
-          {% else %}
-          {{ data['subjectDis-address-line-1'] }} </br>
-          {{ data['subjectDis-address-town'] }} </br>
-          {{ data['subjectDis-address-postcode'] }} </br>
-          {{ data['selectData'] }} </br>
-          </dd>
-          {% endif %}
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="address-type">
+            <a class="govuk-link" href="right-address-type">
               Change<span class="govuk-visually-hidden"> Change</span>
             </a>
           </dd>
         </div>
 
         {% endif %}
+
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">

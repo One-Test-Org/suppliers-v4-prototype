@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Prototype
+      </strong>
+      <span class="govuk-phase-banner__text">
+          This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <form class="form" method="post">
+     
+
+      <h1 class="govuk-heading-l">
+        {% if (data['exclusionManCount'] == "1") %}
+          You have added 1 Mandatory exclusion
+        {% else %}
+          You have added {{ data['exclusionManCount'] }} Mandatory exclusions
+        {% endif %}
+      </h1>
+
+      <div class="govuk-form-group">
+        {% for exclusionMan in data['exclusionManArray'] %}
+        <dl class="govuk-summary-list ros-add-to-a-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                {{ exclusionMan['exclusionMan'] }}
+            </dt>
+            <dd class="govuk-summary-list__value"></dd>
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="{{loop.index}}/check-answers">Change</a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="{{loop.index}}/remove-exclusion">Remove</a>
+              </li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+        {% endfor %}
+
+
+        {% if (data['exclusionManArray'].length <= 10) %}
+          <fieldset class="govuk-fieldset" data-required data-error="Select yes if you need to add another exclusion"
+            aria-required="true">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Do you need to add another exclusion?
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="addAnotherExclusionMan" name="addAnotherExclusionMan" type="radio"
+                  value="Yes">
+                <label class="govuk-label govuk-radios__label" for="addAnotherExclusionMan">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="addAnotherExclusionMan-1" name="addAnotherExclusionMan" type="radio"
+                  value="No">
+                <label class="govuk-label govuk-radios__label" for="addAnotherExclusionMan">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        {% else %}
+
+          <p class="govuk-!-margin-top-9">You cannot add anymore exclusions</p>
+        {% endif %}
+
+        <div class="govuk-button-group govuk-!-margin-top-6">
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </div>
+
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

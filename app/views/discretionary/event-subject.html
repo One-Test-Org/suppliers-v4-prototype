@@ -73,6 +73,19 @@ Supplier`s information - GOV.UK
                         </div>
 
                         {% endfor %}
+
+                        <div class="govuk-radios__divider">or</div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSubDis-or" name="eventSubDis" type="radio"
+                                value="Not listed">
+                            <label class="govuk-label govuk-radios__label" for="eventSubDis-or">
+                                Not listed
+                            </label>
+                            <div id="eventSubDis-hint" class="govuk-hint govuk-radios__hint">
+                                You’ll have to declare this person as a Connected Person before you can add them here.
+                                This option will take you to the Connected Person page.
+                            </div>
+                        </div>
                     </div>
 
                 </fieldset>

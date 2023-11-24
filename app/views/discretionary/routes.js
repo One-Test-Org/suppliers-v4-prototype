@@ -4,6 +4,7 @@ const path = require('node:path')
 
 // API
 const axios = require('axios');
+const e = require('express');
 
 // Add your routes here - above the module.exports line
 
@@ -31,8 +32,22 @@ router.post('/exclusion-grounds', function (req, res) {
 })
 
 router.post('/event-subject', function (req, res) {
-    res.redirect('email-address');
+
+    let eventSubDis = req.session.data.eventSubDis;
+
+    if (eventSubDis == 'Not listed') {
+        let startQuestion = req.session.data.startQuestion;
+        if (startQuestion == 'Company') {
+            res.redirect('../suppliers-c/account-home');
+        }
+        else {
+            res.redirect('../suppliers-d/account-home');
+        }
+    } else {
+        res.redirect('email-address');
+    }
 })
+
 
 router.post('/email-address', function (req, res) {
     res.redirect('event-documents');

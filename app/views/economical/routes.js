@@ -62,9 +62,7 @@ router.post('/check-answers', function (req, res) {
 
 // add another file
 
-router.post('/check-answers', function (req, res) {
-    res.redirect('add-another-file');
-});
+
 
 router.get('/:index/remove-file', function (req, res) {
     res.render(path.resolve(__dirname, 'remove-file'));
@@ -128,7 +126,6 @@ router.post('/check-answers', function (req, res) {
     }
 
     delete data.editFile;
-
     res.redirect('add-another-file');
 });
 

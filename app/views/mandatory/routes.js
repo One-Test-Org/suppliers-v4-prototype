@@ -26,9 +26,9 @@ router.post('/exclusion-grounds', function (req, res) {
 
 router.post('/event-subject', function (req, res) {
 
-    let eventSubDis = req.session.data.eventSubDis;
+    let eventSubMan = req.session.data.eventSubMan;
 
-    if (eventSubDis == 'Not listed') {
+    if (eventSubMan == 'Not listed') {
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
             res.redirect('../suppliers-c/account-home');
@@ -108,7 +108,7 @@ router.post('/check-answers', function (req, res) {
     const exclusionMans = data.exclusionManArray || [];
 
     const exclusionMan = {
-        exclusionMan: data.eventSubMan,
+        exclusionMan: data.eventSub,
         convictionDay: data.convictionDay,
         convictionMonth: data.convictionMonth,
         convictionYear: data.convictionYear

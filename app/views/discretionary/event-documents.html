@@ -38,8 +38,8 @@ Supplier`s information - GOV.UK
         </h2>
 
         <span class="govuk-caption-l">
-            {{ data['discretionaryExclusions'] }}
-          </span>
+            {{ data['exclusionDis'] }}
+        </span>
 
         <form class="form" method="post">
 
@@ -78,13 +78,13 @@ Supplier`s information - GOV.UK
                                 <label class="govuk-label" for="documents-by-webDis">
                                     Website address
                                 </label>
-                                <input class="govuk-input" id="documents-by-webDis" name="documents-by-webDis" type="text"
-                                    spellcheck="false" autocomplete="web">
+                                <input class="govuk-input" id="documents-by-webDis" name="documents-by-webDis"
+                                    type="text" spellcheck="false" autocomplete="web">
                             </div>
                         </div>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="documents-2Dis" name="documents-2Dis" type="checkbox"
-                                value="File upload" data-aria-controls="conditional-documents-2">
+                            <input class="govuk-checkboxes__input" id="documents-2Dis" name="documents-2Dis"
+                                type="checkbox" value="File upload" data-aria-controls="conditional-documents-2">
                             <label class="govuk-label govuk-checkboxes__label" for="documents-2Dis">
                                 Document upload
                             </label>
@@ -95,7 +95,8 @@ Supplier`s information - GOV.UK
                                 <label class="govuk-label" for="file-upload-1">
                                     Upload a file
                                 </label>
-                                <input class="govuk-file-upload" id="file-upload-1Dis" name="file-upload-1Dis" type="file">
+                                <input class="govuk-file-upload" id="file-upload-1Dis" name="file-upload-1Dis"
+                                    type="file">
                             </div>
                         </div>
 
@@ -104,8 +105,8 @@ Supplier`s information - GOV.UK
 
                     <div class="govuk-checkboxes__divider">or</div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="cannotProveDisNone" name="cannotProveDisNone" type="hidden"
-                            value="None" data-behaviour="exclusive">
+                        <input class="govuk-checkboxes__input" id="cannotProveDisNone" name="cannotProveDisNone"
+                            type="hidden" value="None" data-behaviour="exclusive">
                         <input class="govuk-checkboxes__input" id="cannotProveDis" name="cannotProveDis" type="checkbox"
                             value="No, I cannot provide any documentation" data-behaviour="exclusive">
                         <label class="govuk-label govuk-checkboxes__label" for="cannotProveDis">

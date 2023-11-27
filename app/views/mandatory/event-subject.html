@@ -36,7 +36,7 @@ Supplier`s information - GOV.UK
         </h2>
 
         <span class="govuk-caption-l">
-            {{ data['mandatory'] }}
+            {{ data['exclusionMan'] }}
         </span>
 
         <form class="form" method="post">
@@ -51,27 +51,41 @@ Supplier`s information - GOV.UK
                     </legend>
                     <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="eventSub" name="eventSub" type="radio"
+                            <input class="govuk-radios__input" id="eventSubMan" name="eventSubMan" type="radio"
                                 value="Supplier">
-                            <label class="govuk-label govuk-radios__label" for="eventSub">
-                                The supplier
+                            {% if data['startQuestion'] != "Individual" %}
+                            <label class="govuk-label govuk-radios__label" for="eventSubMan">
+                                Tech Innovators Ltd
                             </label>
+                            {% else %}
+                            <label class="govuk-label govuk-radios__label" for="eventSubMan">
+                                John Smith
+                            </label>
+                            {% endif %}
                         </div>
+                        {% for connectedPerson in data['connectedPersonArray'] %}
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="eventSub-3" name="eventSub" type="radio"
+                            <input class="govuk-radios__input" id="eventSub-3Man" name="eventSubMan" type="radio"
                                 value="Connected person">
-                            <label class="govuk-label govuk-radios__label" for="eventSub">
-                                A connected person
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="eventSub-5" name="eventSub" type="radio"
-                                value="Connected organisation">
-                            <label class="govuk-label govuk-radios__label" for="eventSub">
-                                A connected organisation
+                            <label class="govuk-label govuk-radios__label" for="eventSubMan">
+                                {{ connectedPerson['connectedPerson'] }}
                             </label>
                         </div>
 
+                        {% endfor %}
+
+                        <div class="govuk-radios__divider">or</div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSubMan-or" name="eventSubMan" type="radio"
+                                value="Not listed">
+                            <label class="govuk-label govuk-radios__label" for="eventSubMan-or">
+                                Not listed
+                            </label>
+                            <div id="eventSubMan-hint" class="govuk-hint govuk-radios__hint">
+                                You’ll have to declare this person as a Connected Person before you can add them here.
+                                This option will take you to the Connected Person page.
+                            </div>
+                        </div>
                     </div>
 
                 </fieldset>

@@ -10,20 +10,13 @@ const e = require('express');
 
 router.post('/exclusion-grounds', function (req, res) {
 
-    let exclusionDis1 = req.session.data.exclusionDis1;
-    let exclusionDis2 = req.session.data.exclusionDis2;
-    let exclusionDis3 = req.session.data.exclusionDis3;
-    let exclusionDis4 = req.session.data.exclusionDis4;
-    let exclusionDis5 = req.session.data.exclusionDis5;
-    let exclusionDis6 = req.session.data.exclusionDis6;
-    let exclusionDis7 = req.session.data.exclusionDis7;
-    let exclusionDis8 = req.session.data.exclusionDis8;
+    let exclusionDis = req.session.data.exclusionDis;
     let startQuestion = req.session.data.startQuestion;
 
-    if (exclusionDis1 == '' && exclusionDis2 == '' && exclusionDis3 == '' && exclusionDis4 == '' && exclusionDis5 == '' && exclusionDis6 == '' && exclusionDis7 == '' && exclusionDis8 == '' && startQuestion == 'Company') {
+    if (exclusionDis == '' && startQuestion == 'Company') {
         res.redirect('/suppliers-c/account-home');
 
-    } else if (exclusionDis1 == '' && exclusionDis2 == '' && exclusionDis3 == '' && exclusionDis4 == '' && exclusionDis5 == '' && exclusionDis6 == '' && exclusionDis7 == '' && exclusionDis8 == '' && startQuestion == 'Individual') {
+    } else if (exclusionDis == '' && startQuestion == 'Individual') {
         res.redirect('/suppliers-d/account-home');
     } else {
         res.redirect('event-subject');

@@ -57,7 +57,7 @@ Supplier`s information - GOV.UK
 
       <form class="form" method="post">
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" data-required data-error="Select yes or no" aria-required="true">
+          <fieldset class="govuk-fieldset" data-required data-error="Select one option" aria-required="true">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
               <h2 class="govuk-fieldset__heading">
                 Has your organisation or any of its connected persons been involved with an event mentioned in Parts 1
@@ -67,562 +67,437 @@ Supplier`s information - GOV.UK
             </legend>
 
             <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
-              Select all the options, stating either yes or no.
+              Select one option at a time, at the end of the journey you will be able to add more exclusions
             </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Corporate manslaughter or corporate homicide
-              </h2>
-              <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Exclusion details
-                  </span>
-                </summary>
-            </legend>
-            <div class="govuk-details__text">
-              An offence under section 1 of the Corporate Manslaughter and Corporate
-              Homicide Act 2007 (corporate manslaughter or corporate homicide).
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan1" name="exclusionMan1" type="radio"
+            <div class="govuk-radios" data-module="govuk-radios">
+
+              <div class="govuk-radios__item govuk-!-margin-top-6">
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Corporate manslaughter or corporate homicide">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan1">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Corporate manslaughter or corporate homicide</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan1" name="exclusionMan1" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan1">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Terrorism
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              An offence listed in section 41 or 42 of the Counter-Terrorism Act 2008
-              (terrorism offences, and offences having a terrorist connection, in respect of
-              which the notification requirements under Part 4 of that Act apply).
 
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-details__text">
+                  An offence under section 1 of the Corporate Manslaughter and Corporate
+                  Homicide Act 2007 (corporate manslaughter or corporate homicide).
+                </div>
+              </details>
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan2" name="exclusionMan2" type="radio"
-                  value="Terrorism">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan2">
-                  Yes
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio" value="Terrorism">
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Terrorism</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan2" name="exclusionMan2" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan2">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Theft, fraud, bribery etc
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              An offence at common law in Scotland of theft, fraud, extortion, robbery,
-              theft by housebreaking, housebreaking with intent to steal, or reset.<br><br>
-              An offence under any of the following sections of the Theft Act 1968:<br><br>
-              (a) sections 7 to 13 (theft, robbery, burglary, etc);<br>
-              (b) sections 17 to 21 (fraud and blackmail);<br>
-              (c) sections 22 and 23 (offences relating to stolen goods);<br>
-              (d) section 24A (dishonestly retaining a wrongful credit);<br>
-              (e) section 25 (going equipped for stealing etc).<br><br>
-              An offence under any of the following sections of the Theft Act (Northern
-              Ireland) 1969 (c. 16 (N.I.)):<br><br>
-              (a) sections 7 to 13 (theft, robbery, burglary, etc);<br>
-              (b) sections 17 to 20 (fraud and blackmail);<br>
-              (c) sections 21 and 22 (offences relating to stolen goods);<br>
-              (d) section 23A (dishonestly retaining a wrongful credit);<br>
-              (e) section 24 (going equipped for stealing etc).<br>
-              An offence under section 3 of the Theft Act 1978 (making off without
-              payment).<br><br>
-              An offence under section 5 of the Theft (Northern Ireland) Order 1978 (S.I.
-              1978/1407 (N.I. 23)) (making off without payment).<br><br>
-              An offence under section 58 of the Civic Government (Scotland) Act 1982
-              (convicted thief in possession).<br><br>
-              An offence under section 113 of the Representation of the People Act 1983
-              (bribery of electors).<br><br>
-              An offence under section 178 of the Road Traffic Act 1988 (taking motor
-              vehicle without authority etc).<br><br>
-              An offence under section 327, 328 or 329 of the Proceeds of Crime Act 2002
-              (money laundering offences).<br><br>
-              An offence under section 2, 3, 4, 6 or 7 of the Fraud Act 2006 (fraud offences).<br><br>
-              An offence under section 993 of the Companies Act 2006 (fraudulent
-              trading).<br><br>
-              An offence under section 1, 2 or 6 of the Bribery Act 2010 (bribery offences).<br><br>
-              An offence under section 49 of the Criminal Justice and Licensing (Scotland)<br><br>
-              Act 2010 (asp 13) (offences relating to articles for use in fraud).
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                </legend>
+                <div class="govuk-details__text">
+                  An offence listed in section 41 or 42 of the Counter-Terrorism Act 2008
+                  (terrorism offences, and offences having a terrorist connection, in respect of
+                  which the notification requirements under Part 4 of that Act apply).
+
+                </div>
+              </details>
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan3" name="exclusionMan3" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Theft, fraud, bribery etc">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan3">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Theft, fraud, bribery etc</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan3" name="exclusionMan3" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan3">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Labour market, slavery and human trafficking offences
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              An offence under the Employment Agencies Act 1973 (offences relating to
-              employment agencies) other than an offence under section 9(4)(b) of that Act.<br><br>
-              An offence under the Employment (Miscellaneous Provisions) (Northern
-              Ireland) Order 1981 (S.I. 1981/839) (N.I. 20) (offences relating to
-              employment agencies) other than an offence under Article 7B(11) of that Order.<br><br>
-              An offence under section 31(1) of the National Minimum Wage Act 1998
-              (refusal or wilful neglect to pay the national minimum wage).<br><br>
-              An offence under the Gangmasters (Licensing) Act 2004 (offences relating to gangmasters).<br><br>
-              An offence under section 1, 2, 4 or 30 of the Modern Slavery Act 2015 (slavery
-              and human trafficking offences).<br><br>
-              An offence under section 1, 4 or 32 of the Human Trafficking and
-              Exploitation (Scotland) Act 2015 (asp 12) (slavery and human trafficking offences).<br><br>
-              An offence under section 1, 2 or 4 of the Human Trafficking and Exploitation
-              (Criminal Justice and Support for Victims) Act (Northern Ireland) 2015 (c. 2)
-              (N.I.), or paragraph 16 of Schedule 3 to that Act (slavery and human trafficking offences).<br><br>
-              An offence under section 27 of the Immigration Act 2016 (failure to comply
-              with labour market enforcement order).
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                <div class="govuk-details__text">
+                  An offence at common law in Scotland of theft, fraud, extortion, robbery,
+                  theft by housebreaking, housebreaking with intent to steal, or reset.<br><br>
+                  An offence under any of the following sections of the Theft Act 1968:<br><br>
+                  (a) sections 7 to 13 (theft, robbery, burglary, etc);<br>
+                  (b) sections 17 to 21 (fraud and blackmail);<br>
+                  (c) sections 22 and 23 (offences relating to stolen goods);<br>
+                  (d) section 24A (dishonestly retaining a wrongful credit);<br>
+                  (e) section 25 (going equipped for stealing etc).<br><br>
+                  An offence under any of the following sections of the Theft Act (Northern
+                  Ireland) 1969 (c. 16 (N.I.)):<br><br>
+                  (a) sections 7 to 13 (theft, robbery, burglary, etc);<br>
+                  (b) sections 17 to 20 (fraud and blackmail);<br>
+                  (c) sections 21 and 22 (offences relating to stolen goods);<br>
+                  (d) section 23A (dishonestly retaining a wrongful credit);<br>
+                  (e) section 24 (going equipped for stealing etc).<br>
+                  An offence under section 3 of the Theft Act 1978 (making off without
+                  payment).<br><br>
+                  An offence under section 5 of the Theft (Northern Ireland) Order 1978 (S.I.
+                  1978/1407 (N.I. 23)) (making off without payment).<br><br>
+                  An offence under section 58 of the Civic Government (Scotland) Act 1982
+                  (convicted thief in possession).<br><br>
+                  An offence under section 113 of the Representation of the People Act 1983
+                  (bribery of electors).<br><br>
+                  An offence under section 178 of the Road Traffic Act 1988 (taking motor
+                  vehicle without authority etc).<br><br>
+                  An offence under section 327, 328 or 329 of the Proceeds of Crime Act 2002
+                  (money laundering offences).<br><br>
+                  An offence under section 2, 3, 4, 6 or 7 of the Fraud Act 2006 (fraud offences).<br><br>
+                  An offence under section 993 of the Companies Act 2006 (fraudulent
+                  trading).<br><br>
+                  An offence under section 1, 2 or 6 of the Bribery Act 2010 (bribery offences).<br><br>
+                  An offence under section 49 of the Criminal Justice and Licensing (Scotland)<br><br>
+                  Act 2010 (asp 13) (offences relating to articles for use in fraud).
+                </div>
+              </details>
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan4" name="exclusionMan4" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Labour market, slavery and human trafficking offences">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan4">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Labour market, slavery and human trafficking offences</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan4" name="exclusionMan4" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan4">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Organised crime
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              An offence under section 28 of the Criminal Justice and Licensing (Scotland)
-              Act 2010 (agreeing to become involved in serious organised crime).<br><br>
-              An offence under section 45 of the Serious Crime Act 2015 (participating in
-              activities of organised crime group).
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                <div class="govuk-details__text">
+                  An offence under the Employment Agencies Act 1973 (offences relating to
+                  employment agencies) other than an offence under section 9(4)(b) of that Act.<br><br>
+                  An offence under the Employment (Miscellaneous Provisions) (Northern
+                  Ireland) Order 1981 (S.I. 1981/839) (N.I. 20) (offences relating to
+                  employment agencies) other than an offence under Article 7B(11) of that Order.<br><br>
+                  An offence under section 31(1) of the National Minimum Wage Act 1998
+                  (refusal or wilful neglect to pay the national minimum wage).<br><br>
+                  An offence under the Gangmasters (Licensing) Act 2004 (offences relating to gangmasters).<br><br>
+                  An offence under section 1, 2, 4 or 30 of the Modern Slavery Act 2015 (slavery
+                  and human trafficking offences).<br><br>
+                  An offence under section 1, 4 or 32 of the Human Trafficking and
+                  Exploitation (Scotland) Act 2015 (asp 12) (slavery and human trafficking offences).<br><br>
+                  An offence under section 1, 2 or 4 of the Human Trafficking and Exploitation
+                  (Criminal Justice and Support for Victims) Act (Northern Ireland) 2015 (c. 2)
+                  (N.I.), or paragraph 16 of Schedule 3 to that Act (slavery and human trafficking offences).<br><br>
+                  An offence under section 27 of the Immigration Act 2016 (failure to comply
+                  with labour market enforcement order).
+                </div>
+              </details>
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan5" name="exclusionMan5" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Organised crime">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan5">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Organised crime</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan5" name="exclusionMan5" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan5">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Tax offences
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              An offence at common law of cheating the public revenue.<br><br>
-              An offence under section 170 of the Customs and Excise Management Act
-              1979 (fraudulent evasion of duty etc).<br><br>
-              An offence under section 72 of the Value Added Tax Act 1994 (fraudulent
-              evasion of VAT etc).<br><br>
-              An offence under section 45 or 46 of the Criminal Finances Act 2017 (failure
-              to prevent facilitation of tax evasion).
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                <div class="govuk-details__text">
+                  An offence under section 28 of the Criminal Justice and Licensing (Scotland)
+                  Act 2010 (agreeing to become involved in serious organised crime).<br><br>
+                  An offence under section 45 of the Serious Crime Act 2015 (participating in
+                  activities of organised crime group).
+                </div>
+              </details>
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan6" name="exclusionMan6" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Tax offences">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan6">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Tax offences</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan6" name="exclusionMan6" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan6">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Cartel offence
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              An offence under section 188 of the Enterprise Act 2002 (cartel offence).
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                <div class="govuk-details__text">
+                  An offence at common law of cheating the public revenue.<br><br>
+                  An offence under section 170 of the Customs and Excise Management Act
+                  1979 (fraudulent evasion of duty etc).<br><br>
+                  An offence under section 72 of the Value Added Tax Act 1994 (fraudulent
+                  evasion of VAT etc).<br><br>
+                  An offence under section 45 or 46 of the Criminal Finances Act 2017 (failure
+                  to prevent facilitation of tax evasion).
+                </div>
+              </details>
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan7" name="exclusionMan7" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Cartel offence">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan7">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Cartel offence</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan7" name="exclusionMan7" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan7">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Ancillary offences
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              In relation to an offence otherwise referred to in this Part, any of the
-              following offences:<br><br>
-              (a) aiding, abetting, counselling or procuring the commission of the
-              offence;<br>
-              (b) in Scotland, being part in the commission of the offence;
-              (c) an offence under Part 2 of the Serious Crime Act 2007 (encouraging
-              or assisting crime) in relation to the offence;<br>
-              (d) inciting a person to commit the offence;<br>
-              (e) attempting or conspiring to commit the offence.
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                <div class="govuk-details__text">
+                  An offence under section 188 of the Enterprise Act 2002 (cartel offence).
+                </div>
+              </details>
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan8" name="exclusionMan8" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Ancillary offences">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan8">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Ancillary offences</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan8" name="exclusionMan8" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan8">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Offences committed outside the United Kingdom
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              (1) An offence under the law of a country or territory outside the United
-              Kingdom which would be an offence otherwise referred to in this Part of this
-              Schedule if the conduct constituting that offence was carried out in any part
-              of the United Kingdom.<br><br>
-              (2) For the purposes of this paragraph, an act punishable under the law of a
-              country or territory outside the United Kingdom constitutes an offence
-              under that law, however it is described in that law.
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                <div class="govuk-details__text">
+                  In relation to an offence otherwise referred to in this Part, any of the
+                  following offences:<br><br>
+                  (a) aiding, abetting, counselling or procuring the commission of the
+                  offence;<br>
+                  (b) in Scotland, being part in the commission of the offence;
+                  (c) an offence under Part 2 of the Serious Crime Act 2007 (encouraging
+                  or assisting crime) in relation to the offence;<br>
+                  (d) inciting a person to commit the offence;<br>
+                  (e) attempting or conspiring to commit the offence.
+                </div>
+              </details>
+
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan9" name="exclusionMan9" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Offences committed outside the United Kingdom">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan9">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Offences committed outside the United Kingdom</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan9" name="exclusionMan9" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan9">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Misconduct in relation to tax
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              (1) A mandatory exclusion ground applies to a supplier if the supplier or a
-              connected person has been liable to a penalty under:<br><br>
-              (a) section 69C of the Value Added Tax Act 1994 (transactions connected
-              with VAT fraud) except where the penalty is reduced under section 70 of that Act, or <br>
-              (b) section 25 of the Finance Act 2003 (evasion of tax or duty).<br><br>
-              (2) The supplier or connected person is not to be treated as having been liable
-              to such a penalty unless HMRC has assessed the amount of the penalty and
-              the time for any appeal or further appeal relating to the penalty has expired
-              or, if later, any appeal or final appeal relating to it has been finally determined. <br><br>
-              (1) A Mandatory exclusion ground applies to a supplier if a penalty has been
-              payable by the supplier or a connected person under:<br><br>
-              (a) Schedule 24 to the Finance Act 2007 (errors in tax documentation), or<br>
-              (b) Schedule 41 to the Finance Act 2008 (failure to notify and certain VAT and excise wrongdoing),
-              but only where the conduct giving rise to that penalty was deliberate.<br><br>
-              (2) Such a penalty is not to be treated as having been payable unless:<br><br>
-              (a) if the penalty has been assessed, the time for any appeal or further
-              appeal relating to the penalty has expired or, if later, any appeal or
-              final appeal relating to it has been finally determined, or<br>
-              (b) a contract has been made between HMRC and the supplier or
-              connected person, under which HMRC undertook not to assess the
-              penalty or (if it was assessed) not to take proceedings to recover it.<br><br>
-              (1) A Mandatory exclusion ground applies to a supplier if:<br><br>
-              (a) the supplier or a connected person has entered into or carried out a
-              tax arrangement that is abusive, and <br>
-              (b) an adjustment has accordingly been made by HMRC under section
-              209 of the Finance Act 2013 (countering tax advantages), including as
-              it applies under section 10 of the National Insurance Contributions Act 2014.<br><br>
-              (2) The adjustment is not to be treated as having been made by HMRC until it
-              can no longer be challenged, whether on appeal or otherwise.<br><br>
-              (1) A Mandatory exclusion ground applies to a supplier if the supplier or a
-              connected person has been found by HMRC, in exercise of its powers in
-              respect of VAT, to have engaged in an abusive practice.<br><br>
-              (2) The supplier or connected person is not to be treated as having been found
-              by HMRC to have engaged in those arrangements or practices until the
-              finding can no longer be challenged, whether on appeal or otherwise. <br>
-              A Mandatory exclusion ground applies to a supplier if the supplier or a
-              connected person has incurred a defeat in respect of abusive tax
-              arrangements, within the meaning given by paragraph 4 of Schedule 16 to
-              the Finance (No. 2) Act 2017.
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                <div class="govuk-details__text">
+                  (1) An offence under the law of a country or territory outside the United
+                  Kingdom which would be an offence otherwise referred to in this Part of this
+                  Schedule if the conduct constituting that offence was carried out in any part
+                  of the United Kingdom.<br><br>
+                  (2) For the purposes of this paragraph, an act punishable under the law of a
+                  country or territory outside the United Kingdom constitutes an offence
+                  under that law, however it is described in that law.
+                </div>
+              </details>
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan10" name="exclusionMan10" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Misconduct in relation to tax">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan10">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Misconduct in relation to tax</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan10" name="exclusionMan10" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan10">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Competition law infringements
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              (1) A Mandatory exclusion ground applies to a supplier if the CMA has made a
-              decision under the Competition Act 1998 that the Chapter I prohibition
-              (within the meaning given by section 2 of that Act) has been infringed by an
-              agreement or concerted practice:<br><br>
-              (a) to which the supplier or a connected person was party, and <br>
-              (b) which was a cartel (within the meaning given by paragraph 4(1) of
-              Schedule 8A to that Act).<br><br>
-              (2) Sub-paragraph (1) does not apply if:<br><br>
-              (a) the CMA did not impose a penalty on the supplier or connected
-              person in respect of the infringement because the supplier or
-              connected person was an immunity recipient (within the meaning
-              given by paragraph 14 of Schedule 8A to the Competition Act 1998), or<br>
-              (b) the CMA gave written notice to a connected person under section
-              190(4) of the Enterprise Act 2002 (immunity from prosecution for
-              cartel offences) in connection with the infringement.<br><br>
-              (3) In this paragraph, references to the CMA include references to a regulator
-              referred to in section 54(1) of the Competition Act 1998 in circumstances
-              where it exercises functions concurrently with the CMA in accordance with
-              that Act.
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                <div class="govuk-details__text">
+                  (1) A mandatory exclusion ground applies to a supplier if the supplier or a
+                  connected person has been liable to a penalty under:<br><br>
+                  (a) section 69C of the Value Added Tax Act 1994 (transactions connected
+                  with VAT fraud) except where the penalty is reduced under section 70 of that Act, or <br>
+                  (b) section 25 of the Finance Act 2003 (evasion of tax or duty).<br><br>
+                  (2) The supplier or connected person is not to be treated as having been liable
+                  to such a penalty unless HMRC has assessed the amount of the penalty and
+                  the time for any appeal or further appeal relating to the penalty has expired
+                  or, if later, any appeal or final appeal relating to it has been finally determined. <br><br>
+                  (1) A Mandatory exclusion ground applies to a supplier if a penalty has been
+                  payable by the supplier or a connected person under:<br><br>
+                  (a) Schedule 24 to the Finance Act 2007 (errors in tax documentation), or<br>
+                  (b) Schedule 41 to the Finance Act 2008 (failure to notify and certain VAT and excise wrongdoing),
+                  but only where the conduct giving rise to that penalty was deliberate.<br><br>
+                  (2) Such a penalty is not to be treated as having been payable unless:<br><br>
+                  (a) if the penalty has been assessed, the time for any appeal or further
+                  appeal relating to the penalty has expired or, if later, any appeal or
+                  final appeal relating to it has been finally determined, or<br>
+                  (b) a contract has been made between HMRC and the supplier or
+                  connected person, under which HMRC undertook not to assess the
+                  penalty or (if it was assessed) not to take proceedings to recover it.<br><br>
+                  (1) A Mandatory exclusion ground applies to a supplier if:<br><br>
+                  (a) the supplier or a connected person has entered into or carried out a
+                  tax arrangement that is abusive, and <br>
+                  (b) an adjustment has accordingly been made by HMRC under section
+                  209 of the Finance Act 2013 (countering tax advantages), including as
+                  it applies under section 10 of the National Insurance Contributions Act 2014.<br><br>
+                  (2) The adjustment is not to be treated as having been made by HMRC until it
+                  can no longer be challenged, whether on appeal or otherwise.<br><br>
+                  (1) A Mandatory exclusion ground applies to a supplier if the supplier or a
+                  connected person has been found by HMRC, in exercise of its powers in
+                  respect of VAT, to have engaged in an abusive practice.<br><br>
+                  (2) The supplier or connected person is not to be treated as having been found
+                  by HMRC to have engaged in those arrangements or practices until the
+                  finding can no longer be challenged, whether on appeal or otherwise. <br>
+                  A Mandatory exclusion ground applies to a supplier if the supplier or a
+                  connected person has incurred a defeat in respect of abusive tax
+                  arrangements, within the meaning given by paragraph 4 of Schedule 16 to
+                  the Finance (No. 2) Act 2017.
+                </div>
+              </details>
+
+
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan11" name="exclusionMan11" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Competition law infringements">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan11">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Competition law infringements</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan11" name="exclusionMan11" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan11">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Equivalents outside the United Kingdom
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              A Mandatory exclusion ground applies to a supplier if the supplier or a
-              connected person:<br><br>
-              (a) has been subject to a penalty or a decision by a regulator, court or
-              other authority outside the United Kingdom, where the conduct
-              giving rise to that penalty or decision is conduct that would give rise
-              to a penalty or decision referred to in any of paragraphs 34 to 39 if
-              committed in the United Kingdom, in circumstances where the
-              penalty or decision would be a Mandatory exclusion ground, or <br>
-              (b) has had a tax advantage counteracted outside the United Kingdom,
-              in circumstances where the supplier or connected person would
-              have incurred a defeat of the kind referred to in paragraph 38 had the
-              tax advantage arisen in respect of tax payable in the United
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                <div class="govuk-details__text">
+                  (1) A Mandatory exclusion ground applies to a supplier if the CMA has made a
+                  decision under the Competition Act 1998 that the Chapter I prohibition
+                  (within the meaning given by section 2 of that Act) has been infringed by an
+                  agreement or concerted practice:<br><br>
+                  (a) to which the supplier or a connected person was party, and <br>
+                  (b) which was a cartel (within the meaning given by paragraph 4(1) of
+                  Schedule 8A to that Act).<br><br>
+                  (2) Sub-paragraph (1) does not apply if:<br><br>
+                  (a) the CMA did not impose a penalty on the supplier or connected
+                  person in respect of the infringement because the supplier or
+                  connected person was an immunity recipient (within the meaning
+                  given by paragraph 14 of Schedule 8A to the Competition Act 1998), or<br>
+                  (b) the CMA gave written notice to a connected person under section
+                  190(4) of the Enterprise Act 2002 (immunity from prosecution for
+                  cartel offences) in connection with the infringement.<br><br>
+                  (3) In this paragraph, references to the CMA include references to a regulator
+                  referred to in section 54(1) of the Competition Act 1998 in circumstances
+                  where it exercises functions concurrently with the CMA in accordance with
+                  that Act.
+                </div>
+              </details>
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan12" name="exclusionMan12" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Equivalents outside the United Kingdom">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan12">
-                  Yes
+                <label class="govuk-label govuk-radios__label" for="exclusionMan">
+                  <strong>Equivalents outside the United Kingdom</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan12" name="exclusionMan12" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan12">
-                  No
-                </label>
-              </div>
-            </div>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-4">
-              <h2 class="govuk-fieldset__heading">
-                Failure to cooperate with investigation
-              </h2>
               <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
                     Exclusion details
                   </span>
                 </summary>
-            </legend>
-            <div class="govuk-details__text">
-              A mandatory exclusion ground applies to a supplier if:<br><br>
-              (a) an appropriate authority has given the supplier or a connected
-              person notice under section 57(6) (requests for documents or other
-              assistance in connection with investigation),<br>
-              (b) the supplier or connected person has failed to comply with the notice
-              to the satisfaction of the authority before the end of the period
-              specified in the notice, and <br>
-              (c) a Minister of the Crown has made a determination that the failure to
-              do so was sufficiently serious so as to warrant constituting a
-              exclusion ground.
-            </div>
-            </details>
-            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+
+                <div class="govuk-details__text">
+                  A Mandatory exclusion ground applies to a supplier if the supplier or a
+                  connected person:<br><br>
+                  (a) has been subject to a penalty or a decision by a regulator, court or
+                  other authority outside the United Kingdom, where the conduct
+                  giving rise to that penalty or decision is conduct that would give rise
+                  to a penalty or decision referred to in any of paragraphs 34 to 39 if
+                  committed in the United Kingdom, in circumstances where the
+                  penalty or decision would be a Mandatory exclusion ground, or <br>
+                  (b) has had a tax advantage counteracted outside the United Kingdom,
+                  in circumstances where the supplier or connected person would
+                  have incurred a defeat of the kind referred to in paragraph 38 had the
+                  tax advantage arisen in respect of tax payable in the United
+                </div>
+              </details>
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan13" name="exclusionMan13" type="radio"
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Failure to cooperate with investigation">
                 <label class="govuk-label govuk-radios__label" for="exclusionMan13">
-                  Yes
+                  <strong>Failure to cooperate with investigation</strong>
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan13" name="exclusionMan13" type="radio" value="">
-                <label class="govuk-label govuk-radios__label" for="exclusionMan13">
-                  No
-                </label>
-              </div>
-            </div>
+
+              <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Exclusion details
+                  </span>
+                </summary>
+
+                <div class="govuk-details__text">
+                  A mandatory exclusion ground applies to a supplier if:<br><br>
+                  (a) an appropriate authority has given the supplier or a connected
+                  person notice under section 57(6) (requests for documents or other
+                  assistance in connection with investigation),<br>
+                  (b) the supplier or connected person has failed to comply with the notice
+                  to the satisfaction of the authority before the end of the period
+                  specified in the notice, and <br>
+                  (c) a Minister of the Crown has made a determination that the failure to
+                  do so was sufficiently serious so as to warrant constituting a
+                  exclusion ground.
+                </div>
+              </details>
+
+
           </fieldset>
 
           <button class="govuk-button" data-module="govuk-button">

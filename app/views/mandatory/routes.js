@@ -108,7 +108,7 @@ router.post('/check-answers', function (req, res) {
     const exclusionMans = data.exclusionManArray || [];
 
     const exclusionMan = {
-        exclusionMan: data.eventSub,
+        exclusionMan: data.eventSubMan,
         convictionDay: data.convictionDay,
         convictionMonth: data.convictionMonth,
         convictionYear: data.convictionYear

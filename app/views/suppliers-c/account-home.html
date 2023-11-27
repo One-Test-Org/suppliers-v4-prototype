@@ -142,7 +142,7 @@ Supplier`s information - GOV.UK
 
                         <!-- connected persons -->
 
-                        {% if data['connectedPsc'] | length != "0" and data['connectedPersons'] | length == "0" %}
+                        {% if (data['connectedPersonCount'] == "1") %}
                         <li class="app-task-list__item">
                             <span class="app-task-list__task-name">
                                 <a href="/connected/connected-question" aria-describedby="connected-none">Connected
@@ -155,7 +155,7 @@ Supplier`s information - GOV.UK
                                 Last updated: {{ data['dt'] }}
                             </span>
                             <span class="app-task-list__items">
-                                0 connected persons
+                                1 connected person
                             </span>
                             <span class="govuk-tag app-task-list__tag govuk-tag--green" id="connected-none">
                                 Completed

@@ -905,11 +905,13 @@ Supplier`s information - GOV.UK
               {% endif %}
               {% endif %}
 
-              {% if data['connectedPersons'] == "PSC not individual or Public Authority" %}
+              {% if data['connectedPersons'] == "PSC (Person of significant control) not individual or Public Authority"
+              %}
 
-              <!-- PSC not individual or Public Authority  -->
+              <!-- PSC (Person of significant control) not individual or Public Authority  -->
 
-              <span class="govuk-caption-l">PSC not individual or Public Authority</span>
+              <span class="govuk-caption-l">PSC (Person of significant control) not individual or Public
+                Authority</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
               <dl class="govuk-summary-list govuk-!-margin-bottom-3">
 
@@ -1269,11 +1271,11 @@ Supplier`s information - GOV.UK
                 </div>
               </dl>
 
-              {% elif data['connectedPersons'] == "PSC Individual" %}
+              {% elif data['connectedPersons'] == "PSC (Person of significant control) Individual" %}
 
-              <!-- PSC Individual  -->
+              <!-- PSC (Person of significant control) Individual  -->
 
-              <span class="govuk-caption-l">PSC Individual</span>
+              <span class="govuk-caption-l">PSC (Person of significant control) Individual</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
               <dl class="govuk-summary-list govuk-!-margin-bottom-3">
 

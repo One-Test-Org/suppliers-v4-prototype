@@ -13,7 +13,7 @@ router.post('/exclusion-grounds', function (req, res) {
     let exclusionMan = req.session.data.exclusionMan;
     let startQuestion = req.session.data.startQuestion;
 
-    if (exclusionMan == '' && startQuestion == 'Company') {
+    if (exclusionMan == 'None of the above' && startQuestion == 'Company') {
         res.redirect('/suppliers-c/account-home');
 
     } else if (exclusionMan == '' && startQuestion == 'Individual') {

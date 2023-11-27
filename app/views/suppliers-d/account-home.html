@@ -219,15 +219,7 @@ Supplier`s information - GOV.UK
                                 Completed
                             </span>
                         </li>
-                        {% elif data['exclusionMan1'] == '' and data['exclusionMan2'] == '' and data ['exclusionMan3']
-                        == '' and data
-                        ['exclusionMan4'] == '' and data ['exclusionMan5'] == '' and data['exclusionMan6'] == '' and
-                        data
-                        ['exclusionMan7'] == '' and data ['exclusionMan8'] == '' and data ['exclusionMan9'] == '' and
-                        data
-                        ['exclusionMan10'] == '' and data ['exclusionMan11'] == '' and data ['exclusionMan12'] == '' and
-                        data
-                        ['exclusionMan13'] == '' %}
+                        {% elif data['exclusionMan'] == 'None of the above' %}
                         <li class="app-task-list__item">
                             <span class="app-task-list__task-name">
                                 <a href="/mandatory/add-another-exclusion" aria-describedby="mandatory-completed">
@@ -238,7 +230,7 @@ Supplier`s information - GOV.UK
                                 Last updated: {{ data['dt'] }}
                             </span>
                             <span class="app-task-list__items">
-                                {{ data ['exclusionManCount'] }} mandatory exclusions
+                                No mandatory exclusions
                             </span>
                             <span class="govuk-tag app-task-list__tag govuk-tag--green" id="mandatory-completed">
                                 Completed
@@ -290,11 +282,7 @@ Supplier`s information - GOV.UK
                                 Completed
                             </span>
                         </li>
-                        {% elif data['exclusionDis1'] == '' and data['exclusionDis2'] == '' and data ['exclusionDis3']
-                        == '' and data
-                        ['exclusionDis4'] == '' and data ['exclusionDis5'] == '' and data['exclusionDis6'] == '' and
-                        data
-                        ['exclusionDis7'] == '' and data ['exclusionDis8'] == '' %}
+                        {% elif data['exclusionDis'] == 'None of the above' %}
                         <li class="app-task-list__item">
                             <span class="app-task-list__task-name">
                                 <a href="/discretionary/add-another-exclusion"
@@ -306,7 +294,7 @@ Supplier`s information - GOV.UK
                                 Last updated: {{ data['dt'] }}
                             </span>
                             <span class="app-task-list__items">
-                                {{ data ['exclusionCount'] }} discretionary exclusions
+                                No discretionary exclusions
                             </span>
                             <span class="govuk-tag app-task-list__tag govuk-tag--green" id="discretionary-completed">
                                 Completed

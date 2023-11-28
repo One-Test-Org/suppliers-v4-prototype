@@ -109,10 +109,9 @@ router.post('/check-answers', function (req, res) {
 
     const exclusion = {
         exclusion: data.eventSubDis,
-        convictionDay: data.convictionDay,
-        convictionMonth: data.convictionMonth,
-        convictionYear: data.convictionYear
+        exclusion: data.exclusionDis,
     };
+
 
     if (data.editExclusion) {
         exclusions[data.editExclusion - 1] = exclusion;

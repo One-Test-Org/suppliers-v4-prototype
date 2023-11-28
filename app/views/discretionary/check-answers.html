@@ -499,7 +499,7 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
-        {% elif data['addressTypeGov'] == "Yes" %}
+        {% elif data['addressTypeGov'] == "Yes" and data['address'] | length == "0" %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">

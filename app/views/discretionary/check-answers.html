@@ -29,16 +29,28 @@ Supplier`s information - GOV.UK
       Discretionary exclusion grounds
     </h2>
 
-    <span class="govuk-caption-l">
-      {{ data['exclusionDis'] }}
-    </span>
-
-
 
     <form class="form" method="post">
 
       <h1 class="govuk-heading-l">Check your answers</h1>
       <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exclusion grounds:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['exclusionDis'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="exclusion-grounds">
+              Change<span class="govuk-visually-hidden">
+                the event subject</span>
+            </a>
+          </dd>
+        </div>
+
+
 
         {% if data['eventSubDis'] == "Supplier" %}
 

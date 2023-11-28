@@ -108,12 +108,12 @@ router.post('/check-answers', function (req, res) {
     const exclusions = data.exclusionArray || [];
 
     const exclusion = {
-        exclusion: data.eventSubDis,
-        convictionDay: data.convictionDay,
-        convictionMonth: data.convictionMonth,
-        convictionYear: data.convictionYear
+        exclusion: data.exclusionDis
     };
 
+    const exclusionSecond = {
+        exclusionSecond: data.eventSubDis
+    };
 
     if (data.editExclusion) {
         exclusions[data.editExclusion - 1] = exclusion;
@@ -132,15 +132,25 @@ router.post('/check-answers', function (req, res) {
 router.post('/add-another-exclusion-route', function (req, res) {
     var sessionData = req.session.data;
     var exclusionArray = sessionData.exclusionArray || [];
+
     var exclusion = {
         "id": exclusionArray.length + 1,
         "Exclusion": sessionData.exclusion,
-    }
+    };
+
+    var exclusionSecond = {
+        "id": exclusionArray.length + 2, // Use a different id for the second exclusion
+        "ExclusionSecond": sessionData.exclusionSecond,
+    };
+
     exclusionArray.push(exclusion);
+    exclusionArray.push(exclusionSecond);
     sessionData.exclusionArray = exclusionArray;
     sessionData.exclusionCount = exclusionArray.length;
+
     res.redirect('add-another-exclusion');
 });
+
 
 router.post('/add-another-exclusion', function (req, res) {
     delete req.session.data.editExclusion;

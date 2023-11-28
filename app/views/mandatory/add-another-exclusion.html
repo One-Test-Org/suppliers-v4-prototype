@@ -23,7 +23,7 @@ Supplier`s information - GOV.UK
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-full-width">
 
     <form class="form" method="post">
 
@@ -43,7 +43,9 @@ Supplier`s information - GOV.UK
             <dt class="govuk-summary-list__key">
               {{ exclusionMan['exclusionMan'] }}
             </dt>
-            <dd class="govuk-summary-list__value"></dd>
+            <dt class="govuk-summary-list__key">
+              {{ exclusionMan['exclusionSecond'] }}
+            </dt>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">

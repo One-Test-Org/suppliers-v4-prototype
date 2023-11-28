@@ -108,10 +108,8 @@ router.post('/check-answers', function (req, res) {
     const exclusionMans = data.exclusionManArray || [];
 
     const exclusionMan = {
-        exclusionMan: data.eventSubMan,
-        convictionDay: data.convictionDay,
-        convictionMonth: data.convictionMonth,
-        convictionYear: data.convictionYear
+        exclusionMan: data.exclusionMan,
+        exclusionSecond: data.eventSubMan
     };
 
     if (data.editExclusionMan) {
@@ -131,13 +129,21 @@ router.post('/check-answers', function (req, res) {
 router.post('/add-another-exclusion-route', function (req, res) {
     var sessionData = req.session.data;
     var exclusionManArray = sessionData.exclusionManArray || [];
+
     var exclusionMan = {
         "id": exclusionManArray.length + 1,
-        "exclusionMan": sessionData.exclusionMan,
-    }
+        "ExclusionMan": sessionData.exclusionMan,
+    };
+
+    var exclusionSecond = {
+        "id": exclusionManArray.length + 2,
+        "ExclusionSecond": sessionData.exclusionSecond,
+    };
+
     exclusionManArray.push(exclusionMan);
     sessionData.exclusionManArray = exclusionManArray;
     sessionData.exclusionManCount = exclusionManArray.length;
+
     res.redirect('add-another-exclusion');
 });
 

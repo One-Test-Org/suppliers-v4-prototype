@@ -51,13 +51,15 @@ Supplier`s information - GOV.UK
                     </legend>
                     <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="eventSubMan" name="eventSubMan" type="radio"
-                                value="Supplier">
                             {% if data['startQuestion'] != "Individual" %}
+                            <input class="govuk-radios__input" id="eventSubMan" name="eventSubMan" type="radio"
+                                value="Tech Innovators Ltd">
                             <label class="govuk-label govuk-radios__label" for="eventSubMan">
                                 Tech Innovators Ltd
                             </label>
                             {% else %}
+                            <input class="govuk-radios__input" id="eventSubMan" name="eventSubMan" type="radio"
+                                value="John Smith">
                             <label class="govuk-label govuk-radios__label" for="eventSubMan">
                                 John Smith
                             </label>

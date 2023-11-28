@@ -108,10 +108,7 @@ router.post('/check-answers', function (req, res) {
     const exclusions = data.exclusionArray || [];
 
     const exclusion = {
-        exclusion: data.exclusionDis
-    };
-
-    const exclusionSecond = {
+        exclusion: data.exclusionDis,
         exclusionSecond: data.eventSubDis
     };
 

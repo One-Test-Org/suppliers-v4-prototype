@@ -465,9 +465,9 @@ router.post('/find-postal-uk-address', function (req, res) {
 
       axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then(response => {
-          var addresses = response.data.results.map(result => result.DPA.ADDRESS);
+          var secondAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
-          const titleCaseAddresses = addresses.map(address => {
+          const titleCaseSecondAddresses = secondAddresses.map(address => {
             const parts = address.split(', ');
             const formattedParts = parts.map((part, index) => {
               if (index === parts.length - 1) {
@@ -482,7 +482,7 @@ router.post('/find-postal-uk-address', function (req, res) {
             return formattedParts.join(', ');
           });
 
-          req.session.data['addresses'] = titleCaseAddresses;
+          req.session.data['secondAddresses'] = titleCaseSecondAddresses;
 
           res.redirect('select-postal-uk-address')
         })

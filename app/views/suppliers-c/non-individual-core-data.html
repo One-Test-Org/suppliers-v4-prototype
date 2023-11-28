@@ -182,6 +182,8 @@ Supplier`s information - GOV.UK
             <dt class="govuk-summary-list__key">
               Contact postal address:
             </dt>
+            <dd class="govuk-summary-list__value">
+            </dd>
             {% if data ['postal-address-line-2'] | length == "0" and data ['postal-address-county'] | length ==
             "0" %}
             <dd class="govuk-summary-list__value">
@@ -198,8 +200,6 @@ Supplier`s information - GOV.UK
               {{ data['postal-address-town'] }} </br>
               {{ data['postal-address-county'] }} </br>
               {{ data['postal-address-postcode'] }} </br>
-            </dd>
-            <dd class="govuk-summary-list__value">
             </dd>
             {% endif %}
             <dd class="govuk-summary-list__actions">
@@ -219,6 +219,8 @@ Supplier`s information - GOV.UK
             {% if data ['registered-address-line-2'] | length == "0" and data ['registered-address-county'] | length ==
             "0" %}
             <dd class="govuk-summary-list__value">
+            </dd>
+            <dd class="govuk-summary-list__value">
               {{ data['registered-address-line-1'] }} </br>
               {{ data['registered-address-town'] }} </br>
               {{ data['registered-address-postcode'] }} </br>
@@ -234,9 +236,7 @@ Supplier`s information - GOV.UK
               {{ data['registered-address-county'] }} </br>
               {{ data['registered-address-postcode'] }} </br>
               {{ data['selectData'] }} </br>
-            <dd class="govuk-summary-list__value">
-            </dd>
-            {% endif %}
+              {% endif %}
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="is-the-address-same">
                 Change<span class="govuk-visually-hidden"> Change</span>
@@ -253,16 +253,16 @@ Supplier`s information - GOV.UK
             <dt class="govuk-summary-list__key">
               Contact postal address:
             </dt>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              </a>
+            </dd>
             {% if data ['postal-address-line-2'] | length == "0" and data['postal-address-county'] | length == "0" %}
             <dd class="govuk-summary-list__value">
               {{ data['postal-address-line-1'] }} </br>
               {{ data['postal-address-town'] }} </br>
               {{ data['postal-address-postcode'] }} </br>
               {{ data['selectData'] }} </br>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-              </a>
             </dd>
             {% else %}
             <dd class="govuk-summary-list__value">
@@ -272,10 +272,6 @@ Supplier`s information - GOV.UK
               {{ data['postal-address-county'] }} </br>
               {{ data['postal-address-postcode'] }} </br>
               {{ data['selectData'] }} </br>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-              </a>
             </dd>
             {% endif %}
             <dd class="govuk-summary-list__actions">
@@ -292,6 +288,10 @@ Supplier`s information - GOV.UK
             <dt class="govuk-summary-list__key">
               Contact postal address:
             </dt>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              </a>
+            </dd>
             {% if data ['postal-address-line-2'] | length == "0" and data ['postal-address-county'] | length == "0" %}
             <dd class="govuk-summary-list__value">
               {{ data['postal-uk-address-line-1'] }} </br>
@@ -308,10 +308,6 @@ Supplier`s information - GOV.UK
             </dd>
             {% endif %}
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-              </a>
-            </dd>
-            <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="is-the-address-same">
                 Change<span class="govuk-visually-hidden"> Change</span>
               </a>
@@ -327,7 +323,7 @@ Supplier`s information - GOV.UK
             <dd class="govuk-summary-list__value">
             </dd>
             <dd class="govuk-summary-list__value">
-              {{ data['address'] }}
+              {{ data['secondAddress'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="is-the-address-same">

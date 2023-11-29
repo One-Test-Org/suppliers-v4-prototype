@@ -68,7 +68,7 @@ Supplier`s information - GOV.UK
                         {% for connectedPerson in data['connectedPersonArray'] %}
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSub-3Dis" name="eventSubDis" type="radio"
-                                value="Connected person">
+                                value="{{ connectedPerson['connectedPerson'] }}">
                             <label class="govuk-label govuk-radios__label" for="eventSubDis">
                                 {{ connectedPerson['connectedPerson'] }}
                             </label>

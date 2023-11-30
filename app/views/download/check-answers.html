@@ -85,7 +85,7 @@ Supplier`s information - GOV.UK
                     </dd>
                 </div>
 
-                {% if data['addressTypeDec'] == "Yes" and data['address'] | length != "0" %}
+                {% if data['addressSame'] == "Yes" and data['addressTypeBasic'] == "No" %}
 
 
                 <div class="govuk-summary-list__row">
@@ -111,13 +111,14 @@ Supplier`s information - GOV.UK
                     </dd>
                     {% endif %}
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="address-type">
+                        <a class="govuk-link" href="address-question">
                             Change<span class="govuk-visually-hidden"> Change</span>
                         </a>
                     </dd>
                 </div>
 
-                {% elif data['addressTypeBasic'] == "Yes" and data['address'] | length == "0" %}
+                {% elif data ['addressSame'] == "Yes" and data['addressTypeBasic'] == "Yes" and data['address'] | length
+                == "0" %}
 
 
                 <div class="govuk-summary-list__row">
@@ -142,13 +143,15 @@ Supplier`s information - GOV.UK
                     </dd>
                     {% endif %}
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="address-type">
+                        <a class="govuk-link" href="address-question">
                             Change<span class="govuk-visually-hidden"> Change</span>
                         </a>
                     </dd>
                 </div>
 
-                {% elif data['addressTypeBasic'] == "Yes" and data['address'] | length != "0" %}
+                {% elif data ['addressSame'] == "Yes" and data['addressTypeBasic'] == "Yes" and data['address'] | length
+                !=
+                "0" %}
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
@@ -158,7 +161,7 @@ Supplier`s information - GOV.UK
                         {{ data['address'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="address-type">
+                        <a class="govuk-link" href="address-question">
                             Change<span class="govuk-visually-hidden"> Change</span>
                         </a>
                     </dd>

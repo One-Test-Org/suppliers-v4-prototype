@@ -57,6 +57,8 @@ Supplier`s information - GOV.UK
       <dt class="govuk-summary-list__key">
         Registered or principal office address:
       </dt>
+      <dd class="govuk-summary-list__value">
+      </dd>
       {% if data ['registered-address-line-2'] | length == "0" and data ['registered-address-county'] | length == "0" %}
       <dd class="govuk-summary-list__value">
         {{ data['registered-address-line-1'] }} </br>
@@ -74,10 +76,6 @@ Supplier`s information - GOV.UK
         {{ data['selectData'] }} </br>
       </dd>
       {% endif %}
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
-        </a>
-      </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="address-type">
           Change<span class="govuk-visually-hidden"> Change</span>
@@ -164,7 +162,6 @@ Supplier`s information - GOV.UK
               Contact postal address:
             </dt>
             <dd class="govuk-summary-list__value">
-
             </dd>
             <dd class="govuk-summary-list__value">
               {{ data['address'] }}
@@ -190,8 +187,6 @@ Supplier`s information - GOV.UK
               {{ data['postal-address-line-1'] }} </br>
               {{ data['postal-address-town'] }} </br>
               {{ data['postal-address-postcode'] }} </br>
-            </dd>
-            <dd class="govuk-summary-list__value">
             </dd>
             {% else %}
             <dd class="govuk-summary-list__value">
@@ -225,8 +220,6 @@ Supplier`s information - GOV.UK
               {{ data['registered-address-town'] }} </br>
               {{ data['registered-address-postcode'] }} </br>
               {{ data['selectData'] }} </br>
-            </dd>
-            <dd class="govuk-summary-list__value">
             </dd>
             {% else %}
             <dd class="govuk-summary-list__value">

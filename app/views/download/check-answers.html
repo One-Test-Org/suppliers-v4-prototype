@@ -161,6 +161,22 @@ Supplier`s information - GOV.UK
                         {{ data['address'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="is-the-address-same">
+                            Change<span class="govuk-visually-hidden"> Change</span>
+                        </a>
+                    </dd>
+                </div>
+
+                {% elif data ['addressSame'] == "No" and data['shareAddress'] | length != "0" %}
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Person address:
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['shareAddress'] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="address-question">
                             Change<span class="govuk-visually-hidden"> Change</span>
                         </a>

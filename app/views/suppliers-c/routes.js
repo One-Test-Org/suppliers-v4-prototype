@@ -187,11 +187,11 @@ router.post('/legal-form', function (req, res) {
 
   let legalForm = req.session.data.legalForm;
 
-  if (legalForm == "Other") {
-    res.redirect('formation-date');
+  if (legalForm == "Partnership") {
+    res.redirect('law-registered');
   }
   else {
-    res.redirect('law-registered');
+    res.redirect('formation-date');
   }
 })
 

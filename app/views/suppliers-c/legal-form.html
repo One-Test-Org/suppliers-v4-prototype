@@ -33,46 +33,49 @@ Supplier`s information - GOV.UK
     <form class="form" method="post">
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="legalForm-hint">
+        <fieldset class="govuk-fieldset" data-required data-error="Select the organisation's registered legal form"
+          aria-required="true" aria-describedby="legalForm-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
               What is your organisation’s registered legal form?
             </h1>
           </legend>
+
+          {% if data['ca-question'] == 'Yes' %}
+
           <div id="legalForm-hint" class="govuk-hint govuk-!-margin-bottom-6">
             Legal form is the organisation type as defined in the Companies Act.
           </div>
 
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="legalForm" name="legalForm" type="radio" value="Sole Trader"
-                data-aria-controls="conditional-legalForm">
-              <label class="govuk-label govuk-radios__label" for="legalForm">
-                Sole Trader
-              </label>
-            </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio"
+              value="Limited liability partnership" data-aria-controls="conditional-legalForm-2">
+            <label class="govuk-label govuk-radios__label" for="legalForm-2">
+              Limited liability partnership
+            </label>
+          </div>
 
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Limited company"
+              data-aria-controls="conditional-legalForm-2">
+            <label class="govuk-label govuk-radios__label" for="legalForm-2">
+              Limited company
+            </label>
+          </div>
+
+          {% else %}
+
+
+          <div id="legalForm-hint" class="govuk-hint govuk-!-margin-bottom-6">
+            Legal form is the organisation equivalent to the Companies Act.
+          </div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Partnership"
                 data-aria-controls="conditional-legalForm-2">
               <label class="govuk-label govuk-radios__label" for="legalForm-2">
                 Partnership
-              </label>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio"
-                value="Limited liability partnership" data-aria-controls="conditional-legalForm-2">
-              <label class="govuk-label govuk-radios__label" for="legalForm-2">
-                Limited liability partnership
-              </label>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Limited company"
-                data-aria-controls="conditional-legalForm-2">
-              <label class="govuk-label govuk-radios__label" for="legalForm-2">
-                Limited company
               </label>
             </div>
 
@@ -92,7 +95,10 @@ Supplier`s information - GOV.UK
                   value="{{ data['legalFormByText'] }}" type="tel" autocomplete="tel">
               </div>
             </div>
-          </div>
+
+            {% endif %}
+
+
         </fieldset>
       </div>
 
@@ -101,7 +107,7 @@ Supplier`s information - GOV.UK
     </form>
   </div>
 
-</div>
+
 </div>
 
 {% endblock %}

@@ -179,6 +179,10 @@ router.post('/sme-question', function (req, res) {
   res.redirect('non-individual-core-data');
 })
 
+router.post('/ca-question', function (req, res) {
+  res.redirect('legal-form');
+})
+
 router.post('/legal-form', function (req, res) {
   res.redirect('formation-date');
 })

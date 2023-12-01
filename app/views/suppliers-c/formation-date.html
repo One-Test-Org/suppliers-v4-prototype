@@ -34,27 +34,15 @@ Supplier`s information - GOV.UK
     <form class="form" method="post">
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" data-required data-error="Enter the date trading began or registered under the companies act 2006"
-          aria-required="true">
+        <fieldset class="govuk-fieldset" data-required
+          data-error="Enter the date trading began or registered under the companies act 2006" aria-required="true">
 
-           
+          {% if data['ca-question'] == 'Yes' %}
+
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-heading-l">Enter the date your company was registered under the companies act 2006.</h1>
-            <div id="formationHint" class="govuk-hint">
-                If you are not registered under the act, please enter an equivalent date or the date you began trading.
-              </div>
-          </legend>
-       <!--
-
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-heading-l">Enter the date your company was registered under the companies act 2006. If you are not registered under the act, please enter an equivalent date or the date you began trading.</h1>
           </legend>
 
-          <div id="formationHint" class="govuk-hint">
-            For example, 27 3 2007
-          </div>
-
-          -->
           <div class="govuk-date-input" id="formation">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
@@ -83,6 +71,44 @@ Supplier`s information - GOV.UK
                   name="formationYear" type="text" inputmode="numeric" value="{{ data['formationYear']}}">
               </div>
             </div>
+
+            {% else %}
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-l"> Enter an equivalent date of registration to the Companies Act of 2006 or the
+                date you began trading.</h1>
+            </legend>
+
+            <div class="govuk-date-input" id="formation">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="formationDay">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="formationDay"
+                    name="formationDay" type="text" inputmode="numeric" value="{{ data['formationDay'] }}">>
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="formationMonth">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="formationMonth"
+                    name="formationMonth" type="text" inputmode="numeric" value="{{ data['formationMonth']}}">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="formationYear">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="formationYear"
+                    name="formationYear" type="text" inputmode="numeric" value="{{ data['formationYear']}}">
+                </div>
+              </div>
+
+              {% endif %}
 
         </fieldset>
       </div>

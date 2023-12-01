@@ -751,7 +751,7 @@ Supplier`s information - GOV.UK
             </dt>
             <dt class="govuk-summary-list__value">
               {% if data['lawRegistered'] | length != "0" %}
-              {{ data['lawRegistered'] }}
+              {{ data['lawRegistered'] }} <br>
               {{ data['formationDay'] }} / {{ data['formationMonth'] }} / {{ data['formationYear'] }}
               {% else %}
               {{ data['formationDay'] }} / {{ data['formationMonth'] }} / {{ data['formationYear'] }}

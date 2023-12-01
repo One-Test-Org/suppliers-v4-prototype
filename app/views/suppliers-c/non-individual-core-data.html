@@ -750,7 +750,12 @@ Supplier`s information - GOV.UK
               {% endif %}
             </dt>
             <dt class="govuk-summary-list__value">
+              {% if data['lawRegistered'] | length != "0" %}
+              {{ data['lawRegistered'] }}
               {{ data['formationDay'] }} / {{ data['formationMonth'] }} / {{ data['formationYear'] }}
+              {% else %}
+              {{ data['formationDay'] }} / {{ data['formationMonth'] }} / {{ data['formationYear'] }}
+              {% endif %}
             </dt>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="ca-question">

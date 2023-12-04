@@ -75,8 +75,6 @@ Supplier`s information - GOV.UK
         {{ data['selectData'] }} </br>
       </dd>
       {% endif %}
-      <dd class="govuk-summary-list__value">
-      </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="address-type">
           Change<span class="govuk-visually-hidden"> Change</span>
@@ -96,8 +94,6 @@ Supplier`s information - GOV.UK
           {{ data['postal-address-line-1'] }} </br>
           {{ data['postal-address-town'] }} </br>
           {{ data['postal-address-postcode'] }} </br>
-        </dd>
-        <dd class="govuk-summary-list__value">
         </dd>
         {% else %}
         <dd class="govuk-summary-list__value">
@@ -126,8 +122,6 @@ Supplier`s information - GOV.UK
           <dd class="govuk-summary-list__value">
             {{ data['address'] }}
           </dd>
-          <dd class="govuk-summary-list__value">
-          </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="address-type">
               Change<span class="govuk-visually-hidden"> Change</span>
@@ -143,8 +137,6 @@ Supplier`s information - GOV.UK
             <dt class="govuk-summary-list__key">
               Contact postal address:
             </dt>
-            <dd class="govuk-summary-list__value">
-            </dd>
             <dd class="govuk-summary-list__value">
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -165,9 +157,6 @@ Supplier`s information - GOV.UK
             <dt class="govuk-summary-list__value">
               {{ data['vatReg'] }}
             </dt>
-            <dt class="govuk-summary-list__value">
-
-            </dt>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="vat-question">
                 Change<span class="govuk-visually-hidden"> Change</span>
@@ -182,9 +171,7 @@ Supplier`s information - GOV.UK
               VAT Number:
             </dt>
             <dt class="govuk-summary-list__value">
-              {{ data['vatReg'] }}
-            </dt>
-            <dt class="govuk-summary-list__value">
+              {{ data['vatReg'] }}<br>
               {{ data['vatNumber'] }}
             </dt>
             <dd class="govuk-summary-list__actions">
@@ -199,9 +186,6 @@ Supplier`s information - GOV.UK
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               VAT Number:
-            </dt>
-            <dt class="govuk-summary-list__value">
-
             </dt>
             <dt class="govuk-summary-list__value">
 
@@ -224,8 +208,6 @@ Supplier`s information - GOV.UK
             <dt class="govuk-summary-list__value">
               {{ data['webQuestion'] }}
             </dt>
-            <dt class="govuk-summary-list__value">
-            </dt>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="web-question">
                 Change<span class="govuk-visually-hidden"> Change</span>
@@ -241,9 +223,7 @@ Supplier`s information - GOV.UK
               Website address:
             </dt>
             <dt class="govuk-summary-list__value">
-              {{ data['webQuestion'] }}
-            </dt>
-            <dt class="govuk-summary-list__value">
+              {{ data['webQuestion'] }}<br>
               <a class="govuk-link" href="https://{{ data['webAddress'] }}">
                 {{ data['webAddress'] }}
               </a>
@@ -260,9 +240,6 @@ Supplier`s information - GOV.UK
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Website address:
-            </dt>
-            <dt class="govuk-summary-list__value">
-
             </dt>
             <dt class="govuk-summary-list__value">
 
@@ -285,9 +262,6 @@ Supplier`s information - GOV.UK
               Email address:
             </dt>
             <dt class="govuk-summary-list__value">
-
-            </dt>
-            <dt class="govuk-summary-list__value">
               {{ data['emailAddress'] }}
             </dt>
             <dd class="govuk-summary-list__actions">
@@ -302,9 +276,6 @@ Supplier`s information - GOV.UK
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Email address:
-            </dt>
-            <dt class="govuk-summary-list__value">
-
             </dt>
             <dt class="govuk-summary-list__value">
 
@@ -327,9 +298,6 @@ Supplier`s information - GOV.UK
               Qualifications:
             </dt>
             <dt class="govuk-summary-list__value">
-              You have added
-            </dt>
-            <dt class="govuk-summary-list__value">
               {{ data['qualificationCount'] }} qualification
             </dt>
             <dd class="govuk-summary-list__actions">
@@ -344,9 +312,6 @@ Supplier`s information - GOV.UK
           <div class="govuk-summary-list__row ros-add-to-a-list">
             <dt class="govuk-summary-list__key">
               Qualifications:
-            </dt>
-            <dt class="govuk-summary-list__value">
-              You have added
             </dt>
             <dt class="govuk-summary-list__value">
               {{ data['qualificationCount'] }} qualifications
@@ -367,9 +332,6 @@ Supplier`s information - GOV.UK
             <dt class="govuk-summary-list__value">
               None
             </dt>
-            <dt class="govuk-summary-list__value">
-
-            </dt>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="qualification-question">
                 Change<span class="govuk-visually-hidden">Change</span>
@@ -382,8 +344,6 @@ Supplier`s information - GOV.UK
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Qualifications:
-            </dt>
-            <dt class="govuk-summary-list__value">
             </dt>
             <dt class="govuk-summary-list__value">
 
@@ -406,9 +366,6 @@ Supplier`s information - GOV.UK
               Trade assurances:
             </dt>
             <dt class="govuk-summary-list__value">
-              You have added
-            </dt>
-            <dt class="govuk-summary-list__value">
               {{ data['tradeCount'] }} trade assurance
             </dt>
             <dd class="govuk-summary-list__actions">
@@ -423,9 +380,6 @@ Supplier`s information - GOV.UK
           <div class="govuk-summary-list__row ros-add-to-a-list">
             <dt class="govuk-summary-list__key">
               Trade assurances:
-            </dt>
-            <dt class="govuk-summary-list__value">
-              You have added
             </dt>
             <dt class="govuk-summary-list__value">
               {{ data['tradeCount'] }} trade assurances
@@ -446,9 +400,6 @@ Supplier`s information - GOV.UK
             <dt class="govuk-summary-list__value">
               None
             </dt>
-            <dt class="govuk-summary-list__value">
-
-            </dt>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="trade-question">
                 View<span class="govuk-visually-hidden">View</span>
@@ -461,8 +412,6 @@ Supplier`s information - GOV.UK
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Trade assurances:
-            </dt>
-            <dt class="govuk-summary-list__value">
             </dt>
             <dt class="govuk-summary-list__value">
 

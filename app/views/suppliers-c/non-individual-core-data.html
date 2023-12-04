@@ -664,9 +664,9 @@ Supplier`s information - GOV.UK
               Legal form:
             </dt>
             <dt class="govuk-summary-list__value">
-              {{ data['legalForm'] }}
-              {% if data['legalFormByText'] | length != '0' %}
-              {{ data['legalFormByText'] }}
+              {{ data['legalForm'] }} <br>
+              {% if data['legalFormByText'] | length != '0' %} <br>
+              {{ data['legalFormByText'] }} <br>
               {% endif %}
               {% if data['lawRegistered'] | length != "0" %}
               {{ data['lawRegistered'] }} <br>

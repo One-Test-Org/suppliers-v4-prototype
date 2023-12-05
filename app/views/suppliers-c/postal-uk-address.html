@@ -35,13 +35,13 @@ Supplier`s information - GOV.UK
 
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                {% if data['postcode'] | length == "0" %}
+                {% if data['addressSecond'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter the supplier’s Contact Address manually
+                    Enter the supplier’s contact postal address manually
                 </h1>
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
-                    Address not found, enter the supplier’s Contact Address
+                    Address not found, enter the supplier’s contact postal address manually
                 </h1>
                 {% endif %}
             </legend>

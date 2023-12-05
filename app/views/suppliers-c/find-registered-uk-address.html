@@ -33,7 +33,7 @@ Supplier`s information - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-        <fieldset class="govuk-fieldset" data-required data-error="Select an address" aria-required="true">
+        <fieldset class="govuk-fieldset" data-required data-error="Enter a valid UK postcode" aria-required="true">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
                     Enter a UK postcode
@@ -43,14 +43,17 @@ Supplier`s information - GOV.UK
             <form class="form" method="post" action="/suppliers-c/find-registered-uk-address">
 
                 <div class="govuk-form-group">
-                    <label class="govuk-label" for="postcode">
-                        Post code
-                    </label>
+
                     <div id="postcodeHint" class="govuk-hint">
                         For example, WA4 1AB
                     </div>
                     <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text"
                         autocomplete="postcode">
+
+                    <p class="govuk-body govuk-!-margin-top-3">
+                        Or, add address<a href="registered-uk-address" class="govuk-link"> manually</a>.
+                    </p>
+
                 </div>
 
                 <div class="govuk-form-group">

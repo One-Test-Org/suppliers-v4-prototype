@@ -617,7 +617,84 @@ Supplier`s information - GOV.UK
 
           <!-- SME section -->
 
-          {% if data ['orgType'] | length != "0" or data ['orgType-2'] | length != "0" or data ['orgType-3'] | length !=
+          {% if data ['orgType'] | length != "0" and data ['orgType-2'] | length == "0" and data ['orgType-3'] |
+          length ==
+          "0"
+          and data ['orgType-4'] | length == "0"%}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Organisation type:
+            </dt>
+            <dt class="govuk-summary-list__value">
+              {{ data['orgType'] }}
+            </dt>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="sme-question">
+                Change<span class="govuk-visually-hidden"> Change</span>
+              </a>
+            </dd>
+          </div>
+
+          {% elif data ['orgType'] | length == "0" and data ['orgType-2'] | length != "0" and data ['orgType-3'] |
+          length ==
+          "0"
+          and data ['orgType-4'] | length == "0"%}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Organisation type:
+            </dt>
+            <dt class="govuk-summary-list__value">
+              {{ data['orgType-2'] }}
+            </dt>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="sme-question">
+                Change<span class="govuk-visually-hidden"> Change</span>
+              </a>
+            </dd>
+          </div>
+
+          {% elif data ['orgType'] | length == "0" and data ['orgType-2'] | length == "0" and data ['orgType-3'] |
+          length !=
+          "0"
+          and data ['orgType-4'] | length == "0"%}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Organisation type:
+            </dt>
+            <dt class="govuk-summary-list__value">
+              {{ data['orgType-3'] }}
+            </dt>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="sme-question">
+                Change<span class="govuk-visually-hidden"> Change</span>
+              </a>
+            </dd>
+          </div>
+
+          {% elif data ['orgType'] | length == "0" and data ['orgType-2'] | length == "0" and data ['orgType-3'] |
+          length ==
+          "0"
+          and data ['orgType-4'] | length != "0"%}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Organisation type:
+            </dt>
+            <dt class="govuk-summary-list__value">
+              {{ data['orgType-4'] }}
+            </dt>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="sme-question">
+                Change<span class="govuk-visually-hidden"> Change</span>
+              </a>
+            </dd>
+          </div>
+
+          {% elif data ['orgType'] | length != "0" or data ['orgType-2'] | length != "0" or data ['orgType-3'] | length
+          !=
           "0"
           or data ['orgType-4'] | length != "0"%}
 
@@ -637,8 +714,6 @@ Supplier`s information - GOV.UK
               </a>
             </dd>
           </div>
-
-
 
           {% else %}
 

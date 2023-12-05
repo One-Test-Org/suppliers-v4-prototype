@@ -33,11 +33,19 @@ Supplier`s information - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
+
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Address not found, enter the supplier’s Registered or Principle Address manually
+                    Enter the supplier’s Registered or Principle address
                 </h1>
+                {% else %}
+                <h1 class="govuk-fieldset__heading">
+                    Address not found, enter the supplier’s Registered or Principle address manually
+                </h1>
+                {% endif %}
             </legend>
 
             <form class="form" method="post">

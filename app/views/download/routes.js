@@ -115,7 +115,7 @@ router.post('/find-person-uk-address', function (req, res) {
                 })
                 .catch(error => {
                     console.log(error);
-                    res.redirect('/suppliers-c/person-uk-address')
+                    res.redirect('/download/person-uk-address')
                 });
 
         }

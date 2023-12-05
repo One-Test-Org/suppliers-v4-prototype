@@ -58,6 +58,17 @@ router.post('/event-date', function (req, res) {
     res.redirect('check-answers');
 })
 
+router.post('/address-type', function (req, res) {
+    let addressTypeDis = req.session.data.addressTypeDis;
+
+    if (addressTypeDis == 'Yes') {
+        res.redirect('find-subject-uk-address');
+    }
+    else {
+        res.redirect('subject-address');
+    }
+})
+
 // Add another pattern
 
 router.get('/:index/remove-exclusion', function (req, res) {

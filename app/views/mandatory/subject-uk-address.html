@@ -42,6 +42,20 @@ Supplier`s information - GOV.UK
         </span>
 
         <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                {% if data['postcode'] | length == "0" %}
+                <h1 class="govuk-fieldset__heading">
+                    Enter the supplier’s Contact Address manually
+                </h1>
+                {% else %}
+                <h1 class="govuk-fieldset__heading">
+                    Address not found, enter the supplier’s Contact Address
+                </h1>
+                {% endif %}
+            </legend>
+
+            <!--
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
                 {% if data['eventSub'] == "Supplier" and data['startQuestion'] == "Company" %}
@@ -59,7 +73,7 @@ Supplier`s information - GOV.UK
                 {% endif %}
 
             </legend>
-
+            -->
             <form class="form" method="post">
                 <div class="govuk-form-group">
 

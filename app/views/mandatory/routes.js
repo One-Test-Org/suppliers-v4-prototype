@@ -57,6 +57,16 @@ router.post('/event-date', function (req, res) {
     res.redirect('check-answers');
 })
 
+router.post('/address-type', function (req, res) {
+    let addressType = req.session.data.addressType;
+
+    if (addressType == 'Yes') {
+        res.redirect('find-subject-uk-address');
+    }
+    else {
+        res.redirect('subject-address');
+    }
+})
 
 // Add another pattern
 

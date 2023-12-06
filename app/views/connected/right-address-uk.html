@@ -39,13 +39,19 @@ Supplier`s information - GOV.UK
         <span class="govuk-caption-l">Right to exercise control</span>
 
         <fieldset class="govuk-fieldset">
+
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    What is {{ data['connectedPerson'] }}`s address?
+                    Enter {{ data['connectedPerson'] }}’s address manually
                 </h1>
+                {% else %}
+                <h1 class="govuk-fieldset__heading">
+                    Address not found, enter {{ data['connectedPerson'] }}’s address manually
+                </h1>
+                {% endif %}
             </legend>
-
-
 
             <form class="form" method="post">
                 <div class="govuk-form-group">

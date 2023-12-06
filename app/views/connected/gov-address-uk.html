@@ -40,11 +40,17 @@ Supplier`s information - GOV.UK
 
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                    Adress not found, enter {{ data['connectedPerson'] }}'s address manually
-                </h1>
-            </legend>
 
+                {% if data['postcode'] | length == "0" %}
+                <h1 class="govuk-fieldset__heading">
+                    Enter {{ data['connectedPerson'] }}’s address manually
+                </h1>
+                {% else %}
+                <h1 class="govuk-fieldset__heading">
+                    Address not found, enter {{ data['connectedPerson'] }}’s address manually
+                </h1>
+                {% endif %}
+            </legend>
 
             <form class="form" method="post">
                 <div class="govuk-form-group">

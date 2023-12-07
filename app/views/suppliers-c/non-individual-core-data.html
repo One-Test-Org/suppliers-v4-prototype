@@ -101,7 +101,6 @@ Supplier`s information - GOV.UK
           {{ data['postal-address-town'] }} </br>
           {{ data['postal-address-county'] }} </br>
           {{ data['postal-address-postcode'] }} </br>
-        <dd class="govuk-summary-list__value">
         </dd>
         {% endif %}
         <dd class="govuk-summary-list__actions">
@@ -214,7 +213,8 @@ Supplier`s information - GOV.UK
               {{ data['registered-address-county'] }} </br>
               {{ data['registered-address-postcode'] }} </br>
               {{ data['selectData'] }} </br>
-              {% endif %}
+            </dd>
+            {% endif %}
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="is-the-address-same">
                 Change<span class="govuk-visually-hidden"> Change</span>

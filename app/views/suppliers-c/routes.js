@@ -191,7 +191,7 @@ router.post('/legal-form', function (req, res) {
     res.redirect('law-registered');
   }
   else {
-    res.redirect('formation-date');
+    res.redirect('law-registered');
   }
 })
 

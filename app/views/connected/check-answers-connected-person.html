@@ -920,9 +920,6 @@ Supplier`s information - GOV.UK
                     PSC details:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Organisation's name: </br>
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['connectedPerson'] }} </br>
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -939,8 +936,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-                  </dd>
                   {% if data['connectedPersonsUkPscNi-address-line-2'] | length != "0" and
                   data['connectedPersonsUkPscNi-address-county'] | length != "0" %}
                   <dd class="govuk-summary-list__value">
@@ -974,8 +969,6 @@ Supplier`s information - GOV.UK
                     Service address:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['address'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -992,8 +985,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-                  </dd>
                   {% if data['connectedPersonsPscNi-address-line-2'] | length != "0" and
                   data['connectedPersonsPscNi-address-county'] | length != "0" %}
                   <dd class="govuk-summary-list__value">
@@ -1027,9 +1018,6 @@ Supplier`s information - GOV.UK
                     Legal form:
                   </dt>
                   <dd class="govuk-summary-list__value">
-
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['pscLegalForm'] }} </br>
                     {{ data['pscLaw'] }}
                   </dd>
@@ -1046,9 +1034,6 @@ Supplier`s information - GOV.UK
                     Nature of Control:
                   </dt>
                   <dd class="govuk-summary-list__value">
-
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['controlNaturePscNi'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -1063,9 +1048,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Registered date:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-
-                  </dd>
                   <dd class="govuk-summary-list__value">
                     {{ data['dateRegisteredPscNiDay'] }} / {{ data['dateRegisteredPscNiMonth'] }} / {{
                     data['dateRegisteredPscNiYear'] }}
@@ -1082,9 +1064,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Register Name:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-
-                  </dd>
                   <dd class="govuk-summary-list__value">
                     {{ data['nameRegisterPscNi'] }}
                   </dd>
@@ -1112,9 +1091,6 @@ Supplier`s information - GOV.UK
                     Authority Name:
                   </dt>
                   <dd class="govuk-summary-list__value">
-
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['connectedPerson'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -1131,8 +1107,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-                  </dd>
                   {% if data['govPublicService-address-line-2'] | length != "0" and
                   data['govPublicService-address-county'] | length != "0" %}
                   <dd class="govuk-summary-list__value">
@@ -1166,8 +1140,6 @@ Supplier`s information - GOV.UK
                     Service address:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['address'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -1183,8 +1155,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-                  </dd>
                   {% if data['govPublicUk-address-line-2'] | length != "0" and data['govPublicUk-address-county'] |
                   length != "0" %}
                   <dd class="govuk-summary-list__value">
@@ -1219,9 +1189,6 @@ Supplier`s information - GOV.UK
                     Legal form:
                   </dt>
                   <dd class="govuk-summary-list__value">
-
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['govPublicLegalForm'] }} </br>
                     {{ data['govPublicLaw'] }}
                   </dd>
@@ -1238,9 +1205,6 @@ Supplier`s information - GOV.UK
                     Nature of Control:
                   </dt>
                   <dd class="govuk-summary-list__value">
-
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['controlNatureGov'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -1255,9 +1219,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Registered date:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-
-                  </dd>
                   <dd class="govuk-summary-list__value">
                     {{ data['connectedOrganisationDay'] }} / {{ data['connectedOrganisationMonth'] }} /
                     {{ data['connectedOrganisationYear'] }}
@@ -1284,13 +1245,9 @@ Supplier`s information - GOV.UK
                     PSC details:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Name: </br>
-                    Date of birth: </br>
-                    Nationality: </br>
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['connectedPerson'] }} </br>
-                    {{ data['individualDay'] }} / {{ data['individualMonth'] }} / {{ data['individualYear'] }} </br>
+                    DoB: {{ data['individualDay'] }} / {{ data['individualMonth'] }} / {{ data['individualYear'] }}
+                    </br>
                     {{ data['selectNationality'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -1307,8 +1264,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-                  </dd>
                   {% if data['connectedPersonsUk-address-line-2'] | length != "0" and
                   data['connectedPersonsUk-address-county'] | length != "0" %}
                   <dd class="govuk-summary-list__value">
@@ -1342,8 +1297,6 @@ Supplier`s information - GOV.UK
                     Service address:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['address'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -1359,8 +1312,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-                  </dd>
                   {% if data['connectedPersons-address-line-2'] | length != "0" and
                   data['connectedPersons-address-county'] | length != "0" %}
                   <dd class="govuk-summary-list__value">
@@ -1394,9 +1345,6 @@ Supplier`s information - GOV.UK
                     Nature of Control:
                   </dt>
                   <dd class="govuk-summary-list__value">
-
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['controlNaturePsc'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -1411,9 +1359,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Registered date:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-
-                  </dd>
                   <dd class="govuk-summary-list__value">
                     {{ data['dateRegisteredDay'] }} / {{ data['dateRegisteredMonth'] }} / {{ data['dateRegisteredYear']
                     }}
@@ -1430,9 +1375,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Register Name:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-
-                  </dd>
                   <dd class="govuk-summary-list__value">
                     {{ data['nameRegister'] }}
                   </dd>
@@ -1459,13 +1401,8 @@ Supplier`s information - GOV.UK
                     Director details:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Name: </br>
-                    Date of birth: </br>
-                    Nationality: </br>
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['connectedPerson'] }} </br>
-                    {{ data['directorDay'] }} / {{ data['directorMonth'] }} / {{ data['directorYear'] }} </br>
+                    DoB: {{ data['directorDay'] }} / {{ data['directorMonth'] }} / {{ data['directorYear'] }} </br>
                     {{ data['selectNationality'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -1482,8 +1419,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-                  </dd>
                   {% if data['directorAddressUk-address-line-2'] | length != "0" and
                   data['directorAddressUk-address-county'] | length != "0" %}
                   <dd class="govuk-summary-list__value">
@@ -1517,8 +1452,6 @@ Supplier`s information - GOV.UK
                     Service address:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                  </dd>
-                  <dd class="govuk-summary-list__value">
                     {{ data['address'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
@@ -1534,8 +1467,6 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
-                  <dd class="govuk-summary-list__value">
-                  </dd>
                   {% if data['directorAddress-address-line-2'] | length != "0" and
                   data['directorAddress-address-county'] | length != "0" %}
                   <dd class="govuk-summary-list__value">
@@ -1577,9 +1508,6 @@ Supplier`s information - GOV.UK
                       Director details:
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      Organisation name:
-                    </dd>
-                    <dd class="govuk-summary-list__value">
                       {{ data['connectedPerson'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
@@ -1596,8 +1524,6 @@ Supplier`s information - GOV.UK
                     <dt class="govuk-summary-list__key">
                       Service address:
                     </dt>
-                    <dd class="govuk-summary-list__value">
-                    </dd>
                     {% if data['directorAddressUkNi-address-line-2'] | length != "0" and
                     data['directorAddressUkNi-address-county'] | length != "0" %}
                     <dd class="govuk-summary-list__value">
@@ -1631,8 +1557,6 @@ Supplier`s information - GOV.UK
                       Subject address:
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    </dd>
-                    <dd class="govuk-summary-list__value">
                       {{ data['address'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
@@ -1648,8 +1572,6 @@ Supplier`s information - GOV.UK
                     <dt class="govuk-summary-list__key">
                       Service address:
                     </dt>
-                    <dd class="govuk-summary-list__value">
-                    </dd>
                     {% if data['directorAddressNi-address-line-2'] | length != "0" and
                     data['directorAddressNi-address-county'] | length != "0" %}
                     <dd class="govuk-summary-list__value">
@@ -1684,9 +1606,6 @@ Supplier`s information - GOV.UK
                       What is the organisations`s Legal formation:
                     </dt>
                     <dd class="govuk-summary-list__value">
-
-                    </dd>
-                    <dd class="govuk-summary-list__value">
                       {{ data['dirLegalForm'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
@@ -1702,9 +1621,6 @@ Supplier`s information - GOV.UK
                       Which Law it is covered by:
                     </dt>
                     <dd class="govuk-summary-list__value">
-
-                    </dd>
-                    <dd class="govuk-summary-list__value">
                       {{ data['dirLaw'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
@@ -1719,9 +1635,6 @@ Supplier`s information - GOV.UK
                     <dt class="govuk-summary-list__key">
                       Is the Organisation registered with Companies House:
                     </dt>
-                    <dd class="govuk-summary-list__value">
-
-                    </dd>
                     <dd class="govuk-summary-list__value">
                       {{ data['lawRegisterDirNi'] }}
                     </dd>
@@ -1739,9 +1652,6 @@ Supplier`s information - GOV.UK
                     <dt class="govuk-summary-list__key">
                       Registered number:
                     </dt>
-                    <dd class="govuk-summary-list__value">
-
-                    </dd>
                     <dd class="govuk-summary-list__value">
                       {{ data['companiesHouseNumber'] }}
                     </dd>

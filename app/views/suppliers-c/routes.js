@@ -190,8 +190,11 @@ router.post('/legal-form', function (req, res) {
   if (legalForm == "Partnership") {
     res.redirect('law-registered');
   }
-  else {
+  else if (legalForm == "Other") {
     res.redirect('law-registered');
+  }
+  else {
+    res.redirect('formation-date');
   }
 })
 

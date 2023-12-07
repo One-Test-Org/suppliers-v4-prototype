@@ -148,7 +148,7 @@ router.post('/persons', function (req, res) {
     res.redirect('/connected/right');
 
   } else {
-    res.redirect('/connected/standin/stand-in');
+    res.redirect('/connected/journey-page');
   }
 
 })

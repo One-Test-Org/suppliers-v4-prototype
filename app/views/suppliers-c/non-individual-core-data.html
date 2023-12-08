@@ -255,7 +255,7 @@ Supplier`s information - GOV.UK
             </dd>
           </div>
 
-          {% elif data['addressTypePos'] == "Yes" and data ['address'] | length == "0" %}
+          {% elif data['addressTypePos'] == "Yes" and data ['addressSecond'] | length == "0" %}
 
 
           <div class="govuk-summary-list__row">
@@ -284,7 +284,7 @@ Supplier`s information - GOV.UK
             </dd>
           </div>
 
-          {% elif data['addressTypePos'] == "Yes" and data ['address'] | length != "0" %}
+          {% elif data['addressTypePos'] == "Yes" and data ['addressSecond'] | length != "0" %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">

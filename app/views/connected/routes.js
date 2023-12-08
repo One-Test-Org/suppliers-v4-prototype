@@ -243,12 +243,7 @@ router.post('/check-answers-connected-person', function (req, res) {
 
   const connectedPerson = {
     connectedPerson: data.connectedPerson,
-    connectedPersonDay: data.connectedPersonDay,
-    connectedPersonMonth: data.connectedPersonMonth,
-    connectedPersonYear: data.connectedPersonYear,
-    individualDay: data.individualDay,
-    individualMonth: data.individualMonth,
-    individualYear: data.individualYear
+
   };
 
   if (data.editConnectedPerson) {

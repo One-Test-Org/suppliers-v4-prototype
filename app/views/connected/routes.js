@@ -242,22 +242,22 @@ router.post('/check-answers-connected-person', function (req, res) {
   const connectedPersons = data.connectedPersonArray || [];
 
   const connectedPerson = {
+    connectedPersons: data.connectedPersons,
     connectedPerson: data.connectedPerson,
-    rightNumberQuestion: data.rightNumberQuestion,
-    rightHouseNumber: data.rightHouseNumber,
-    controlNatureRight: data.controlNatureRight,
+    numberQuestion: data.numberQuestion,
+    houseNumber: data.houseNumber,
     dateRegisteredRightDay: data.dateRegisteredRightDay,
     dateRegisteredRightMonth: data.dateRegisteredRightMonth,
     dateRegisteredRightYear: data.dateRegisteredRightYear,
     rightHouseNumberEquiv: data.rightHouseNumberEquiv,
-    controlNatureRight: data.controlNatureRight,
+    controlNature: data.controlNature,
     predNumberQuestion: data.predNumberQuestion,
-    predHouseNumber: data.predHouseNumber,
+    houseNumber: data.houseNumber,
     dateRegisteredPredDay: data.dateRegisteredPredDay,
     dateRegisteredPredMonth: data.dateRegisteredPredMonth,
     dateRegisteredPredYear: data.dateRegisteredPredYear,
-    parentNumberQuestion: data.parentNumberQuestion,
-    parentHouseNumber: data.parentHouseNumber,
+    numberQuestion: data.numberQuestion,
+    houseNumber: data.houseNumber,
     pscLegalForm: data.pscLegalForm,
     pscLaw: data.pscLaw,
     controlNaturePscNi: data.controlNaturePscNi,
@@ -267,7 +267,6 @@ router.post('/check-answers-connected-person', function (req, res) {
     nameRegisterPscNi: data.nameRegisterPscNi,
     govPublicLegalForm: data.govPublicLegalForm,
     govPublicLaw: data.govPublicLaw,
-    controlNatureGov: data.controlNatureGov,
     connectedOrganisationDay: data.connectedOrganisationDay,
     connectedOrganisationMonth: data.connectedOrganisationMonth,
     connectedOrganisationYear: data.connectedOrganisationYear,
@@ -286,7 +285,6 @@ router.post('/check-answers-connected-person', function (req, res) {
     dirLegalForm: data.dirLegalForm,
     dirLaw: data.dirLaw,
     lawRegisterDirNi: data.lawRegisterDirNi,
-    companiesHouseNumber: data.companiesHouseNumber,
   };
 
   if (data.editConnectedPerson) {
@@ -462,9 +460,9 @@ router.post('/parent-address-uk', function (req, res) {
 
 router.post('/parent-company-number-question', function (req, res) {
 
-  let parentNumberQuestion = req.session.data.parentNumberQuestion;
+  let numberQuestion = req.session.data.numberQuestion;
 
-  if (parentNumberQuestion == "Yes") {
+  if (numberQuestion == "Yes") {
     res.redirect('parent-company-number');
   }
   else {
@@ -574,9 +572,9 @@ router.post('/right-address-uk', function (req, res) {
 
 router.post('/right-company-number-question', function (req, res) {
 
-  let rightNumberQuestion = req.session.data.rightNumberQuestion;
+  let numberQuestion = req.session.data.numberQuestion;
 
-  if (rightNumberQuestion == "Yes") {
+  if (numberQuestion == "Yes") {
     res.redirect('right-company-number');
   }
   else {
@@ -631,11 +629,11 @@ router.post('/find-address-dir', function (req, res) {
 
     if (regex.test(postcodeLookup) === true) {
 
-      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + "CS48P3ceaHollIQFsIMoP4oXLjvlbqp2")
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then(response => {
-          var addresses = response.data.results.map(result => result.DPA.ADDRESS);
+          var dirAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
-          const titleCaseAddresses = addresses.map(address => {
+          const titleCaseDirAddresses = dirAddresses.map(address => {
             const parts = address.split(', ');
             const formattedParts = parts.map((part, index) => {
               if (index === parts.length - 1) {
@@ -650,7 +648,7 @@ router.post('/find-address-dir', function (req, res) {
             return formattedParts.join(', ');
           });
 
-          req.session.data['addresses'] = titleCaseAddresses;
+          req.session.data['dirAddresses'] = titleCaseDirAddresses;
 
           res.redirect('select-address-dir')
         })
@@ -681,11 +679,11 @@ router.post('/find-address-dir-ni', function (req, res) {
 
     if (regex.test(postcodeLookup) === true) {
 
-      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + "CS48P3ceaHollIQFsIMoP4oXLjvlbqp2")
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then(response => {
-          var addresses = response.data.results.map(result => result.DPA.ADDRESS);
+          var dirNiAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
-          const titleCaseAddresses = addresses.map(address => {
+          const titleCaseDirNiAddresses = dirNiAddresses.map(address => {
             const parts = address.split(', ');
             const formattedParts = parts.map((part, index) => {
               if (index === parts.length - 1) {
@@ -700,7 +698,7 @@ router.post('/find-address-dir-ni', function (req, res) {
             return formattedParts.join(', ');
           });
 
-          req.session.data['addresses'] = titleCaseAddresses;
+          req.session.data['dirNiAddresses'] = titleCaseDirNiAddresses;
 
           res.redirect('select-address-dir-ni')
         })
@@ -731,11 +729,11 @@ router.post('/find-address-parent', function (req, res) {
 
     if (regex.test(postcodeLookup) === true) {
 
-      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + "CS48P3ceaHollIQFsIMoP4oXLjvlbqp2")
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then(response => {
-          var addresses = response.data.results.map(result => result.DPA.ADDRESS);
+          var parentAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
-          const titleCaseAddresses = addresses.map(address => {
+          const titleCaseParentAddresses = parentAddresses.map(address => {
             const parts = address.split(', ');
             const formattedParts = parts.map((part, index) => {
               if (index === parts.length - 1) {
@@ -750,7 +748,7 @@ router.post('/find-address-parent', function (req, res) {
             return formattedParts.join(', ');
           });
 
-          req.session.data['addresses'] = titleCaseAddresses;
+          req.session.data['parentAddresses'] = titleCaseParentAddresses;
 
           res.redirect('select-address-parent')
         })
@@ -781,11 +779,11 @@ router.post('/find-address-psc', function (req, res) {
 
     if (regex.test(postcodeLookup) === true) {
 
-      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + "CS48P3ceaHollIQFsIMoP4oXLjvlbqp2")
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then(response => {
-          var addresses = response.data.results.map(result => result.DPA.ADDRESS);
+          var pscAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
-          const titleCaseAddresses = addresses.map(address => {
+          const titleCasePscAddresses = pscAddresses.map(address => {
             const parts = address.split(', ');
             const formattedParts = parts.map((part, index) => {
               if (index === parts.length - 1) {
@@ -800,7 +798,7 @@ router.post('/find-address-psc', function (req, res) {
             return formattedParts.join(', ');
           });
 
-          req.session.data['addresses'] = titleCaseAddresses;
+          req.session.data['pscAddresses'] = titleCasePscAddresses;
 
           res.redirect('select-address-psc')
         })
@@ -831,11 +829,11 @@ router.post('/find-address-pred', function (req, res) {
 
     if (regex.test(postcodeLookup) === true) {
 
-      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + "CS48P3ceaHollIQFsIMoP4oXLjvlbqp2")
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then(response => {
-          var addresses = response.data.results.map(result => result.DPA.ADDRESS);
+          var predAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
-          const titleCaseAddresses = addresses.map(address => {
+          const titleCasePredAddresses = predAddresses.map(address => {
             const parts = address.split(', ');
             const formattedParts = parts.map((part, index) => {
               if (index === parts.length - 1) {
@@ -850,7 +848,7 @@ router.post('/find-address-pred', function (req, res) {
             return formattedParts.join(', ');
           });
 
-          req.session.data['addresses'] = titleCaseAddresses;
+          req.session.data['predAddresses'] = titleCasePredAddresses;
 
           res.redirect('select-address-pred')
         })
@@ -881,11 +879,11 @@ router.post('/find-address-gov', function (req, res) {
 
     if (regex.test(postcodeLookup) === true) {
 
-      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + "CS48P3ceaHollIQFsIMoP4oXLjvlbqp2")
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then(response => {
-          var addresses = response.data.results.map(result => result.DPA.ADDRESS);
+          var govAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
-          const titleCaseAddresses = addresses.map(address => {
+          const titleCaseGovAddresses = govAddresses.map(address => {
             const parts = address.split(', ');
             const formattedParts = parts.map((part, index) => {
               if (index === parts.length - 1) {
@@ -900,7 +898,7 @@ router.post('/find-address-gov', function (req, res) {
             return formattedParts.join(', ');
           });
 
-          req.session.data['addresses'] = titleCaseAddresses;
+          req.session.data['govAddresses'] = titleCaseGovAddresses;
 
           res.redirect('select-address-gov')
         })
@@ -931,11 +929,11 @@ router.post('/find-address-psc-ni', function (req, res) {
 
     if (regex.test(postcodeLookup) === true) {
 
-      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + "CS48P3ceaHollIQFsIMoP4oXLjvlbqp2")
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then(response => {
-          var addresses = response.data.results.map(result => result.DPA.ADDRESS);
+          var pscNiAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
-          const titleCaseAddresses = addresses.map(address => {
+          const titleCasePscNiAddresses = pscNiAddresses.map(address => {
             const parts = address.split(', ');
             const formattedParts = parts.map((part, index) => {
               if (index === parts.length - 1) {
@@ -950,7 +948,7 @@ router.post('/find-address-psc-ni', function (req, res) {
             return formattedParts.join(', ');
           });
 
-          req.session.data['addresses'] = titleCaseAddresses;
+          req.session.data['pscNiAddresses'] = titleCasePscNiAddresses;
 
           res.redirect('select-address-psc-ni')
         })
@@ -981,11 +979,11 @@ router.post('/find-address-right', function (req, res) {
 
     if (regex.test(postcodeLookup) === true) {
 
-      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + "CS48P3ceaHollIQFsIMoP4oXLjvlbqp2")
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then(response => {
-          var addresses = response.data.results.map(result => result.DPA.ADDRESS);
+          var rightAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
-          const titleCaseAddresses = addresses.map(address => {
+          const titleCaseRightAddresses = rightAddresses.map(address => {
             const parts = address.split(', ');
             const formattedParts = parts.map((part, index) => {
               if (index === parts.length - 1) {
@@ -1000,7 +998,7 @@ router.post('/find-address-right', function (req, res) {
             return formattedParts.join(', ');
           });
 
-          req.session.data['addresses'] = titleCaseAddresses;
+          req.session.data['rightAddresses'] = titleCaseRightAddresses;
 
           res.redirect('select-address-right')
         })

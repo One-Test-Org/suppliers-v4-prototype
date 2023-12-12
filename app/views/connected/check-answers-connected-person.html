@@ -35,7 +35,7 @@ Supplier`s information - GOV.UK
 
       {% if data['connectedPersons'] == "Right to exercise control" and data['personQuestion'] == "organisation" %}
 
-      <span class="govuk-caption-l">Right to exercise control</span>
+      <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
 
       <h1 class="govuk-heading-l">Check your answers</h1>
       <dl class="govuk-summary-list govuk-!-margin-bottom-3">
@@ -44,9 +44,6 @@ Supplier`s information - GOV.UK
           <dt class="govuk-summary-list__key">
             Right to exercise control details:
           </dt>
-          <dd class="govuk-summary-list__value">
-            Organisation's name: </br>
-          </dd>
           <dd class="govuk-summary-list__value">
             {{ data['connectedPerson'] }} </br>
           </dd>
@@ -64,8 +61,6 @@ Supplier`s information - GOV.UK
           <dt class="govuk-summary-list__key">
             Service address:
           </dt>
-          <dd class="govuk-summary-list__value">
-          </dd>
           {% if data['connectedPersonsRight-address-line-2'] | length != "0" and
           data['connectedPersonsRight-address-county'] | length != "0" %}
           <dd class="govuk-summary-list__value">
@@ -92,14 +87,12 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
-        {% elif data['addressTypeRight'] == "Yes" and data['address'] | length == "0" %}
+        {% elif data['addressTypeRight'] == "Yes" and data['rightAddress'] | length == "0" %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Service address:
           </dt>
-          <dd class="govuk-summary-list__value">
-          </dd>
           {% if data['connectedPersonsUkRight-address-line-2'] | length != "0" and
           data['connectedPersonsUkRight-address-county'] | length != "0" %}
           <dd class="govuk-summary-list__value">
@@ -131,9 +124,7 @@ Supplier`s information - GOV.UK
             Subject address:
           </dt>
           <dd class="govuk-summary-list__value">
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['address'] }}
+            {{ data['rightAddress'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="right-address-type">
@@ -149,10 +140,7 @@ Supplier`s information - GOV.UK
             Is the Organisation registered with Companies House:
           </dt>
           <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['rightNumberQuestion'] }}
+            {{ data['numberQuestion'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="right-company-number-question">
@@ -162,17 +150,14 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
-        {% if data['rightNumberQuestion'] == "Yes" %}
+        {% if data['numberQuestion'] == "Yes" %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Registered number:
           </dt>
           <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['rightHouseNumber'] }}
+            {{ data['houseNumber'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="right-company-number">
@@ -187,10 +172,7 @@ Supplier`s information - GOV.UK
             Nature of Control:
           </dt>
           <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['controlNatureRight'] }}
+            {{ data['controlNature'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="right-nature-of-control">
@@ -204,9 +186,6 @@ Supplier`s information - GOV.UK
           <dt class="govuk-summary-list__key">
             Registerable date:
           </dt>
-          <dd class="govuk-summary-list__value">
-
-          </dd>
           <dd class="govuk-summary-list__value">
             {{ data['dateRegisteredRightDay'] }} / {{ data['dateRegisteredRightMonth'] }} / {{
             data['dateRegisteredRightYear'] }}
@@ -226,10 +205,7 @@ Supplier`s information - GOV.UK
             Equivalent Registered number:
           </dt>
           <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['rightHouseNumberEquiv'] }}
+            {{ data['houseNumberEquiv'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="right-company-number-equiv">
@@ -244,10 +220,7 @@ Supplier`s information - GOV.UK
             Nature of Control:
           </dt>
           <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['controlNatureRight'] }}
+            {{ data['controlNature'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="right-nature-of-control">
@@ -261,9 +234,6 @@ Supplier`s information - GOV.UK
           <dt class="govuk-summary-list__key">
             Registerable date:
           </dt>
-          <dd class="govuk-summary-list__value">
-
-          </dd>
           <dd class="govuk-summary-list__value">
             {{ data['dateRegisteredRightDay'] }} / {{ data['dateRegisteredRightMonth'] }} / {{
             data['dateRegisteredRightYear'] }}
@@ -280,7 +250,7 @@ Supplier`s information - GOV.UK
 
         {% elif data['connectedPersons'] == "Right to exercise control" and data['personQuestion'] == "person" %}
 
-        <span class="govuk-caption-l">Right to exercise control</span>
+        <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
 
         <h1 class="govuk-heading-l">Check your answers</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-3">
@@ -300,7 +270,7 @@ Supplier`s information - GOV.UK
             </dd>
           </div>
 
-          {% if data['addressTypeRight'] == "Yes" and data['address'] | length == "0" %}
+          {% if data['addressTypeRight'] == "Yes" and data['rightAddress'] | length == "0" %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -330,14 +300,14 @@ Supplier`s information - GOV.UK
             </dd>
           </div>
 
-          {% elif data['addressTypeRight'] == "Yes" and data['address'] | length != "0" %}
+          {% elif data['addressTypeRight'] == "Yes" and data['rightAddress'] | length != "0" %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Subject address:
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['address'] }}
+              {{ data['rightAddress'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="right-address-type">
@@ -387,7 +357,7 @@ Supplier`s information - GOV.UK
               Is the Organisation registered with Companies House:
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['rightNumberQuestion'] }}
+              {{ data['numberQuestion'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="right-company-number-question">
@@ -397,14 +367,14 @@ Supplier`s information - GOV.UK
             </dd>
           </div>
 
-          {% if data['rightNumberQuestion'] == "Yes" %}
+          {% if data['numberQuestion'] == "Yes" %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Registered number:
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['rightHouseNumber'] }}
+              {{ data['houseNumber'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="right-company-number">
@@ -419,7 +389,7 @@ Supplier`s information - GOV.UK
               Nature of Control:
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['controlNatureRight'] }}
+              {{ data['controlNature'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="right-nature-of-control">
@@ -452,7 +422,7 @@ Supplier`s information - GOV.UK
               Equivalent Registered number:
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['rightHouseNumberEquiv'] }}
+              {{ data['houseNumberEquiv'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="right-company-number-equiv">
@@ -467,7 +437,7 @@ Supplier`s information - GOV.UK
               Nature of Control:
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['controlNatureRight'] }}
+              {{ data['controlNature'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="right-nature-of-control">
@@ -502,7 +472,7 @@ Supplier`s information - GOV.UK
               Nature of Control:
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['controlNatureRight'] }}
+              {{ data['controlNature'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="right-nature-of-control">
@@ -538,7 +508,7 @@ Supplier`s information - GOV.UK
 
           {% if data['connectedPersons'] == "Predecessor" %}
 
-          <span class="govuk-caption-l">Predecessor</span>
+          <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
 
           <h1 class="govuk-heading-l">Check your answers</h1>
           <dl class="govuk-summary-list govuk-!-margin-bottom-3">
@@ -548,27 +518,22 @@ Supplier`s information - GOV.UK
                 Predecessor details:
               </dt>
               <dd class="govuk-summary-list__value">
-                Organisation's name: </br>
-              </dd>
-              <dd class="govuk-summary-list__value">
                 {{ data['connectedPerson'] }} </br>
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="parent-sub">
+                <a class="govuk-link" href="predecessor">
                   Change<span class="govuk-visually-hidden">
                     the Predecessor details</span>
                 </a>
               </dd>
             </div>
 
-            {% if data['addressTypePred'] == "Yes" and data['address'] | length == "0" %}
+            {% if data['addressTypePred'] == "Yes" and data['predAddress'] | length == "0" %}
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Service address:
               </dt>
-              <dd class="govuk-summary-list__value">
-              </dd>
               {% if data['connectedPersonsUkPred-address-line-2'] | length != "0" and
               data['connectedPersonsUkPred-address-county'] | length != "0" %}
               <dd class="govuk-summary-list__value">
@@ -593,16 +558,14 @@ Supplier`s information - GOV.UK
               </dd>
             </div>
 
-            {% elif data['addressTypePred'] == "Yes" and data['address'] | length != "0" %}
+            {% elif data['addressTypePred'] == "Yes" and data['predAddress'] | length != "0" %}
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Service address:
               </dt>
               <dd class="govuk-summary-list__value">
-              </dd>
-              <dd class="govuk-summary-list__value">
-                {{ data['address'] }}
+                {{ data['predAddress'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="pred-address-type">
@@ -617,8 +580,6 @@ Supplier`s information - GOV.UK
               <dt class="govuk-summary-list__key">
                 Service address:
               </dt>
-              <dd class="govuk-summary-list__value">
-              </dd>
               {% if data['connectedPersonsPred-address-line-2'] | length != "0" and
               data['connectedPersonsPred-address-county'] | length != "0" %}
               <dd class="govuk-summary-list__value">
@@ -652,9 +613,6 @@ Supplier`s information - GOV.UK
                 Is the Organisation registered with Companies House:
               </dt>
               <dd class="govuk-summary-list__value">
-
-              </dd>
-              <dd class="govuk-summary-list__value">
                 {{ data['predNumberQuestion'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
@@ -672,10 +630,7 @@ Supplier`s information - GOV.UK
                 Registered number:
               </dt>
               <dd class="govuk-summary-list__value">
-
-              </dd>
-              <dd class="govuk-summary-list__value">
-                {{ data['predHouseNumber'] }}
+                {{ data['houseNumber'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="pred-company-number">
@@ -689,9 +644,6 @@ Supplier`s information - GOV.UK
               <dt class="govuk-summary-list__key">
                 Insolvency or trading end date:
               </dt>
-              <dd class="govuk-summary-list__value">
-
-              </dd>
               <dd class="govuk-summary-list__value">
                 {{ data['dateRegisteredPredDay'] }} / {{ data['dateRegisteredPredMonth'] }} / {{
                 data['dateRegisteredPredYear'] }}
@@ -712,7 +664,7 @@ Supplier`s information - GOV.UK
 
             {% if data['connectedPersons'] == "Parent / subsidiary" %}
 
-            <span class="govuk-caption-l">Parent undertaking or a subsidiary undertaking</span>
+            <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
             <h1 class="govuk-heading-l">Check your answers</h1>
             <dl class="govuk-summary-list govuk-!-margin-bottom-3">
 
@@ -720,9 +672,6 @@ Supplier`s information - GOV.UK
                 <dt class="govuk-summary-list__key">
                   PSC details:
                 </dt>
-                <dd class="govuk-summary-list__value">
-                  Organisation's name: </br>
-                </dd>
                 <dd class="govuk-summary-list__value">
                   {{ data['connectedPerson'] }} </br>
                 </dd>
@@ -734,14 +683,12 @@ Supplier`s information - GOV.UK
                 </dd>
               </div>
 
-              {% if data['addressTypeParent'] == "Yes" and data['address'] | length == "0" %}
+              {% if data['addressTypeParent'] == "Yes" and data['parentAddress'] | length == "0" %}
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Service address:
                 </dt>
-                <dd class="govuk-summary-list__value">
-                </dd>
                 {% if data['connectedPersonsUkParent-address-line-2'] | length != "0" and
                 data['connectedPersonsUkParent-address-county'] | length != "0" %}
                 <dd class="govuk-summary-list__value">
@@ -766,19 +713,17 @@ Supplier`s information - GOV.UK
                 </dd>
               </div>
 
-              {% elif data['addressTypeParent'] == "Yes" and data['address'] | length != "0" %}
+              {% elif data['addressTypeParent'] == "Yes" and data['parentAddress'] | length != "0" %}
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Service address:
                 </dt>
                 <dd class="govuk-summary-list__value">
-                </dd>
-                <dd class="govuk-summary-list__value">
-                  {{ data['address'] }}
+                  {{ data['parentAddress'] }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="director-address-type-ni">
+                  <a class="govuk-link" href="parent-address-type">
                     Change<span class="govuk-visually-hidden"> Change</span>
                   </a>
                 </dd>
@@ -790,8 +735,6 @@ Supplier`s information - GOV.UK
                 <dt class="govuk-summary-list__key">
                   Service address:
                 </dt>
-                <dd class="govuk-summary-list__value">
-                </dd>
                 {% if data['connectedPersonsParent-address-line-2'] | length != "0" and
                 data['connectedPersonsParent-address-county'] | length != "0" %}
                 <dd class="govuk-summary-list__value">
@@ -825,10 +768,7 @@ Supplier`s information - GOV.UK
                   Is the Organisation registered with Companies House:
                 </dt>
                 <dd class="govuk-summary-list__value">
-
-                </dd>
-                <dd class="govuk-summary-list__value">
-                  {{ data['parentNumberQuestion'] }}
+                  {{ data['numberQuestion'] }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="parent-company-number-question">
@@ -838,17 +778,14 @@ Supplier`s information - GOV.UK
                 </dd>
               </div>
 
-              {% if data['parentNumberQuestion'] == "Yes" %}
+              {% if data['numberQuestion'] == "Yes" %}
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Registered number:
                 </dt>
                 <dd class="govuk-summary-list__value">
-
-                </dd>
-                <dd class="govuk-summary-list__value">
-                  {{ data['parentHouseNumber'] }}
+                  {{ data['houseNumber'] }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="parent-company-number">
@@ -866,8 +803,7 @@ Supplier`s information - GOV.UK
 
               <!-- PSC (Person of significant control) not individual or Public Authority  -->
 
-              <span class="govuk-caption-l">PSC (Person of significant control) not individual or Public
-                Authority</span>
+              <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
               <dl class="govuk-summary-list govuk-!-margin-bottom-3">
 
@@ -886,7 +822,7 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
-                {% if data['addressTypePscNi'] == "Yes" and data['address'] | length == "0" %}
+                {% if data['addressTypePscNi'] == "Yes" and data['pscNiAddress'] | length == "0" %}
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
@@ -916,17 +852,17 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
-                {% elif data['addressTypePscNi'] == "Yes" and data['address'] | length != "0" %}
+                {% elif data['addressTypePscNi'] == "Yes" and data['pscNiAddress'] | length != "0" %}
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['address'] }}
+                    {{ data['pscNiAddress'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="gov-address-type">
+                    <a class="govuk-link" href="psc-address-type-ni">
                       Change<span class="govuk-visually-hidden"> Change</span>
                     </a>
                   </dd>
@@ -988,7 +924,7 @@ Supplier`s information - GOV.UK
                     Nature of Control:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['controlNaturePscNi'] }}
+                    {{ data['controlNature'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="nature-of-control-psc-ni">
@@ -1036,7 +972,7 @@ Supplier`s information - GOV.UK
 
               {% if data['connectedPersons'] == "Gov/Public Authority" %}
 
-              <span class="govuk-caption-l">Gov/Public Authority</span>
+              <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
               <dl class="govuk-summary-list govuk-!-margin-bottom-3">
 
@@ -1087,14 +1023,14 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
-                {% elif data['addressTypeGov'] == "Yes" and data['address'] | length != "0" %}
+                {% elif data['addressTypeGov'] == "Yes" and data['govAddress'] | length != "0" %}
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['address'] }}
+                    {{ data['govAddress'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="gov-address-type">
@@ -1157,7 +1093,7 @@ Supplier`s information - GOV.UK
                     Nature of Control:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['controlNatureGov'] }}
+                    {{ data['controlNature'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="nature-of-control-gov">
@@ -1188,7 +1124,7 @@ Supplier`s information - GOV.UK
 
               <!-- PSC (Person of significant control) Individual  -->
 
-              <span class="govuk-caption-l">PSC (Person of significant control) Individual</span>
+              <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
               <dl class="govuk-summary-list govuk-!-margin-bottom-3">
 
@@ -1210,7 +1146,7 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
-                {% if data['addressType'] == "Yes" and data['address'] | length == "0" %}
+                {% if data['addressType'] == "Yes" and data['pscAddress'] | length == "0" %}
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
@@ -1240,14 +1176,14 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
-                {% elif data['addressType'] == "Yes" and data['address'] | length != "0" %}
+                {% elif data['addressType'] == "Yes" and data['pscAddress'] | length != "0" %}
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['address'] }}
+                    {{ data['pscAddress'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="address-type">
@@ -1295,7 +1231,7 @@ Supplier`s information - GOV.UK
                     Nature of Control:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['controlNaturePsc'] }}
+                    {{ data['controlNature'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="nature-of-control-psc">
@@ -1342,7 +1278,7 @@ Supplier`s information - GOV.UK
 
               <!-- Director or Shadow Director, Individual  -->
 
-              <span class="govuk-caption-l">Director or Shadow Director, Individual</span>
+              <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
               <dl class="govuk-summary-list govuk-!-margin-bottom-3">
 
@@ -1363,7 +1299,7 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
-                {% if data['addressTypeDir'] == "Yes" and data['address'] | length == "0" %}
+                {% if data['addressTypeDir'] == "Yes" and data['dirAddress'] | length == "0" %}
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
@@ -1393,14 +1329,14 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
-                {% elif data['addressTypeDir'] == "Yes" and data['address'] | length != "0" %}
+                {% elif data['addressTypeDir'] == "Yes" and data['dirAddress'] | length != "0" %}
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Service address:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['address'] }}
+                    {{ data['dirAddress'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="address-type">
@@ -1447,7 +1383,7 @@ Supplier`s information - GOV.UK
 
                 <!-- Director or Shadow Director, Not Individual  -->
 
-                <span class="govuk-caption-l">Director or Shadow Director, Not Individual</span>
+                <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
                 <h1 class="govuk-heading-l">Check your answers</h1>
                 <dl class="govuk-summary-list govuk-!-margin-bottom-3">
 
@@ -1466,7 +1402,7 @@ Supplier`s information - GOV.UK
                     </dd>
                   </div>
 
-                  {% if data['addressTypeDirNi'] == "Yes" and data['address'] | length == "0" %}
+                  {% if data['addressTypeDirNi'] == "Yes" and data['dirNiAddress'] | length == "0" %}
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
@@ -1496,14 +1432,14 @@ Supplier`s information - GOV.UK
                     </dd>
                   </div>
 
-                  {% elif data['addressTypeDirNi'] == "Yes" and data['address'] | length != "0" %}
+                  {% elif data['addressTypeDirNi'] == "Yes" and data['dirNiAddress'] | length != "0" %}
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Subject address:
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{ data['address'] }}
+                      {{ data['dirNiAddress'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                       <a class="govuk-link" href="director-address-type-ni">
@@ -1599,7 +1535,7 @@ Supplier`s information - GOV.UK
                       Registered number:
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{ data['companiesHouseNumber'] }}
+                      {{ data['houseNumber'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                       <a class="govuk-link" href="dir-company-number">

@@ -1,0 +1,281 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-l" style="color: #1d70b8;">
+        Mandatory exclusion grounds
+    </h1>
+
+    <span class="govuk-caption-l govuk-!-margin-bottom-4">
+
+    </span>
+
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" data-required data-error="Select one option" aria-required="true">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h2 class="govuk-fieldset__heading">
+                                {{ data['exclusionMan'] }}
+                            </h2>
+                        </legend>
+
+                        <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                            In respect of paragraph 4 to 18 of Schedule 6 to the PA 2023 (Theft, Fraud. bribery,
+                            etc), has the supplier or a connected person been convicted of an offence:
+                        </div>
+
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div class="govuk-radios__item govuk-!-margin-top-6">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="At common law in Scotland of theft, fraud, extortion, robbery, theft by
+                                    housebreaking, housebreaking with intent to steal, uttering, embezzlement, or reset.">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    At common law in Scotland of theft, fraud, extortion, robbery, theft by
+                                    housebreaking, housebreaking with intent to steal, uttering, embezzlement, or reset.
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="At common law of conspiracy to defraud.">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    At common law of conspiracy to defraud.
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" data-required data-error="Select one option" aria-required="true">
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div id="mandatory-hint" class="govuk-hint">
+                                Under any of the following sections of the Theft Act 1968:
+                            </div>
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="(a) sections 1 to 13 (theft, robbery, burglary, etc);">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (a) sections 1 to 13 (theft, robbery, burglary, etc);
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="(b) sections 17 to 21 (fraud and blackmail);">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (b) sections 17 to 21 (fraud and blackmail);
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="(c) sections 22 and 23 (offences relating to stolen goods);e">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (c) sections 22 and 23 (offences relating to stolen goods);
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="(d) section 24A (dishonestly retaining a wrongful credit);s">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (d) section 24A (dishonestly retaining a wrongful credit);
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="(e) section 25 (going equipped for stealing etc).">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (e) section 25 (going equipped for stealing etc).
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" data-required data-error="Select one option" aria-required="true">
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div id="mandatory-hint" class="govuk-hint">Under any of the following sections of the <a
+                                    href="https://www.legislation.gov.uk/apni/1969/16/contents" target="_blank">Theft
+                                    Act (Northern Ireland) 1969 (c. 16 (N.I.))</a>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Ancillary offences">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    <strong>Ancillary offences</strong>
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Offences committed outside the United Kingdom">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    <strong>Offences committed outside the United Kingdom</strong>
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Penalties for transactions connected with VAT fraud and evasion or tax or duty">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    <strong>Penalties for transactions connected with VAT fraud and evasion or tax or
+                                        duty</strong>
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    <strong>Penalties payable for errors in tax documentation and failure to notify and
+                                        certain VAT and
+                                        excise wrongdoing</strong>
+                                </label>
+                            </div>
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Adjustments for tax arrangements that are abusive">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    <strong>Adjustments for tax arrangements that are abusive</strong>
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Finding by HMRC, in exercise of its powers in respect of VAT, of abusive  practice">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    <strong>Finding by HMRC, in exercise of its powers in respect of VAT, of abusive
+                                        practice</strong>
+                                </label>
+                            </div>
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Defeat in respect of notifiable tax arrangements">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    <strong>Defeat in respect of notifiable tax arrangements</strong>
+                                </label>
+                            </div>
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Competition law infringements">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    <strong>Competition law infringements</strong>
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Equivalents outside the United Kingdom">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    <strong>Equivalents outside the United Kingdom</strong>
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Failure to cooperate with investigation">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft13">
+                                    <strong>Failure to cooperate with investigation</strong>
+                                </label>
+                            </div>
+
+
+
+
+
+                    </fieldset>
+
+                    <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+                        Save and continue
+                    </button>
+
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

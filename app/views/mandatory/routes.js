@@ -13,16 +13,16 @@ router.post('/exclusion-grounds', function (req, res) {
     let exclusionMan = req.session.data.exclusionMan;
     let startQuestion = req.session.data.startQuestion;
 
-    if (exclusionMan == 'None of the above' && startQuestion == 'Company') {
-        res.redirect('/suppliers-c/account-home');
-
+    if (exclusionMan == 'Theft, fraud, bribery etc') {
+        res.redirect('theft-fraud-bribery');
     } else if (exclusionMan == '' && startQuestion == 'Individual') {
         res.redirect('/suppliers-d/account-home');
     } else {
         res.redirect('event-subject');
     }
 
-})
+});
+
 
 router.post('/event-subject', function (req, res) {
 

@@ -23,6 +23,9 @@ router.post('/exclusion-grounds', function (req, res) {
 
 });
 
+router.post('/theft-fraud-bribery', function (req, res) {
+    res.redirect('event-subject');
+});
 
 router.post('/event-subject', function (req, res) {
 

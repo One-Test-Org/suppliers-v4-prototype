@@ -24,7 +24,7 @@ Supplier`s information - GOV.UK
 
 {% block content %}
 
-<div class="govuk-grid-column-ful-width">
+<div class="govuk-grid-column-full-width">
 
   <h1 class="govuk-heading-l" style="color: #1d70b8;">
     Mandatory exclusion grounds
@@ -33,6 +33,8 @@ Supplier`s information - GOV.UK
   <span class="govuk-caption-l">
     {{ data['mandatory'] }}
   </span>
+
+  <!--
 
   <section class="moj-ticket-panel__content moj-ticket-panel__content" aria-label="title section">
     <div class="govuk-warning-text">
@@ -52,23 +54,27 @@ Supplier`s information - GOV.UK
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
   </hr>
 
+  -->
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
       <form class="form" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" data-required data-error="Select one option" aria-required="true">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-                Has your organisation or any of its connected persons been involved with an event mentioned in Parts 1
-                or
-                2 of Schedule 6 in the Procurement Act 2023
+                Has the supplier or a connected person has been convicted of any of the following offences, referred to
+                in Schedule 6 of the Procurement Act 2023?
               </h2>
             </legend>
 
             <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
-              Select one option at a time, at the end of the journey you will be able to add more exclusions
+              Using the ‘offences’ and ‘events’ lists below, select one option at a time to indicate which apply. Once
+              you have selected an option you will be asked to provided further details.
             </div>
+
+            <h2 class="govuk-heading-m">Offences</h2>
 
             <div class="govuk-radios" data-module="govuk-radios">
 
@@ -341,6 +347,22 @@ Supplier`s information - GOV.UK
                   under that law, however it is described in that law.
                 </div>
               </details>
+
+
+              <!--
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Or has been the subject of any of the following events, referred to in  Schedule 6 to the Procurement Act 2023
+                </h2>
+              </legend>
+  
+              <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                Using the ‘events’ lists below, select one option at a time to indicate which apply. Once
+                you have selected an option you will be asked to provided further details.
+              </div>
+  
+              -->
+              <h2 class="govuk-heading-m">Events</h2>
 
 
               <div class="govuk-radios__item">

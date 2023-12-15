@@ -101,6 +101,23 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
+        {% elif data['exclusionOrganised'] | length != "0" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Offence further details:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['exclusionOrganised'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="tax-offences">
+              Change<span class="govuk-visually-hidden">
+                the event subject</span>
+            </a>
+          </dd>
+        </div>
+
         {% elif data['exclusionVatFraud'] | length != "0" %}
 
         <div class="govuk-summary-list__row">

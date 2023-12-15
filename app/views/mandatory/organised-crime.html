@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-l" style="color: #1d70b8;">
+        Mandatory exclusion grounds
+    </h1>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h2 class="govuk-fieldset__heading">
+                                {{ data['exclusionMan'] }}
+                            </h2>
+                        </legend>
+
+                        <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                            In respect of paragraphs 27 and 28 of Schedule 7 to the PA 2023 (organised crime), has the
+                            supplier or a connected person been convicted of an offence:
+                        </div>
+
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div class="govuk-radios__item govuk-!-margin-top-6">
+                                <input class="govuk-radios__input" id="exclusionOrganised" name="exclusionOrganised"
+                                    type="radio"
+                                    value="Under section 28 of the Criminal Justice and Licensing (Scotland) Act 2010 (agreeing to become involved in serious organised crime)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionOrganised">
+                                    Under section 28 of the Criminal Justice and Licensing (Scotland) Act 2010 (agreeing
+                                    to become involved in serious organised crime)
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionOrganised" name="exclusionOrganised"
+                                    type="radio"
+                                    value="Under section 45 of the Serious Crime Act 2015 (participating in activities of organised crime group)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionOrganised">
+                                    Under section 45 of the Serious Crime Act 2015 (participating in activities of
+                                    organised crime group)
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+
+
+                <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                    Save and continue
+                </button>
+
+
+        </div>
+
+        </form>
+
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

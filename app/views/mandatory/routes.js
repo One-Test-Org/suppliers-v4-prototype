@@ -17,6 +17,8 @@ router.post('/exclusion-grounds', function (req, res) {
         res.redirect('theft-fraud-bribery');
     } else if (exclusionMan == 'Labour market, slavery and human trafficking offences') {
         res.redirect('labour-market');
+    } else if (exclusionMan == 'Tax offences') {
+        res.redirect('tax-offences');
     } else if (exclusionMan == 'Penalties for transactions connected with VAT fraud and evasion or tax or duty') {
         res.redirect('vat-fraud');
     } else if (exclusionMan == 'Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing') {

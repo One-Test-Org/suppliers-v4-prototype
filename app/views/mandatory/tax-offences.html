@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-l" style="color: #1d70b8;">
+        Mandatory exclusion grounds
+    </h1>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h2 class="govuk-fieldset__heading">
+                                {{ data['exclusionMan'] }}
+                            </h2>
+                        </legend>
+
+                        <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                            In respect of paragraph 36 of Schedule 6 to the PA 2023 (penalties for transactions
+                            connected with VAT fraud and evasion or tax or duty), has the supplier or a connected person
+                            been the subject of Penalties for transactions connected with VAT fraud and evasion or tax
+                            or duty, i.e. has been liable to a penalty under:
+                        </div>
+
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div class="govuk-radios__item govuk-!-margin-top-6">
+                                <input class="govuk-radios__input" id="exclusionTaxOff" name="exclusionTaxOff"
+                                    type="radio"
+                                    value="(a) section 69C of the Value Added Tax Act 1994 (transactions connected with VAT fraud) except where the penalty is reduced under section 70 of that Act ">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTaxOff">
+                                    (a) section 69C of the Value Added Tax Act 1994 (transactions connected with VAT
+                                    fraud) except where the penalty is reduced under section 70 of that Act
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTaxOff" name="exclusionTaxOff"
+                                    type="radio" value="Section 25 of the Finance Act 2003 (evasion of tax or duty)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTaxOff">
+                                    Section 25 of the Finance Act 2003 (evasion of tax or duty)
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+
+                <div class="govuk-hint govuk-!-margin-top-4">
+                    Note. The supplier or connected person is not to be treated as having been liable to
+                    such a penalty unless HMRC has assessed the amount of the penalty and the time for any
+                    appeal or further appeal relating to the penalty has expired or, if later, any appeal or
+                    final appeal relating to it has been finally determined.
+                </div>
+
+
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+
+                            <div class="govuk-hint govuk-!-margin-top-4">
+                                In respect of paragraph 37 of Schedule 6 to the PA 2023 (penalties for transactions
+                                connected with VAT fraud and evasion or tax or duty), has the supplier or a connected
+                                person been the subject of Penalties payable for errors in tax documentation and failure
+                                to notify and certain VAT and excise
+                                wrongdoing, i.e. a penalty has been payable by the supplier or a connected person under:
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTaxOff" name="exclusionTaxOff"
+                                    type="radio"
+                                    value="(a) Schedule 24 to the Finance Act 2007 (errors in tax documentation)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTaxOff13">
+                                    (a) Schedule 24 to the Finance Act 2007 (errors in tax documentation)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTaxOff" name="exclusionTaxOff"
+                                    type="radio"
+                                    value="(b) Schedule 41 to the Finance Act 2008 (failure to notify and certain VAT and excise wrongdoing) ">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTaxOff13">
+                                    (b) Schedule 41 to the Finance Act 2008 (failure to notify and certain VAT and
+                                    excise wrongdoing)
+                                </label>
+                            </div>
+
+
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="govuk-hint govuk-!-margin-top-4">
+                    But only where the conduct giving rise to that penalty was deliberate.<br>
+
+                    Note. Such a penalty is not to be treated as having been payable unless<br><br>
+
+                    (a) if the penalty has been assessed, the time for any appeal or further appeal relating
+                    to the penalty has expired or, if later, any appeal or final appeal relating to it has
+                    been finally determined, or<br><br>
+
+                    (b) a contract has been made between HMRC and the supplier or connected person, under
+                    which HMRC undertook not to assess the penalty or (if it was assessed) not to take
+                    proceedings to recover it.<br>
+
+
+                </div>
+
+
+
+
+
+                <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                    Save and continue
+                </button>
+
+
+        </div>
+
+        </form>
+
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

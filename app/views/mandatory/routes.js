@@ -21,6 +21,8 @@ router.post('/exclusion-grounds', function (req, res) {
         res.redirect('tax-offences');
     } else if (exclusionMan == 'Organised crime') {
         res.redirect('organised-crime');
+    } else if (exclusionMan == 'Ancillary offences') {
+        res.redirect('ancillary-offences');
     } else if (exclusionMan == 'Penalties for transactions connected with VAT fraud and evasion or tax or duty') {
         res.redirect('vat-fraud');
     } else if (exclusionMan == 'Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing') {
@@ -46,6 +48,10 @@ router.post('/labour-market', function (req, res) {
 })
 
 router.post('/organised-crime', function (req, res) {
+    res.redirect('event-subject');
+})
+
+router.post('/ancillary-offences', function (req, res) {
     res.redirect('event-subject');
 })
 

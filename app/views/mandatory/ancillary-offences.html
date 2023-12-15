@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-l" style="color: #1d70b8;">
+        Mandatory exclusion grounds
+    </h1>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h2 class="govuk-fieldset__heading">
+                                {{ data['exclusionMan'] }}
+                            </h2>
+                        </legend>
+
+                        <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                            In respect of paragraph 33 of Schedule 6 to the PA 2023 (Ancillary), has the supplier or a
+                            connected person been convicted of an offence otherwise referred to in this Part, any of the
+                            following offences:
+                        </div>
+
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div class="govuk-radios__item govuk-!-margin-top-6">
+                                <input class="govuk-radios__input" id="exclusionAncillary" name="exclusionAncillary"
+                                    type="radio"
+                                    value="(a) aiding, abetting, counselling or procuring the commission of the offence">
+                                <label class="govuk-label govuk-radios__label" for="exclusionAncillary">
+                                    (a) aiding, abetting, counselling or procuring the commission of the offence
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionAncillary" name="exclusionAncillary"
+                                    type="radio"
+                                    value="(b) in Scotland, being art and part in the commission of the offence">
+                                <label class="govuk-label govuk-radios__label" for="exclusionAncillary">
+                                    (b) in Scotland, being art and part in the commission of the offence
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionAncillary" name="exclusionAncillary"
+                                    type="radio"
+                                    value="(c) an offence under Part 2 of the Serious Crime Act 2007 (encouraging or assisting crime) in relation to the offence;">
+                                <label class="govuk-label govuk-radios__label" for="exclusionAncillary">
+                                    (c) an offence under Part 2 of the Serious Crime Act 2007 (encouraging or assisting
+                                    crime) in relation to the offence
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionAncillary" name="exclusionAncillary"
+                                    type="radio" value="(d) inciting a person to commit the offence">
+                                <label class="govuk-label govuk-radios__label" for="exclusionAncillary13">
+                                    (d) inciting a person to commit the offence
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionAncillary" name="exclusionAncillary"
+                                    type="radio" value="(e) attempting or conspiring to commit the offence">
+                                <label class="govuk-label govuk-radios__label" for="exclusionAncillary">
+                                    (e) attempting or conspiring to commit the offence
+                                </label>
+                            </div>
+
+
+
+                    </fieldset>
+
+                    <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                        Save and continue
+                    </button>
+
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

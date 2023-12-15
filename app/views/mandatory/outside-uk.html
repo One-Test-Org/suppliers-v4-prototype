@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-l" style="color: #1d70b8;">
+        Mandatory exclusion grounds
+    </h1>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h2 class="govuk-fieldset__heading">
+                                {{ data['exclusionMan'] }}
+                            </h2>
+                        </legend>
+
+                        <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                            In respect of paragraph 42 of Schedule 6 to the PA 2023 (equivalents outside the United
+                            Kingdom), has the supplier or a connected person:
+                        </div>
+
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div class="govuk-radios__item govuk-!-margin-top-6">
+                                <input class="govuk-radios__input" id="exclusionAncillary" name="exclusionAncillary"
+                                    type="radio"
+                                    value="(a) been subject to a penalty or a decision by a regulator, court or other authority outside the United Kingdom, where the conduct giving rise to that penalty or decision is conduct that would give rise to a penalty or decision referred to in any of paragraphs 36 to 41 if committed in the United Kingdom, in circumstances where the penalty or decision would be a mandatory exclusion ground">
+                                <label class="govuk-label govuk-radios__label" for="exclusionAncillary">
+                                    (a) been subject to a penalty or a decision by a regulator, court or other authority
+                                    outside the United Kingdom, where the conduct giving rise to that penalty or
+                                    decision is conduct that would give rise to a penalty or decision referred to in any
+                                    of paragraphs <a
+                                        href="https://www.legislation.gov.uk/ukpga/2023/54/enacted#schedule-6-paragraph-36"
+                                        target="_blank">36</a> to <a
+                                        href="https://www.legislation.gov.uk/ukpga/2023/54/enacted#schedule-6-paragraph-41"
+                                        target="_blank">41</a> if committed in the United Kingdom, in circumstances
+                                    where
+                                    the penalty or decision would be a mandatory exclusion ground
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionAncillary" name="exclusionAncillary"
+                                    type="radio"
+                                    value="(b) had a tax advantage counteracted outside the United Kingdom, in circumstances where the supplier or connected person would have incurred a defeat of the kind referred to in paragraph 40 had the tax advantage arisen in respect of tax payable in the United Kingdom.">
+                                <label class="govuk-label govuk-radios__label" for="exclusionAncillary">
+                                    (b) had a tax advantage counteracted outside the United Kingdom, in circumstances
+                                    where the supplier or connected person would have incurred a defeat of the kind
+                                    referred to in paragraph <a
+                                        href="https://www.legislation.gov.uk/ukpga/2023/54/enacted#schedule-6-paragraph-40"
+                                        target="_blank">40</a> had the tax advantage arisen in respect of tax payable
+                                    in the United Kingdom.
+                                </label>
+                            </div>
+
+
+                    </fieldset>
+
+                    <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                        Save and continue
+                    </button>
+
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

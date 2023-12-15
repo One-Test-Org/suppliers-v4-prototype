@@ -54,7 +54,7 @@ Supplier`s information - GOV.UK
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Exclusion further details:
+            Offence further details:
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['exclusionTheft'] }}
@@ -67,11 +67,11 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
-        {% if data['exclusionLabour'] | length != "0" %}
+        {% elif data['exclusionLabour'] | length != "0" %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Exclusion further details:
+            Offence further details:
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['exclusionLabour'] }}
@@ -83,6 +83,8 @@ Supplier`s information - GOV.UK
             </a>
           </dd>
         </div>
+
+        {% endif %}
 
         {% if data['eventSubMan'] == "Tech Innovators Ltd" %}
 
@@ -135,7 +137,6 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
-        {% endif %}
         {% endif %}
 
         {% if data['startQuestion'] == "Company" and data['eventSubMan'] == "Tech Innovators Ltd" %}

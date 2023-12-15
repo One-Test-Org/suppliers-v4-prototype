@@ -17,21 +17,29 @@ router.post('/exclusion-grounds', function (req, res) {
         res.redirect('theft-fraud-bribery');
     } else if (exclusionMan == 'Labour market, slavery and human trafficking offences') {
         res.redirect('labour-market');
+    } else if (exclusionMan == 'Penalties for transactions connected with VAT fraud and evasion or tax or duty') {
+        res.redirect('vat-fraud');
+    } else if (exclusionMan == 'Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing') {
+        res.redirect('vat-fraud');
     } else if (exclusionMan == '' && startQuestion == 'Individual') {
         res.redirect('/suppliers-d/account-home');
     } else {
         res.redirect('event-subject');
     }
 
-});
+})
 
 router.post('/theft-fraud-bribery', function (req, res) {
     res.redirect('event-subject');
-});
+})
 
 router.post('/labour-market', function (req, res) {
     res.redirect('event-subject');
-});
+})
+
+router.post('/vat-fraud', function (req, res) {
+    res.redirect('event-subject');
+})
 
 router.post('/event-subject', function (req, res) {
 
@@ -81,7 +89,7 @@ router.post('/address-type', function (req, res) {
 
 router.get('/:index/remove-exclusion', function (req, res) {
     res.render(path.resolve(__dirname, 'remove-exclusion'));
-});
+})
 
 router.post('/:index/remove-exclusion', function (req, res) {
     let removeExclusionMan = req.session.data.removeExclusionMan;
@@ -100,7 +108,7 @@ router.post('/:index/remove-exclusion', function (req, res) {
     }
 
     res.redirect('../add-another-exclusion');
-});
+})
 
 router.get('/:index/check-answers', function (req, res) {
     const data = req.session.data;
@@ -120,7 +128,7 @@ router.get('/:index/check-answers', function (req, res) {
     };
 
     res.redirect('../check-answers');
-});
+})
 
 router.post('/check-answers', function (req, res) {
     const data = req.session.data;
@@ -143,7 +151,7 @@ router.post('/check-answers', function (req, res) {
     delete data.editExclusionMan;
 
     res.redirect('add-another-exclusion');
-});
+})
 
 router.post('/add-another-exclusion-route', function (req, res) {
     var sessionData = req.session.data;
@@ -164,7 +172,7 @@ router.post('/add-another-exclusion-route', function (req, res) {
     sessionData.exclusionManCount = exclusionManArray.length;
 
     res.redirect('add-another-exclusion');
-});
+})
 
 router.post('/add-another-exclusion', function (req, res) {
     delete req.session.data.editExclusionMan;
@@ -180,7 +188,7 @@ router.post('/add-another-exclusion', function (req, res) {
         }
         res.redirect('../suppliers-d/account-home');
     }
-});
+})
 
 router.post('/add-another-exclusion', function (req, res) {
     delete req.session.data.editExclusionMan;
@@ -191,11 +199,11 @@ router.post('/add-another-exclusion', function (req, res) {
     else {
         res.redirect('exclusion-grounds');
     }
-});
+})
 
 router.post('/select-subject-uk-address', function (req, res) {
     res.redirect('event-documents');
-});
+})
 
 router.post('/find-subject-uk-address', function (req, res) {
 
@@ -222,9 +230,9 @@ router.post('/find-subject-uk-address', function (req, res) {
                                 .split(' ')
                                 .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                                 .join(' ');
-                        });
+                        })
                         return formattedParts.join(', ');
-                    });
+                    })
 
                     req.session.data['addresses'] = titleCaseAddresses;
 
@@ -233,7 +241,7 @@ router.post('/find-subject-uk-address', function (req, res) {
                 .catch(error => {
                     console.log(error);
                     res.redirect('/mandatory/subject-uk-address')
-                });
+                })
 
         }
 

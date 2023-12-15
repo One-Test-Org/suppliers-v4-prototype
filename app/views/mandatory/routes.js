@@ -35,6 +35,10 @@ router.post('/theft-fraud-bribery', function (req, res) {
     res.redirect('event-subject');
 })
 
+router.post('/tax-offences', function (req, res) {
+    res.redirect('event-subject');
+})
+
 router.post('/labour-market', function (req, res) {
     res.redirect('event-subject');
 })

@@ -67,6 +67,23 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
+        {% if data['exclusionLabour'] | length != "0" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exclusion further details:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['exclusionLabour'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="labour-market">
+              Change<span class="govuk-visually-hidden">
+                the event subject</span>
+            </a>
+          </dd>
+        </div>
+
         {% if data['eventSubMan'] == "Tech Innovators Ltd" %}
 
         <div class="govuk-summary-list__row">

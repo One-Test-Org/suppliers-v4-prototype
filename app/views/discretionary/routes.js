@@ -16,8 +16,11 @@ router.post('/exclusion-grounds', function (req, res) {
     if (exclusionDis == 'None of the above' && startQuestion == 'Company') {
         res.redirect('/suppliers-c/account-home');
 
-    } else if (exclusionDis == '' && startQuestion == 'Individual') {
+    } else if (exclusionDis == 'None of the above' && startQuestion == 'Individual') {
         res.redirect('/suppliers-d/account-home');
+
+    } if (exclusionDis == 'None of the above' && startQuestion == 'Trust') {
+        res.redirect('/suppliers-b/account-home');
     } else {
         res.redirect('event-subject');
     }
@@ -171,6 +174,12 @@ router.post('/add-another-exclusion', function (req, res) {
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
             res.redirect('../suppliers-c/account-home');
+        }
+        else if (startQuestion == 'Trust') {
+            res.redirect('../suppliers-b/account-home');
+        }
+        else {
+            res.redirect('../suppliers-d/account-home');
         }
         res.redirect('../suppliers-d/account-home');
     }

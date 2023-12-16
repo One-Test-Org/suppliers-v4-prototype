@@ -15,7 +15,7 @@ router.post('/financial-question', function (req, res) {
     } else if (fileState == 'A copy of the most recent financial year accounts') {
         res.redirect('/economical/one-doc-type');
 
-    } else if (fileState == 'A copy of the most recent accounts or other information') {
+    } else if (fileState == 'Upload accounts or other information which is equivalent to information contained in accounts audited.') {
         res.redirect('/economical/two-or-more-type');
 
     } else {
@@ -151,7 +151,10 @@ router.post('/add-another-file', function (req, res) {
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
             res.redirect('../suppliers-c/account-home');
-        } else {
+        } else if (startQuestion == 'Trust') {
+            res.redirect('../suppliers-b/account-home');
+        }
+        else {
             res.redirect('../suppliers-d/account-home');
         }
     }

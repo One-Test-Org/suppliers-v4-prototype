@@ -393,7 +393,7 @@ router.post('/find-postal-uk-address', function (req, res) {
         })
         .catch(error => {
           console.log(error);
-          res.redirect('/suppliers-d/postal-uk-address')
+          res.redirect('/suppliers-b/postal-uk-address')
         });
 
     }

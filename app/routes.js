@@ -11,6 +11,7 @@ router.use('/public', express.static('public'));
 
 // add routes for the folders in the views folder
 
+router.use('/suppliers-b', require('./views/suppliers-b/routes'))
 router.use('/suppliers-c', require('./views/suppliers-c/routes'))
 router.use('/suppliers-d', require('./views/suppliers-d/routes'))
 router.use('/mandatory', require('./views/mandatory/routes'))
@@ -41,9 +42,12 @@ router.post('/start-question', function (req, res) {
   if (startQuestion == 'Company') {
     res.redirect('/suppliers-c/account-home');
   } else
-    if (startQuestion == 'Individual') {
-      res.redirect('/suppliers-d/account-home');
-    }
+    if (startQuestion == 'Trust') {
+      res.redirect('/suppliers-b/account-home');
+    } else
+      if (startQuestion == 'Individual') {
+        res.redirect('/suppliers-d/account-home');
+      }
 })
 
 // Route index page

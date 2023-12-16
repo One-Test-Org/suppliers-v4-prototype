@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a prototype of a service in development.
+  </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <form class="form" method="post">
+
+      <span class="govuk-caption-l">Qualification:</span>
+      <h1 class="govuk-heading-l">Check your answers</h1>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Qualification type
+          </dt> 
+          <dd class="govuk-summary-list__value">
+             
+          </dd>
+          <dd class="govuk-summary-list__value">
+            {{ data['qualificationType'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="qualification-type">
+              Change<span class="govuk-visually-hidden">
+                the Qualification type</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date awarded
+          </dt>
+          <dd class="govuk-summary-list__value">
+             
+          </dd>
+          <dd class="govuk-summary-list__value">
+            {{ data['awardIssuedDay'] }} / {{ data['awardIssuedMonth'] }} / {{ data['awardIssuedYear'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="awarded-date">
+              Change<span class="govuk-visually-hidden">
+                Date awarded</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Qualification name
+          </dt>
+          <dd class="govuk-summary-list__value">
+             
+          </dd>
+          <dd class="govuk-summary-list__value">
+            {{ data['qualifiedName'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="qualified-name">
+              Change<span class="govuk-visually-hidden">
+                Qualification name</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <div class="govuk-button-group govuk-!-margin-top-9">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </div>
+
+
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -29,8 +29,12 @@ router.post('/exclusion-grounds', function (req, res) {
         res.redirect('vat-fraud');
     } else if (exclusionMan == 'Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing') {
         res.redirect('vat-fraud');
-    } else if (exclusionMan == '' && startQuestion == 'Individual') {
+    } else if (exclusionMan == 'None of the above' && startQuestion == 'Individual') {
         res.redirect('/suppliers-d/account-home');
+    } else if (exclusionMan == 'None of the above' && startQuestion == 'Company') {
+        res.redirect('/suppliers-c/account-home');
+    } else if (exclusionMan == 'None of the above' && startQuestion == 'Trust') {
+        res.redirect('/suppliers-b/account-home');
     } else {
         res.redirect('event-subject');
     }
@@ -73,6 +77,9 @@ router.post('/event-subject', function (req, res) {
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
             res.redirect('../suppliers-c/account-home');
+        }
+        else if (startQuestion == 'Trust') {
+            res.redirect('../suppliers-b/account-home');
         }
         else {
             res.redirect('../suppliers-d/account-home');
@@ -209,6 +216,12 @@ router.post('/add-another-exclusion', function (req, res) {
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
             res.redirect('../suppliers-c/account-home');
+        }
+        else if (startQuestion == 'Trust') {
+            res.redirect('../suppliers-b/account-home');
+        }
+        else {
+            res.redirect('../suppliers-d/account-home');
         }
         res.redirect('../suppliers-d/account-home');
     }

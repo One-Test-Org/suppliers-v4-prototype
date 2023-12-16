@@ -185,6 +185,27 @@ Supplier`s information - GOV.UK
                             </span>
                         </li>
 
+                        {% elif data['connectedPsc'] == "No" %}
+                        <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                                <a href="/connected/connected-question" aria-describedby="connected-completed">
+                                    Connected persons</a>
+                            </span>
+                            <span class="app-task-list__items">
+
+                                <!-- style the below dt variable in DD/MM/YYYY format-->
+
+                                Last updated: {{ data['dt'] }}
+                            </span>
+                            <span class="app-task-list__items">
+                                No connected persons
+                            </span>
+                            <span class="govuk-tag app-task-list__tag govuk-tag--green" id="connected-completed">
+                                Completed
+                            </span>
+                        </li>
+
+
                         {% elif data['connectedPsc'] | length != "0" and data['connectedPersons'] | length != "0" %}
                         <li class="app-task-list__item">
                             <span class="app-task-list__task-name">

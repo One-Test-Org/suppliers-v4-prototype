@@ -99,6 +99,8 @@ router.post('/connected-question', function (req, res) {
     res.redirect('companies-question');
   } else if (startQuestion == "Company") {
     res.redirect('../suppliers-c/account-home');
+  } else if (startQuestion == "Trust") {
+    res.redirect('../suppliers-b/account-home');
   } else {
     res.redirect('../suppliers-d/account-home');
   }
@@ -322,6 +324,9 @@ router.post('/add-another-connected-person', function (req, res) {
   }
   else if (req.session.data.startQuestion == "Company") {
     res.redirect('../suppliers-c/account-home');
+  }
+  else if (req.session.data.startQuestion == "Trust") {
+    res.redirect('../suppliers-b/account-home');
   }
   else {
     res.redirect('../suppliers-d/account-home');

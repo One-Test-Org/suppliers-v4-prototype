@@ -1,0 +1,216 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-l" style="color: #1d70b8;">
+        Discretionary exclusion grounds
+    </h1>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h2 class="govuk-fieldset__heading">
+                                {{ data['exclusionDis'] }}
+                            </h2>
+                        </legend>
+
+                        <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                            In respect of paragraph 7 of Schedule 7 to the PA 2023 (potential competition infringements)
+                            and except in the circumstances mentioned in sub-paragraph (2) of paragraph 7, indicate if
+                            the supplier or connected person
+                        </div>
+
+                        <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                            (a) has been, or is being, investigated by a body or organisation over whether an agreement
+                            or concerted practice to which the supplier or a connected person is party has infringed
+                        </div>
+
+
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div class="govuk-radios__item govuk-!-margin-top-6">
+                                <input class="govuk-radios__input" id="exclusionCompetition" name="exclusionCompetition"
+                                    type="radio"
+                                    value="(a) has been, or is being, investigated by a body or organisation over whether an agreement
+                                    or concerted practice to which the supplier or a connected person is party has infringed (i) the Chapter I prohibition (within the meaning given by section 2 of the Competition Act 1998)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionCompetition">
+                                    (i) the Chapter I prohibition (within the meaning given by section 2 of the
+                                    Competition Act 1998)
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionCompetition" name="exclusionCompetition"
+                                    type="radio"
+                                    value="(a) has been, or is being, investigated by a body or organisation over whether an agreement
+                                    or concerted practice to which the supplier or a connected person is party has infringed (ii) any substantially similar prohibition applicable in a jurisdiction outside the United  Kingdom">
+                                <label class="govuk-label govuk-radios__label" for="exclusionCompetition">
+                                    (ii) any substantially similar prohibition applicable in a jurisdiction outside the
+                                    United Kingdom
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionCompetition" name="exclusionCompetition"
+                                    type="radio"
+                                    value="(b) is the subject of an agreement or concerted practice in respect to which they (the supplier or a connected person) has infringed such prohibitions">
+                                <label class="govuk-label govuk-radios__label" for="exclusionCompetition13">
+                                    (b) is the subject of an agreement or concerted practice in respect to which they
+                                    (the supplier or a connected person) has infringed such prohibitions
+                                </label>
+                            </div>
+
+
+                        </div>
+                    </fieldset>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                                <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                                    In respect of paragraph 8 of Schedule 7 to the PA 2023 (potential competition
+                                    infringements), indicate if the supplier or a connected person (a) has been, or is
+                                    being, investigated by a body or organisation over whether the supplier or a
+                                    connected person has infringed
+                                </div>
+
+                                <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                                    (a) has been, or is being, investigated by a body or organisation over whether the
+                                    supplier or a
+                                </div>
+
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="exclusionCompetition"
+                                        name="exclusionCompetition" type="radio"
+                                        value="(a) has been, or is being, investigated by a body or organisation over whether the
+                                        supplier or a (i) the Chapter II prohibition (within the meaning given by section 18 of the Competition Act 1998)">
+                                    <label class="govuk-label govuk-radios__label" for="exclusionCompetition13">
+                                        (i) the Chapter II prohibition (within the meaning given by section 18 of the
+                                        Competition Act 1998)
+                                    </label>
+                                </div>
+
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="exclusionCompetition"
+                                        name="exclusionCompetition" type="radio"
+                                        value="(a) has been, or is being, investigated by a body or organisation over whether the
+                                        supplier or a (ii) any substantially similar prohibition applicable in a jurisdiction outside the United  Kingdom">
+                                    <label class="govuk-label govuk-radios__label" for="exclusionCompetition13">
+                                        (ii) any substantially similar prohibition applicable in a jurisdiction outside
+                                        the United Kingdom
+                                    </label>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+
+                                    <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                                        In respect of paragraph 10 of Schedule 7 to the PA 2023 (potential competition
+                                        law infringements), indicate if the supplier or a connected person
+                                    </div>
+
+                                    <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                                        (a) has been, or is being, investigated by a body or organisation for conduct
+                                        constituting
+                                    </div>
+
+
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="exclusionCompetition"
+                                            name="exclusionCompetition" type="radio"
+                                            value="(a) has been, or is being, investigated by a body or organisation for conduct
+                                            constituting (i) an offence under section 188 of the Enterprise Act 2002 (cartel offence)">
+                                        <label class="govuk-label govuk-radios__label" for="exclusionCompetition">
+                                            (i) an offence under section 188 of the Enterprise Act 2002 (cartel offence)
+                                        </label>
+                                    </div>
+
+
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="exclusionCompetition"
+                                            name="exclusionCompetition" type="radio"
+                                            value="(a) has been, or is being, investigated by a body or organisation for conduct
+                                            constituting (ii) substantially similar offence under the law of a country/territory outside the United Kingdom">
+                                        <label class="govuk-label govuk-radios__label" for="exclusionCompetition">
+                                            (ii) substantially similar offence under the law of a country/territory
+                                            outside the United Kingdom
+                                        </label>
+                                    </div>
+
+
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="exclusionCompetition"
+                                            name="exclusionCompetition" type="radio"
+                                            value="(b) has engaged in such conduct">
+                                        <label class="govuk-label govuk-radios__label" for="exclusionCompetition">
+                                            (b) has engaged in such conduct
+                                        </label>
+                                    </div>
+
+
+                                </div>
+
+
+                            </fieldset>
+
+                            <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                                Except in the circumstances mentioned in sub-paragraph (2) of paragraph 10.
+                            </div>
+
+
+
+                            <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                                Save and continue
+                            </button>
+
+
+                        </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

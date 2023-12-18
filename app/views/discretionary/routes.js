@@ -25,6 +25,9 @@ router.post('/exclusion-grounds', function (req, res) {
     } else if (exclusionDis == 'Breach of contract and poor performance') {
         res.redirect('breach');
 
+    } else if (exclusionDis == 'Potential competition infringements including competition law infringements') {
+        res.redirect('competition');
+
     } else if (exclusionDis == 'None of the above' && startQuestion == 'Company') {
         res.redirect('/suppliers-c/account-home');
 
@@ -69,6 +72,10 @@ router.post('/infringement', function (req, res) {
 })
 
 router.post('/breach', function (req, res) {
+    res.redirect('event-subject');
+})
+
+router.post('/competition', function (req, res) {
     res.redirect('event-subject');
 })
 

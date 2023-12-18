@@ -31,6 +31,9 @@ router.post('/exclusion-grounds', function (req, res) {
     } else if (exclusionDis == 'Professional misconduct') {
         res.redirect('misconduct');
 
+    } else if (exclusionDis == 'Acting improperly in procurement') {
+        res.redirect('improperly');
+
     } else if (exclusionDis == 'None of the above' && startQuestion == 'Company') {
         res.redirect('/suppliers-c/account-home');
 
@@ -83,6 +86,10 @@ router.post('/competition', function (req, res) {
 })
 
 router.post('/misconduct', function (req, res) {
+    res.redirect('event-subject');
+})
+
+router.post('/improperly', function (req, res) {
     res.redirect('event-subject');
 })
 

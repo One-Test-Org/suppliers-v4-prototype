@@ -15,6 +15,8 @@ router.post('/exclusion-grounds', function (req, res) {
 
     if (exclusionMan == 'Theft, fraud, bribery etc') {
         res.redirect('theft-fraud-bribery');
+    } else if (exclusionMan == 'Labour market, slavery and human trafficking offences') {
+        res.redirect('labour-market');
     } else if (exclusionMan == 'Tax offences') {
         res.redirect('tax-offences');
     } else if (exclusionMan == 'Organised crime') {

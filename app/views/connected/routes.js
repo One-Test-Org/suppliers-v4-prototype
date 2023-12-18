@@ -114,7 +114,7 @@ router.post('/person-question', function (req, res) {
 
   let personQuestion = req.session.data.personQuestion;
 
-  if (personQuestion == "organisation" || personQuestion == "person") {
+  if (personQuestion == "organisation" || personQuestion == "person" || personQuestion == "trust") {
     res.redirect('persons');
   } else {
     res.redirect('journey-page');

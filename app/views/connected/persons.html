@@ -114,7 +114,8 @@ Supplier`s information - GOV.UK
                         </div>
                     </div>
 
-                    {% elif data['companiesQuestion'] == 'Yes' and data['personQuestion'] == 'person' %}
+                    {% elif data['companiesQuestion'] == 'Yes' and data['personQuestion'] == 'person' or
+                    data['personQuestion'] == 'trust' %}
 
 
                     <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">

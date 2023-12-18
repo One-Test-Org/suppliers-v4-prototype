@@ -23,7 +23,7 @@ router.post('/exclusion-grounds', function (req, res) {
         res.redirect('organised-crime');
     } else if (exclusionMan == 'Ancillary offences') {
         res.redirect('ancillary-offences');
-    } else if (exclusionMan == 'Offences committed outside the United Kingdom') {
+    } else if (exclusionMan == 'Equivalents outside the United Kingdom') {
         res.redirect('outside-uk');
     } else if (exclusionMan == 'Penalties for transactions connected with VAT fraud and evasion or tax or duty') {
         res.redirect('vat-fraud');

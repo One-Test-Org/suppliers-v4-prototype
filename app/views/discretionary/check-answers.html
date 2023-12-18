@@ -97,7 +97,25 @@ Supplier`s information - GOV.UK
             {{ data['exclusionInfringement'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="bankruptcy">
+            <a class="govuk-link" href="infringement">
+              Change<span class="govuk-visually-hidden">
+                the event subject</span>
+            </a>
+          </dd>
+        </div>
+
+
+        {% elif data['exclusionBreach'] | length != "0" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exclusion further details:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['exclusionBreach'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="breach">
               Change<span class="govuk-visually-hidden">
                 the event subject</span>
             </a>

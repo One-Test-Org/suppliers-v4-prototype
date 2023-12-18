@@ -22,6 +22,9 @@ router.post('/exclusion-grounds', function (req, res) {
     } else if (exclusionDis == 'Infringement of Competition Act 1998, Chapter II prohibition or equivalent  outside United Kingdom') {
         res.redirect('infringement');
 
+    } else if (exclusionDis == 'Breach of contract and poor performance') {
+        res.redirect('breach');
+
     } else if (exclusionDis == 'None of the above' && startQuestion == 'Company') {
         res.redirect('/suppliers-c/account-home');
 
@@ -58,6 +61,14 @@ router.post('/bankruptcy', function (req, res) {
 })
 
 router.post('/labour-market', function (req, res) {
+    res.redirect('event-subject');
+})
+
+router.post('/infringement', function (req, res) {
+    res.redirect('event-subject');
+})
+
+router.post('/breach', function (req, res) {
     res.redirect('event-subject');
 })
 

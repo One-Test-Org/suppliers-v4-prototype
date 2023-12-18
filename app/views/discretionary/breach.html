@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-l" style="color: #1d70b8;">
+        Discretionary exclusion grounds
+    </h1>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h2 class="govuk-fieldset__heading">
+                                {{ data['exclusionDis'] }}
+                            </h2>
+                        </legend>
+
+                        <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                            In respect of paragraph 11 of Schedule 7 to the PA 2023 (professional misconduct), has the
+                            supplier or a connected person:
+                        </div>
+
+
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div class="govuk-radios__item govuk-!-margin-top-6">
+                                <input class="govuk-radios__input" id="exclusionBreach" name="exclusionBreach"
+                                    type="radio"
+                                    value="Breached a relevant contract, and the breach was sufficiently serious">
+                                <label class="govuk-label govuk-radios__label" for="exclusionBreach">
+                                    Breached a relevant contract, and the breach was sufficiently serious
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionBreach" name="exclusionBreach"
+                                    type="radio" value="Been the subject of a ruling by a court which ruled a relevant contract was
+                                    breached, and the breach was sufficiently serious">
+                                <label class="govuk-label govuk-radios__label" for="exclusionBreach">
+                                    Been the subject of a ruling by a court which ruled a relevant contract was
+                                    breached, and the breach was sufficiently serious
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionBreach" name="exclusionBreach"
+                                    type="radio" value="Not performed a relevant contract to the regulated authority’s satisfaction, was
+                                    given proper opportunity to improve performance, and failed to do so">
+                                <label class="govuk-label govuk-radios__label" for="exclusionBreach">
+                                    Not performed a relevant contract to the regulated authority’s satisfaction, was
+                                    given proper opportunity to improve performance, and failed to do so
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionBreach" name="exclusionBreach"
+                                    type="radio" value="Been the subject of an event where a contracting authority has published information
+                                    under section 71(5) in respect of the supplier (information concerning either breach
+                                    or poor performance)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionBreach">
+                                    Been the subject of an event where a contracting authority has published information
+                                    under section 71(5) in respect of the supplier (information concerning either breach
+                                    or poor performance)
+                                </label>
+                            </div>
+                        </div>
+
+                </div>
+
+                </fieldset>
+
+
+                <div id="mandatory-hint-2" class="govuk-hint govuk-!-margin-top-4">
+                    Notes.<br><br>
+
+                    For the purposes of the questions above, a breach of a contract is “sufficiently
+                    serious” if it results in<br><br>
+
+                    (a) termination (or partial termination) of the contract,<br>
+
+                    (b) the award of damages,<br>
+
+                    (c) a settlement agreement between the supplier and the regulated authority.<br>
+
+                    “regulated authority” means<br>
+
+                    (a) a contracting authority,<br>
+
+                    (b) another public authority, or<br>
+
+                    (c) an authority outside the United Kingdom that the decision-maker considers to be
+                    equivalent;<br>
+
+                    “relevant contract” means a contract to which a regulated authority is party.<br><br>
+
+
+
+                    <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                        Save and continue
+                    </button>
+
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

@@ -28,6 +28,9 @@ router.post('/exclusion-grounds', function (req, res) {
     } else if (exclusionDis == 'Potential competition infringements including competition law infringements') {
         res.redirect('competition');
 
+    } else if (exclusionDis == 'Professional misconduct') {
+        res.redirect('misconduct');
+
     } else if (exclusionDis == 'None of the above' && startQuestion == 'Company') {
         res.redirect('/suppliers-c/account-home');
 
@@ -76,6 +79,10 @@ router.post('/breach', function (req, res) {
 })
 
 router.post('/competition', function (req, res) {
+    res.redirect('event-subject');
+})
+
+router.post('/misconduct', function (req, res) {
     res.redirect('event-subject');
 })
 

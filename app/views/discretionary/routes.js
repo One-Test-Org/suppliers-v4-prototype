@@ -16,6 +16,9 @@ router.post('/exclusion-grounds', function (req, res) {
     if (exclusionDis == 'Labour market misconduct') {
         res.redirect('labour-market');
 
+    } else if (exclusionDis == 'Insolvency, bankruptcy, etc') {
+        res.redirect('bankruptcy');
+
     } else if (exclusionDis == 'None of the above' && startQuestion == 'Company') {
         res.redirect('/suppliers-c/account-home');
 
@@ -47,6 +50,13 @@ router.post('/event-subject', function (req, res) {
     }
 })
 
+router.post('/bankruptcy', function (req, res) {
+    res.redirect('event-subject');
+})
+
+router.post('/labour-market', function (req, res) {
+    res.redirect('event-subject');
+})
 
 router.post('/email-address', function (req, res) {
     res.redirect('event-documents');

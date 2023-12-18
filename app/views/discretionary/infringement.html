@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-l" style="color: #1d70b8;">
+        Discretionary exclusion grounds
+    </h1>
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h2 class="govuk-fieldset__heading">
+                                {{ data['exclusionDis'] }}
+                            </h2>
+                        </legend>
+
+                        <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                            In respect of paragraph 9 of Schedule 7 to the PA 2023 (infringement of Competition Act
+                            1998, Chapter II prohibition or equivalent outside United Kingdom), has the supplier or a
+                            connected person:
+                        </div>
+
+
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div class="govuk-radios__item govuk-!-margin-top-6">
+                                <input class="govuk-radios__input" id="exclusionInfringement"
+                                    name="exclusionInfringement" type="radio"
+                                    value="(a) been the subject of a CMA decision under the Competition Act 1998 indicating that they (supplier or a connected person) has infringed the Chapter II prohibition">
+                                <label class="govuk-label govuk-radios__label" for="exclusionInfringement">
+                                    (a) been the subject of a CMA decision under the Competition Act 1998 indicating
+                                    that they (supplier or a connected person) has infringed the Chapter II prohibition
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionInfringement"
+                                    name="exclusionInfringement" type="radio"
+                                    value="(b) been the subject of a regulator or other authority outside the United Kingdom decision that they (supplier or a connected person) has infringed any substantially similar prohibition">
+                                <label class="govuk-label govuk-radios__label" for="exclusionInfringement">
+                                    (b) been the subject of a regulator or other authority outside the United Kingdom
+                                    decision that they (supplier or a connected person) has infringed any substantially
+                                    similar prohibition
+                                </label>
+                            </div>
+
+
+                            <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                                Note. In this paragraph the reference to the CMA includes a reference to a regulator
+                                referred to in section 54(1) of the Competition Act 1998 in circumstances where it
+                                exercises functions concurrently with the CMA in accordance with that Act
+                            </div>
+
+
+                        </div>
+
+
+                    </fieldset>
+
+                    <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                        Save and continue
+                    </button>
+
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

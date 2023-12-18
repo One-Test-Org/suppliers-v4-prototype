@@ -19,6 +19,9 @@ router.post('/exclusion-grounds', function (req, res) {
     } else if (exclusionDis == 'Insolvency, bankruptcy, etc') {
         res.redirect('bankruptcy');
 
+    } else if (exclusionDis == 'Infringement of Competition Act 1998, Chapter II prohibition or equivalent  outside United Kingdom') {
+        res.redirect('infringement');
+
     } else if (exclusionDis == 'None of the above' && startQuestion == 'Company') {
         res.redirect('/suppliers-c/account-home');
 

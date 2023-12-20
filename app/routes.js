@@ -4,13 +4,14 @@ const router = express.Router();
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+require('dotenv').config();
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
 
 router.post('/select-company', async (req, res) => {
-  const apiKey = '4df276be-67a3-4c06-a326-8ca994dc8018';  // Replace with your actual REST API key
+  const apiKey = process.env.COMPANIES_HOUSE_API_KEY;  // Hide your actual REST API key
   const companyNumber = req.body.companyNumber;
 
   try {

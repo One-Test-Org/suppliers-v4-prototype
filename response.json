@@ -54,22 +54,18 @@
     "can_file": true
   },
   "officers": {
-    "kind": "officer-list",
-    "start_index": 0,
-    "resigned_count": 0,
-    "items_per_page": 35,
     "total_results": 1,
-    "links": {
-      "self": "/company/14656121/officers"
-    },
-    "inactive_count": 0,
-    "active_count": 1,
     "items": [
       {
-        "date_of_birth": {
-          "year": 1976,
-          "month": 1
+        "nationality": "Greek",
+        "links": {
+          "self": "/company/14656121/appointments/DU3HKai2rg12x1rNZUqTkCuoFJA",
+          "officer": {
+            "appointments": "/officers/vNABrgu1RA_lnSULj2Zs45uX2ys/appointments"
+          }
         },
+        "appointed_on": "2023-02-10",
+        "name": "GKIONIS, Nikolaos",
         "address": {
           "locality": "Warrington",
           "country": "England",
@@ -78,20 +74,24 @@
           "postal_code": "WA5 2UD",
           "address_line_2": "Penketh"
         },
-        "officer_role": "director",
-        "name": "GKIONIS, Nikolaos",
-        "links": {
-          "self": "/company/14656121/appointments/DU3HKai2rg12x1rNZUqTkCuoFJA",
-          "officer": {
-            "appointments": "/officers/vNABrgu1RA_lnSULj2Zs45uX2ys/appointments"
-          }
-        },
-        "occupation": "Designer",
-        "nationality": "Greek",
         "country_of_residence": "England",
-        "appointed_on": "2023-02-10"
+        "date_of_birth": {
+          "month": 1,
+          "year": 1976
+        },
+        "officer_role": "director",
+        "occupation": "Designer"
       }
     ],
-    "etag": "2586dd278b567d561be54493b25367f503186e34"
+    "inactive_count": 0,
+    "links": {
+      "self": "/company/14656121/officers"
+    },
+    "start_index": 0,
+    "kind": "officer-list",
+    "active_count": 1,
+    "resigned_count": 0,
+    "etag": "2586dd278b567d561be54493b25367f503186e34",
+    "items_per_page": 35
   }
 }

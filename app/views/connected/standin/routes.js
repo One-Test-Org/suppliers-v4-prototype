@@ -124,13 +124,13 @@ router.post('/stand-in', function (req, res) {
   } else if (connectedPersons == 'Director individual') {
     res.redirect('/connected/standin/director-individual');
 
-  } else if (connectedPersons == 'Director not individual') {
+  } else if (connectedPersons == 'Director organisation') {
     res.redirect('/connected/standin/director-individual-ni');
 
   } else if (connectedPersons == 'Gov/Public Authority') {
     res.redirect('/connected/standin/gov-organisation');
 
-  } else if (connectedPersons == 'PSC not individual or Public Authority') {
+  } else if (connectedPersons == 'PSC organisation or Public Authority') {
     res.redirect('/connected/standin/psc-individual-ni');
 
   } else if (connectedPersons == 'Parent / subsidiary') {

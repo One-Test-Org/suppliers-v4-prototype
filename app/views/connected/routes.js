@@ -125,19 +125,19 @@ router.post('/persons', function (req, res) {
 
   let connectedPersons = req.session.data.connectedPersons;
 
-  if (connectedPersons == 'PSC (Person of significant control) Individual') {
+  if (connectedPersons == 'PSC (Person of significant control) registerable') {
     res.redirect('/connected/psc-individual');
 
   } else if (connectedPersons == 'Director individual') {
     res.redirect('/connected/director-individual');
 
-  } else if (connectedPersons == 'Director not individual') {
+  } else if (connectedPersons == 'Director organisation') {
     res.redirect('/connected/director-individual-ni');
 
-  } else if (connectedPersons == 'Gov/Public Authority') {
+  } else if (connectedPersons == 'Legal Entity - registerable') {
     res.redirect('/connected/gov-organisation');
 
-  } else if (connectedPersons == 'PSC (Person of significant control) not individual or Public Authority') {
+  } else if (connectedPersons == 'PSC (Person of significant control) organisation or Public Authority') {
     res.redirect('/connected/psc-individual-ni');
 
   } else if (connectedPersons == 'Parent / subsidiary') {

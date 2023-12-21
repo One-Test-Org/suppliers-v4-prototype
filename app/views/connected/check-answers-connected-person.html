@@ -798,10 +798,10 @@ Supplier`s information - GOV.UK
               {% endif %}
               {% endif %}
 
-              {% if data['connectedPersons'] == "PSC (Person of significant control) not individual or Public Authority"
+              {% if data['connectedPersons'] == "PSC (Person of significant control) organisation or Public Authority"
               %}
 
-              <!-- PSC (Person of significant control) not individual or Public Authority  -->
+              <!-- PSC (Person of significant control) organisation or Public Authority  -->
 
               <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
@@ -970,7 +970,7 @@ Supplier`s information - GOV.UK
 
               <!-- GOV / Public  -->
 
-              {% if data['connectedPersons'] == "Gov/Public Authority" %}
+              {% if data['connectedPersons'] == "Legal Entity - registerable" %}
 
               <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
@@ -1120,9 +1120,9 @@ Supplier`s information - GOV.UK
                 </div>
               </dl>
 
-              {% elif data['connectedPersons'] == "PSC (Person of significant control) Individual" %}
+              {% elif data['connectedPersons'] == "PSC (Person of significant control) registerable" %}
 
-              <!-- PSC (Person of significant control) Individual  -->
+              <!-- PSC (Person of significant control) registerable  -->
 
               <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
@@ -1379,9 +1379,9 @@ Supplier`s information - GOV.UK
 
                 {% endif %}
 
-                {% elif data['connectedPersons'] == "Director not individual" %}
+                {% elif data['connectedPersons'] == "Director organisation" %}
 
-                <!-- Director or Shadow Director, Not Individual  -->
+                <!-- Director or Shadow Director, organisation  -->
 
                 <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
                 <h1 class="govuk-heading-l">Check your answers</h1>

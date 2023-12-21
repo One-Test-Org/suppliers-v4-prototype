@@ -22,82 +22,48 @@ GOV.UK – {{ serviceName }} –
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <!--
-  <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-    data-module="govuk-notification-banner">
-    <div class="govuk-notification-banner__header">
-      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-        Terms of use
-      </h2>
-    </div>
-    <div class="govuk-notification-banner__content">
-      <p class="govuk-notification-banner__heading">
-        The terms of use for the Public Procurement Gateway have changed.
-        <a class="govuk-notification-banner__link" href="https://test.identify.crowncommercial.gov.uk/terms-of-use">Read
-          the updated terms of use.</a>.
-      </p>
-    </div>
-  </div>
+<form class="form" method="post" action="/select-company">
+  <fieldset class="govuk-fieldset" data-required data-error="Enter you sign in details" aria-required="true">
+    <div class="govuk-form-group">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
 
-</div>
--->
-  <form class="form" method="post" action="/select-company">
-    <fieldset class="govuk-fieldset" data-required data-error="Enter you sign in details" aria-required="true">
-      <div class="govuk-form-group">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <div class="govuk-grid-column-three-quarters">
-              <h2 class="govuk-heading-l">Sign in</h2>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="email">
-                  Email address
-                </label>
-                <span id="email-hint" class="govuk-hint">
-                  Sign in to the Supplier information service
-                </span>
-                <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="password">
-                  Companies House number
-                </label>
-                <span id="email-hint" class="govuk-hint">
-                  For example, 14656121
-                </span>
-                <input class="govuk-input" id="companyNumber" name="companyNumber" required>
-              </div>
-              <div class="govuk-button-group govuk-!-margin-top-3">
-
-                <div class="govuk-button-group">
-                  <button class="govuk-button" data-module="govuk-button">
-                    Sign in
-                  </button>
-                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                    Create an account
-                  </button>
-                </div>
-
-              </div>
-              <a href="password-reset.html" class="govuk-link">Forgotten your password?</a>
-            </div>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-heading-l">What is the registered Companies House number?</h1>
+          </legend>
+          <div id="Companies-House-registration-number-hint" class="govuk-hint">
+            CRNs are always 8 characters long. These can be either 8 digits or 2 letters followed by 6
+            digits. English and Welsh companies have 8-digit CRNs beginning with 0 or 1.
           </div>
-          <!--
-          <div class="govuk-grid-column-one-third">
-            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+          <input class="govuk-input govuk-input--width-20" name="companyNumber" id="companyNumber" type="text"
+            aria-describedby="companyNumber">
 
-              <section class="moj-ticket-panel__content moj-ticket-panel__content" aria-label="guides section">
-                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Guides</h2>
-                <p class="govuk-body"><a href="https://www.crowncommercial.gov.uk/public-procurement-gateway-guides"
-                    class="govuk-link">Learn about the Public Procurement Gateway, and how to set up an account.</a></p>
-              </section>
-
-            </article>
-
-
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-margin-top-3" for="email">
+              Email address
+            </label>
+            <span id="email-hint" class="govuk-hint">
+              Sign in to the Supplier information service
+            </span>
+            <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email"
+              aria-describedby="email-hint">
           </div>
-        -->
+
+          <div class="govuk-button-group govuk-!-margin-top-3">
+            <button class="govuk-button" data-module="govuk-button">
+              Sign in
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Create an account
+            </button>
+          </div>
+
         </div>
-    </fieldset>
-  </form>
-  {% endblock %}
+
+      </div>
+    </div>
+
+    </div>
+  </fieldset>
+</form>
+{% endblock %}

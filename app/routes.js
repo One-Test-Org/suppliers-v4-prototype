@@ -99,7 +99,7 @@ router.post('/sign-in', function (req, res) {
   res.redirect('signin-success');
 });
 
-router.post('/signin-success', function (req, res) {
+router.post('/signin-unsuccessful', function (req, res) {
   res.redirect('suppliers-c/account-home');
 });
 

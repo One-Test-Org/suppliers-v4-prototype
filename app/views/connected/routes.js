@@ -125,26 +125,29 @@ router.post('/persons', function (req, res) {
 
   let connectedPersons = req.session.data.connectedPersons;
 
-  if (connectedPersons == 'PSC (Person of significant control) registerable') {
+  if (connectedPersons == 'A person with significant control over the supplier') {
     res.redirect('/connected/psc-individual');
 
-  } else if (connectedPersons == 'Director individual') {
+  } else if (connectedPersons == 'A director or shadow director of the supplier') {
     res.redirect('/connected/director-individual');
 
-  } else if (connectedPersons == 'Director organisation') {
+  } else if (connectedPersons == 'A director or shadow director of the supplier (org)') {
     res.redirect('/connected/director-individual-ni');
 
-  } else if (connectedPersons == 'Legal Entity - registerable') {
+  } else if (connectedPersons == 'A relevant legal entity (registrable)') {
     res.redirect('/connected/gov-organisation');
 
   } else if (connectedPersons == 'PSC (Person of significant control) organisation or Public Authority') {
     res.redirect('/connected/psc-individual-ni');
 
-  } else if (connectedPersons == 'Parent / subsidiary') {
+  } else if (connectedPersons == 'A parent undertaking or a subsidiary undertaking of the supplier') {
     res.redirect('/connected/parent-sub');
 
-  } else if (connectedPersons == 'Predecessor') {
+  } else if (connectedPersons == 'A predecessor company of the supplier') {
     res.redirect('/connected/predecessor');
+
+  } else if (connectedPersons == 'An organisation with the right to exercise control') {
+    res.redirect('/connected/right');
 
   } else if (connectedPersons == 'Right to exercise control') {
     res.redirect('/connected/right');

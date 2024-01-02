@@ -506,7 +506,7 @@ Supplier`s information - GOV.UK
 
           <!-- Predecessor  -->
 
-          {% if data['connectedPersons'] == "Predecessor" %}
+          {% if data['connectedPersons'] == "A predecessor company of the supplier" %}
 
           <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
 
@@ -662,7 +662,7 @@ Supplier`s information - GOV.UK
 
             <!-- Parent undertaking or a subsidiary undertaking  -->
 
-            {% if data['connectedPersons'] == "Parent / subsidiary" %}
+            {% if data['connectedPersons'] == "A parent undertaking or a subsidiary undertaking of the supplier" %}
 
             <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
             <h1 class="govuk-heading-l">Check your answers</h1>
@@ -970,7 +970,7 @@ Supplier`s information - GOV.UK
 
               <!-- GOV / Public  -->
 
-              {% if data['connectedPersons'] == "Legal Entity - registerable" %}
+              {% if data['connectedPersons'] == "A relevant legal entity (registrable)" %}
 
               <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
@@ -1120,7 +1120,7 @@ Supplier`s information - GOV.UK
                 </div>
               </dl>
 
-              {% elif data['connectedPersons'] == "PSC (Person of significant control) registerable" %}
+              {% elif data['connectedPersons'] == "A person with significant control over the supplier" %}
 
               <!-- PSC (Person of significant control) registerable  -->
 
@@ -1273,7 +1273,7 @@ Supplier`s information - GOV.UK
                 </div>
               </dl>
 
-              {% elif data['connectedPersons'] == "Director individual" %}
+              {% elif data['connectedPersons'] == "A director or shadow director of the supplier" %}
 
 
               <!-- Director or Shadow Director, Individual  -->
@@ -1379,7 +1379,7 @@ Supplier`s information - GOV.UK
 
                 {% endif %}
 
-                {% elif data['connectedPersons'] == "Director organisation" %}
+                {% elif data['connectedPersons'] == "A director or shadow director of the supplier (org)" %}
 
                 <!-- Director or Shadow Director, organisation  -->
 

@@ -1299,6 +1299,21 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Director residency:
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['selectCountry'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="director-residency">
+                      Change<span class="govuk-visually-hidden">
+                        the Director details</span>
+                    </a>
+                  </dd>
+                </div>
+
                 {% if data['addressTypeDir'] == "Yes" and data['dirAddress'] | length == "0" %}
 
                 <div class="govuk-summary-list__row">

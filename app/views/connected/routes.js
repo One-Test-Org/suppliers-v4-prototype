@@ -56,6 +56,16 @@ router.post('/dir-company-number', function (req, res) {
 })
 
 router.post('/director-individual', function (req, res) {
+  res.redirect('director-residency');
+})
+
+router.get('/director-residency', function (req, res) {
+  res.render(path.resolve(__dirname, 'director-residency'), {
+    countries: require('../../data/data').countries
+  })
+})
+
+router.post('/director-residency', function (req, res) {
   res.redirect('director-address-type');
 })
 

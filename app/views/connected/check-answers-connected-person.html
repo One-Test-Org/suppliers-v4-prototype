@@ -33,7 +33,8 @@ Supplier`s information - GOV.UK
 
       <!-- Right to exercise control -->
 
-      {% if data['connectedPersons'] == "Right to exercise control" and data['personQuestion'] == "organisation" %}
+      {% if data['connectedPersons'] == "An organisation with the right to exercise control" and data['personQuestion']
+      == "organisation" %}
 
       <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
 

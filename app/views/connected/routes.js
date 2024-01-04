@@ -548,7 +548,23 @@ router.get('/pred-address', function (req, res) {
   })
 })
 
+router.get('/right', function (req, res) {
+  res.render(path.resolve(__dirname, 'right'), {
+    nationalities: require('../../data/data').nationalities
+  })
+})
+
 router.post('/right', function (req, res) {
+  res.redirect('right-residency');
+})
+
+router.get('/right-residency', function (req, res) {
+  res.render(path.resolve(__dirname, 'right-residency'), {
+    countries: require('../../data/data').countries
+  })
+})
+
+router.post('/right-residency', function (req, res) {
   res.redirect('right-address-type');
 })
 
@@ -565,28 +581,28 @@ router.post('/right-address-type', function (req, res) {
 })
 
 router.post('/right-address', function (req, res) {
-
-  let personQuestion = req.session.data.personQuestion;
-
-  if (personQuestion == "organisation") {
-    res.redirect('right-company-number-question');
-  }
-  else {
-    res.redirect('right-nature-of-control');
-  }
-})
+  /*
+    let personQuestion = req.session.data.personQuestion;
+  
+    if (personQuestion == "organisation") {
+      res.redirect('right-company-number-question');
+    }
+    else {*/
+  res.redirect('right-nature-of-control');
+}
+)
 
 router.post('/right-address-uk', function (req, res) {
-
-  let personQuestion = req.session.data.personQuestion;
-
-  if (personQuestion == "organisation") {
-    res.redirect('right-company-number-question');
-  }
-  else {
-    res.redirect('right-nature-of-control');
-  }
-})
+  /*
+    let personQuestion = req.session.data.personQuestion;
+  
+    if (personQuestion == "organisation") {
+      res.redirect('right-company-number-question');
+    }
+    else {*/
+  res.redirect('right-nature-of-control');
+}
+)
 
 router.post('/right-company-number-question', function (req, res) {
 
@@ -984,7 +1000,7 @@ router.post('/find-address-psc-ni', function (req, res) {
 })
 
 router.post('/select-address-right', function (req, res) {
-  res.redirect('right-company-number-question');
+  res.redirect('right-nature-of-control');
 });
 
 router.post('/find-address-right', function (req, res) {

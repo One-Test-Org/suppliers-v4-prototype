@@ -36,10 +36,9 @@ Supplier`s information - GOV.UK
         <h2 class="govuk-heading-m" style="color: #1d70b8;">
             Connected persons
         </h2>
-        <span class="govuk-caption-l">An organisation with the right to exercise control</span>
+        <span class="govuk-caption-l"> {{ ['connectedPersons'] }}</span>
 
-        <fieldset class="govuk-fieldset" data-required
-            data-error="Enter the Parent undertaking or a subsidiary undertaking details" aria-required="true">
+        <fieldset class="govuk-fieldset" data-required data-error="Enter the individual details" aria-required="true">
 
             <form class="form" method="post">
 
@@ -54,39 +53,56 @@ Supplier`s information - GOV.UK
                     <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="connectedPerson"
                         type="text" aria-describedby="connectedPerson">
 
-                </div>
-    </div>
-</div>
-<button class="govuk-button" type="submit">Save and continue</button>
-</form>
-
-</fieldset>
-
-{% else %}
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-        <h2 class="govuk-heading-m" style="color: #1d70b8;">
-            Connected persons
-        </h2>
-        <span class="govuk-caption-l">An individual with the right to exercise control</span>
-
-        <fieldset class="govuk-fieldset" data-required
-            data-error="Enter the Parent undertaking or a subsidiary undertaking details" aria-required="true">
-
-            <form class="form" method="post">
-
-                <div class="govuk-form-group">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-heading-l">Enter the person with the right to exercise control details
-                        </h1>
-                    </legend>
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
-                        <h2 class="govuk-heading-m">Enter their name</h2>
+                        <h2 class="govuk-heading-m">Enter their date of birth</h2>
                     </legend>
-                    <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="connectedPerson"
-                        type="text" aria-describedby="connectedPerson">
+
+                    <div class="govuk-date-input" id="convictionDis">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="individualDay">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                    id="individualDay" name="individualDay" type="text" inputmode="numeric">>
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="individualMonth">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                    id="individualMonth" name="individualMonth" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="individualYear">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                    id="individualYear" name="individualYear" type="text" inputmode="numeric">
+                            </div>
+                        </div>
+
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
+                            <h2 class="govuk-heading-m">Enter their nationality</h2>
+                        </legend>
+
+
+                        <select class="govuk-input--width-20 autocomplete" id="selectNationality"
+                            name="selectNationality">
+
+                            <option value=""></option>
+                            {% for nationality in nationalities %}
+                            <option value="{{ nationality.value }}">{{ nationality.value }}</option>
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
                 </div>
 
                 <button class="govuk-button" type="submit">Save and continue</button>
@@ -94,6 +110,94 @@ Supplier`s information - GOV.UK
 
         </fieldset>
 
-        {% endif %}
+        {% else %}
 
-        {% endblock %}
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <h2 class="govuk-heading-m" style="color: #1d70b8;">
+                    Connected persons
+                </h2>
+                <span class="govuk-caption-l">An individual with the right to exercise control</span>
+
+                <fieldset class="govuk-fieldset" data-required
+                    data-error="Enter the Parent undertaking or a subsidiary undertaking details" aria-required="true">
+
+                    <form class="form" method="post">
+
+                        <div class="govuk-form-group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-heading-l">Enter the person with the right to exercise control details
+                                </h1>
+                            </legend>
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
+                                <h2 class="govuk-heading-m">Enter their name</h2>
+                            </legend>
+                            <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="connectedPerson"
+                                type="text" aria-describedby="connectedPerson">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
+                                <h2 class="govuk-heading-m">Enter their date of birth</h2>
+                            </legend>
+
+                            <div class="govuk-date-input" id="convictionDis">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="individualDay">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="individualDay" name="individualDay" type="text" inputmode="numeric">>
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="individualMonth">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="individualMonth" name="individualMonth" type="text" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="individualYear">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                            id="individualYear" name="individualYear" type="text" inputmode="numeric">
+                                    </div>
+                                </div>
+
+
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
+                                    <h2 class="govuk-heading-m">Enter their nationality</h2>
+                                </legend>
+
+
+                                <select class="govuk-input--width-20 autocomplete" id="selectNationality"
+                                    name="selectNationality">
+
+                                    <option value=""></option>
+                                    {% for nationality in nationalities %}
+                                    <option value="{{ nationality.value }}">{{ nationality.value }}</option>
+                                    {% endfor %}
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <button class="govuk-button" type="submit">Save and continue</button>
+                    </form>
+
+                </fieldset>
+
+                {% endif %}
+
+                {% endblock %}
+
+                {% block pageScripts %}
+                <script src="/public/javascripts/accessible-autocomplete.js"></script>
+                <script src="/public/javascripts/script.js"></script>
+                <script src="/public/javascripts/data.js"></script>
+                {% endblock %}

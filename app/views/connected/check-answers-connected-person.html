@@ -47,6 +47,9 @@ Supplier`s information - GOV.UK
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['connectedPerson'] }} </br>
+            DoB: {{ data['individualDay'] }} / {{ data['individualMonth'] }} / {{ data['individualYear'] }}
+            </br>
+            {{ data['selectNationality'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="right">
@@ -262,6 +265,9 @@ Supplier`s information - GOV.UK
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['connectedPerson'] }} </br>
+              DoB: {{ data['individualDay'] }} / {{ data['individualMonth'] }} / {{ data['individualYear'] }}
+              </br>
+              {{ data['selectNationality'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="psc-individual">

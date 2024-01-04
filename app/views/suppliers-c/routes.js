@@ -184,18 +184,7 @@ router.post('/ca-question', function (req, res) {
 })
 
 router.post('/legal-form', function (req, res) {
-
-  let legalForm = req.session.data.legalForm;
-
-  if (legalForm == "Partnership") {
-    res.redirect('law-registered');
-  }
-  else if (legalForm == "Other") {
-    res.redirect('law-registered');
-  }
-  else {
-    res.redirect('formation-date');
-  }
+  res.redirect('law-registered');
 })
 
 router.post('/law-registered', function (req, res) {

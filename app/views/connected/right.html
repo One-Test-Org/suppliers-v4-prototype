@@ -36,7 +36,7 @@ Supplier`s information - GOV.UK
         <h2 class="govuk-heading-m" style="color: #1d70b8;">
             Connected persons
         </h2>
-        <span class="govuk-caption-l"> {{ ['connectedPersons'] }}</span>
+        <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
 
         <fieldset class="govuk-fieldset" data-required data-error="Enter the individual details" aria-required="true">
 
@@ -53,56 +53,8 @@ Supplier`s information - GOV.UK
                     <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="connectedPerson"
                         type="text" aria-describedby="connectedPerson">
 
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
-                        <h2 class="govuk-heading-m">Enter their date of birth</h2>
-                    </legend>
-
-                    <div class="govuk-date-input" id="convictionDis">
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="individualDay">
-                                    Day
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                                    id="individualDay" name="individualDay" type="text" inputmode="numeric">>
-                            </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="individualMonth">
-                                    Month
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                                    id="individualMonth" name="individualMonth" type="text" inputmode="numeric">
-                            </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="individualYear">
-                                    Year
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                                    id="individualYear" name="individualYear" type="text" inputmode="numeric">
-                            </div>
-                        </div>
 
 
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
-                            <h2 class="govuk-heading-m">Enter their nationality</h2>
-                        </legend>
-
-
-                        <select class="govuk-input--width-20 autocomplete" id="selectNationality"
-                            name="selectNationality">
-
-                            <option value=""></option>
-                            {% for nationality in nationalities %}
-                            <option value="{{ nationality.value }}">{{ nationality.value }}</option>
-                            {% endfor %}
-
-                        </select>
-
-                    </div>
                 </div>
 
                 <button class="govuk-button" type="submit">Save and continue</button>

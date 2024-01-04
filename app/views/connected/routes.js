@@ -555,7 +555,15 @@ router.get('/right', function (req, res) {
 })
 
 router.post('/right', function (req, res) {
-  res.redirect('right-residency');
+
+  let personQuestion = req.session.data.personQuestion;
+
+  if (personQuestion == "organisation") {
+    res.redirect('right-address-type');
+  }
+  else {
+    res.redirect('right-residency');
+  }
 })
 
 router.get('/right-residency', function (req, res) {
@@ -640,6 +648,10 @@ router.post('/right-nature-of-control', function (req, res) {
 })
 
 router.post('/right-date-registered', function (req, res) {
+  res.redirect('right-law-register');
+})
+
+router.post('/right-law-register', function (req, res) {
   res.redirect('check-answers-connected-person');
 })
 

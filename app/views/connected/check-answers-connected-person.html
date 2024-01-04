@@ -46,10 +46,15 @@ Supplier`s information - GOV.UK
             Right to exercise control details:
           </dt>
           <dd class="govuk-summary-list__value">
+            {% if data['personQuestion'] == "organisation" %}
             {{ data['connectedPerson'] }} </br>
             DoB: {{ data['individualDay'] }} / {{ data['individualMonth'] }} / {{ data['individualYear'] }}
             </br>
             {{ data['selectNationality'] }}
+            {% else %}
+            {{ data['connectedPerson'] }} </br>
+            {{ data['selectNationality'] }}
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="right">
@@ -139,6 +144,8 @@ Supplier`s information - GOV.UK
 
         {% endif %}
 
+        <!--
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Is the Organisation registered with Companies House:
@@ -186,6 +193,8 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
+        -->
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Registerable date:
@@ -202,7 +211,25 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Legal form:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['rightLegalForm'] }} </br>
+            {{ data['rightLaw'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="psc-law-register">
+              Change<span class="govuk-visually-hidden">
+                the Legal form</span>
+            </a>
+          </dd>
+        </div>
+
         {% else %}
+
+        <!--
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -218,6 +245,8 @@ Supplier`s information - GOV.UK
             </a>
           </dd>
         </div>
+
+        -->
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -246,6 +275,22 @@ Supplier`s information - GOV.UK
             <a class="govuk-link" href="right-company-number">
               Change<span class="govuk-visually-hidden">
                 the registered date</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Legal form:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['rightLegalForm'] }} </br>
+            {{ data['rightLaw'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="psc-law-register">
+              Change<span class="govuk-visually-hidden">
+                the Legal form</span>
             </a>
           </dd>
         </div>

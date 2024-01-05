@@ -34,28 +34,28 @@ Supplier`s information - GOV.UK
         <form class="form" method="post">
 
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="addressSame-hint">
+                <fieldset class="govuk-fieldset" aria-describedby="serviceSame-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
                             Is the service address the same as the registered address?
                         </h1>
                     </legend>
-                    <div id="addressSame-hint" class="govuk-hint">
+                    <div id="serviceSame-hint" class="govuk-hint">
                         Preferred service address for the supplier.
                     </div>
                     <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="addressSame" name="addressSame" type="radio"
-                                value="Yes" data-aria-controls="conditional-addressSame">
-                            <label class="govuk-label govuk-radios__label" for="addressSame">
+                            <input class="govuk-radios__input" id="serviceSame" name="serviceSame" type="radio"
+                                value="Yes" data-aria-controls="conditional-serviceSame">
+                            <label class="govuk-label govuk-radios__label" for="serviceSame">
                                 Yes
                             </label>
                         </div>
 
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="addressSame-2" name="addressSame" type="radio"
-                                value="No" data-aria-controls="conditional-addressSame-2">
-                            <label class="govuk-label govuk-radios__label" for="addressSame-2">
+                            <input class="govuk-radios__input" id="serviceSame-2" name="serviceSame" type="radio"
+                                value="No" data-aria-controls="conditional-serviceSame-2">
+                            <label class="govuk-label govuk-radios__label" for="serviceSame-2">
                                 No
                             </label>
                         </div>
@@ -78,7 +78,7 @@ Supplier`s information - GOV.UK
 <!-- unused 
 
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                            id="conditional-addressSame-2">
+                            id="conditional-serviceSame-2">
 
                             <div class="govuk-form-group">
                                 {% if data['addressTypeBasic'] == 'No' %}

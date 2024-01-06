@@ -29,7 +29,12 @@ Supplier`s information - GOV.UK
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h2 class="govuk-heading-m" style="color: #1d70b8;">
+      Connected persons
+    </h2>
+    <span class="govuk-caption-xl"> {{ data['connectedPersons'] }}</span>
 
     <form class="form" method="post">
       <div class="govuk-form-group">
@@ -38,7 +43,7 @@ Supplier`s information - GOV.UK
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Is the connected person's service address in the United Kingdom?
+              Is the service address in the United Kingdom?
             </h1>
           </legend>
           <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">

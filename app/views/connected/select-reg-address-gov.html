@@ -33,6 +33,11 @@ Supplier`s information - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Connected persons
+        </h2>
+        <span class="govuk-caption-xl"> {{ data['connectedPersons'] }}</span>
+
         <fieldset class="govuk-fieldset" data-required data-error="Select an address" aria-required="true">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
@@ -40,7 +45,7 @@ Supplier`s information - GOV.UK
                 </h1>
             </legend>
 
-            <p>{{ data['govAddresses'] | length }} {% if (data['govAddresses'] | length > 1) %}Addresses{% else
+            <p>{{ data['regGovAddresses'] | length }} {% if (data['regGovAddresses'] | length > 1) %}Addresses{% else
                 %}Address{%
                 endif %} found for {{ data['postcode'] }}. <a href="find-reg-address-gov">Search again</a></p>
 
@@ -49,12 +54,12 @@ Supplier`s information - GOV.UK
 
                     <div class="govuk-radios">
                         {# Note: this line was previously `for address in addresses` #}
-                        {% for govAddress in data['govAddresses'] %}
+                        {% for regGovAddress in data['regGovAddresses'] %}
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="address-{{ loop.index }}" name="govAddress"
-                                type="radio" value="{{ govAddress }}">
+                            <input class="govuk-radios__input" id="address-{{ loop.index }}" name="regGovAddress"
+                                type="radio" value="{{ regGovAddress }}">
                             <label class="govuk-label govuk-radios__label" for="address-{{ loop.index }}">
-                                {{ govAddress }}
+                                {{ regGovAddress }}
                             </label>
                         </div>
                         {% endfor %}

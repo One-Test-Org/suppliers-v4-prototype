@@ -1075,14 +1075,14 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
-                {% elif data['addressTypeGovReg'] == "Yes" and data['govAddress'] | length != "0" %}
+                {% elif data['addressTypeGovReg'] == "Yes" and data['regGovAddress'] | length != "0" %}
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Registered or principal address:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['govAddress'] }}
+                    {{ data['regGovAddress'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="gov-reg-address-type">
@@ -1130,7 +1130,7 @@ Supplier`s information - GOV.UK
                     Service address:
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['govAddress'] }}
+                    {{ data['regGovAddress'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="gov-service-same">

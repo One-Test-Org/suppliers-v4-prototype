@@ -1010,9 +1010,9 @@ router.post('/find-reg-address-gov', function (req, res) {
 
       axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then(response => {
-          var govAddresses = response.data.results.map(result => result.DPA.ADDRESS);
+          var regGovAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
-          const titleCaseGovAddresses = govAddresses.map(address => {
+          const titleCaseRegGovAddresses = regGovAddresses.map(address => {
             const parts = address.split(', ');
             const formattedParts = parts.map((part, index) => {
               if (index === parts.length - 1) {
@@ -1027,7 +1027,7 @@ router.post('/find-reg-address-gov', function (req, res) {
             return formattedParts.join(', ');
           });
 
-          req.session.data['govAddresses'] = titleCaseGovAddresses;
+          req.session.data['regGovAddresses'] = titleCaseRegGovAddresses;
 
           res.redirect('select-reg-address-gov')
         })

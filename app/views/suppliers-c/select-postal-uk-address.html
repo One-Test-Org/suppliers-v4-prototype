@@ -40,8 +40,8 @@ Supplier`s information - GOV.UK
                 </h1>
             </legend>
 
-            <p>{{ data['secondAddresses'] | length }} {% if (data['secondAddresses'] | length > 1) %}secondAddresses{%
-                else %}secondAddress{%
+            <p>{{ data['secondAddresses'] | length }} {% if (data['secondAddresses'] | length > 1) %}Addresses{%
+                else %}Address{%
                 endif %} found for {{ data['postcode'] }}. <a href="find-postal-uk-address">Search again</a></p>
 
             <form class="form" method="post">

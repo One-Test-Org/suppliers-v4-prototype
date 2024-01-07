@@ -1567,6 +1567,104 @@ Supplier`s information - GOV.UK
                     </dd>
                   </div>
 
+                  {% if data['addressTypeRegDirNi'] == "Yes" and data['dirRegNiAddress'] | length == "0" %}
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Registered or principal address:
+                    </dt>
+                    {% if data['dirRegAddressUkNi-address-line-2'] | length != "0" and
+                    data['dirRegAddressUkNi-address-county'] | length != "0" %}
+                    <dd class="govuk-summary-list__value">
+                      {{ data['dirRegAddressUkNi-address-line-1'] }} </br>
+                      {{ data['dirRegAddressUkNi-address-line-2'] }} </br>
+                      {{ data['dirRegAddressUkNi-address-town'] }} </br>
+                      {{ data['dirRegAddressUkNi-address-county'] }} </br>
+                      {{ data['dirRegAddressUkNi-address-postcode'] }} </br>
+                    </dd>
+                    {% else %}
+                    <dd class="govuk-summary-list__value">
+                      {{ data['dirRegAddressUkNi-address-line-1'] }} </br>
+                      {{ data['dirRegAddressUkNi-address-town'] }} </br>
+                      {{ data['dirRegAddressUkNi-address-postcode'] }} </br>
+                    </dd>
+                    {% endif %}
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="director-reg-address-type-ni">
+                        Change<span class="govuk-visually-hidden">
+                          the Director`s address</span>
+                      </a>
+                    </dd>
+                  </div>
+
+                  {% elif data['addressTypeRegDirNi'] == "Yes" and data['dirRegNiAddress'] | length != "0" %}
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Registered or principal address:
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data['dirRegNiAddress'] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="director-reg-address-type-ni">
+                        Change<span class="govuk-visually-hidden"> Change</span>
+                      </a>
+                    </dd>
+                  </div>
+
+                  {% else %}
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Registered or principal address:
+                    </dt>
+                    {% if data['directorAddressNi-address-line-2'] | length != "0" and
+                    data['directorAddressNi-address-county'] | length != "0" %}
+                    <dd class="govuk-summary-list__value">
+                      {{ data['dirRegAddressNi-address-line-1'] }} </br>
+                      {{ data['dirRegAddressNi-address-line-2'] }} </br>
+                      {{ data['dirRegAddressNi-address-town'] }} </br>
+                      {{ data['dirRegAddressNi-address-county'] }} </br>
+                      {{ data['dirRegAddressNi-address-postcode'] }} </br>
+                      {{ data['selectData'] }}
+                    </dd>
+                    {% else %}
+                    <dd class="govuk-summary-list__value">
+                      {{ data['dirRegAddressNi-address-line-1'] }} </br>
+                      {{ data['dirRegAddressNi-address-town'] }} </br>
+                      {{ data['dirRegAddressNi-address-postcode'] }} </br>
+                      {{ data['selectData'] }}
+                    </dd>
+                    {% endif %}
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="director-reg-address-type-ni">
+                        Change<span class="govuk-visually-hidden">
+                          the person`s address</span>
+                      </a>
+                    </dd>
+                  </div>
+
+                  {% endif %}
+
+                  {% if data['addressSameDirNi'] == "Yes" %}
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Service address:
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data['dirRegNiAddress'] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="director-reg-address-type-ni">
+                        Change<span class="govuk-visually-hidden"> Change</span>
+                      </a>
+                    </dd>
+                  </div>
+
+                  {% else %}
+
                   {% if data['addressTypeDirNi'] == "Yes" and data['dirNiAddress'] | length == "0" %}
 
                   <div class="govuk-summary-list__row">
@@ -1601,7 +1699,7 @@ Supplier`s information - GOV.UK
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      Subject address:
+                      Service address:
                     </dt>
                     <dd class="govuk-summary-list__value">
                       {{ data['dirNiAddress'] }}
@@ -1644,6 +1742,8 @@ Supplier`s information - GOV.UK
                       </a>
                     </dd>
                   </div>
+
+                  {% endif %}
 
                   {% endif %}
 

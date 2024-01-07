@@ -34,33 +34,30 @@ Supplier`s information - GOV.UK
         <h2 class="govuk-heading-m" style="color: #1d70b8;">
             Connected persons
         </h2>
-        <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
+        <span class="govuk-caption-xl"> {{ data['connectedPersons'] }}</span>
 
         <form class="form" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" data-required
-                    data-error="Select yes if the organisation registered with Companies House" aria-required="true">
+                    data-error="Select yes if the address in the United Kingdom" aria-required="true">
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Is the organisation registered with Companies House?
+                            Is the registered or principal address in the United Kingdom?
                         </h1>
                     </legend>
-                    <div id="lawRegisterDirNiHint" class="govuk-hint">
-                        Under the Companies House 2006 Act.
-                    </div>
                     <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="lawRegisterDirNi" name="lawRegisterDirNi"
+                            <input class="govuk-radios__input" id="addressTypeRegDirNi" name="addressTypeRegDirNi"
                                 type="radio" value="Yes">
-                            <label class="govuk-label govuk-radios__label" for="lawRegisterDirNi">
+                            <label class="govuk-label govuk-radios__label" for="addressTypeRegDirNi">
                                 Yes
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="lawRegisterDirNi-2" name="lawRegisterDirNi"
+                            <input class="govuk-radios__input" id="addressTypeRegDirNi-2" name="addressTypeRegDirNi"
                                 type="radio" value="No">
-                            <label class="govuk-label govuk-radios__label" for="lawRegisterDirNi">
+                            <label class="govuk-label govuk-radios__label" for="addressTypeRegDirNi">
                                 No
                             </label>
                         </div>

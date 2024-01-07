@@ -33,6 +33,11 @@ Supplier`s information - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Connected persons
+        </h2>
+        <span class="govuk-caption-xl"> {{ data['connectedPersons'] }}</span>
+
         <fieldset class="govuk-fieldset" data-required data-error="Select an address" aria-required="true">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
@@ -40,8 +45,8 @@ Supplier`s information - GOV.UK
                 </h1>
             </legend>
 
-            <p>{{ data['dirNiAddresses'] | length }} {% if (data['dirNiAddresses'] | length > 1) %}dirNiAddresses{% else
-                %}dirNiAddress{%
+            <p>{{ data['dirNiAddresses'] | length }} {% if (data['dirNiAddresses'] | length > 1) %}Addresses{% else
+                %}Address{%
                 endif %} found for {{ data['postcode'] }}. <a href="find-address-dir-ni">Search again</a></p>
 
             <form class="form" method="post">

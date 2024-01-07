@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Connected persons
+        </h2>
+        <span class="govuk-caption-xl"> {{ data['connectedPersons'] }}</span>
+
+        <form class="form" method="post">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="addressSameDirNi-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Is the service address the same as the registered address?
+                        </h1>
+                    </legend>
+                    <div id="addressSameDirNi-hint" class="govuk-hint">
+                        Preferred service address for the supplier.
+                    </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="addressSameDirNi" name="addressSameDirNi"
+                                type="radio" value="Yes" data-aria-controls="conditional-addressSameDirNi">
+                            <label class="govuk-label govuk-radios__label" for="addressSameDirNi">
+                                Yes
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="addressSameDirNi-2" name="addressSameDirNi"
+                                type="radio" value="No" data-aria-controls="conditional-addressSameDirNi-2">
+                            <label class="govuk-label govuk-radios__label" for="addressSameDirNi-2">
+                                No
+                            </label>
+                        </div>
+
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Continue</button>
+    </div>
+    </form>
+
+
+</div>
+</div>
+
+{% endblock %}
+
+
+<!-- unused 
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="conditional-addressSameDirNi-2">
+
+                            <div class="govuk-form-group">
+                                {% if data['addressTypeBasic'] == 'No' %}
+                                <div class="govuk-form-group govuk-!-margin-top-3">
+                                    <label class="govuk-label" for="postal-address-line-1">
+                                        Address line 1
+                                    </label>
+                                    <input class="govuk-input" id="postal-address-line-1" name="postal-address-line-1"
+                                        type="text" value="{{ data['postal-address-line-1'] }}"
+                                        autocomplete="postal-address-line-1">
+                                </div>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="postal-address-line-2">
+                                        Address line 2
+                                    </label>
+                                    <input class="govuk-input" id="postal-address-line-2" name="postal-address-line-2"
+                                        type="text" value="{{ data['postal-address-line-2'] }}"
+                                        autocomplete="postal-address-line-2">
+                                </div>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="postal-address-town">
+                                        Town or city
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="postal-address-town"
+                                        name="postal-address-town" type="text" value="{{ data['postal-address-town'] }}"
+                                        autocomplete="postal-address-town">
+                                </div>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="postal-address-county">
+                                        County
+                                    </label>
+                                    <input class="govuk-input govuk-input--width-20" id="postal-address-county"
+                                        name="postal-address-county" type="text"
+                                        value="{{ data['postal-address-county'] }}"
+                                        autocomplete="postal-address-county">
+                                </div>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="postal-address-postcode">
+                                        Postal or Zip code
+                                    </label>
+                                    <input class="govuk-input govuk-input--width-10" id="postal-address-postcode"
+                                        name="postal-address-postcode" type="text"
+                                        value="{{ data['postal-address-postcode'] }}"
+                                        autocomplete="postal-address-postcode">
+                                </div>
+
+                            </div>
+                            <label class="govuk-label govuk-!-margin-top-6" for="registered-address-country">
+                                Country
+                            </label>
+
+                            <select class="govuk-input autocomplete" id="selectData" name="selectData">
+
+                                <option value=""></option>
+                                {% for country in countries %}
+                                <option value="{{ country.value }}">{{ country.value }}</option>
+                                {% endfor %}
+
+                            </select>
+                        </div>
+
+                    </div>
+
+                    {% else %}
+
+                    <div class="govuk-form-group">
+
+                        <div class="govuk-form-group govuk-!-margin-top-3">
+                            <label class="govuk-label" for="postal-uk-address-line-1">
+                                Address line 1
+                            </label>
+                            <input class="govuk-input" id="postal-uk-address-line-1" name="postal-uk-address-line-1"
+                                type="text" value="{{ data['postal-uk-address-line-1'] }}"
+                                autocomplete="postal-uk-address-line-1">
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="postal-uk-address-line-2">
+                                Address line 2
+                            </label>
+                            <input class="govuk-input" id="postal-uk-address-line-2" name="postal-uk-address-line-2"
+                                type="text" value="{{ data['postal-uk-address-line-2'] }}"
+                                autocomplete="postal-uk-address-line-2">
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="postal-uk-address-town">
+                                Town or city
+                            </label>
+                            <input class="govuk-input govuk-!-width-two-thirds" id="postal-uk-address-town"
+                                name="postal-uk-address-town" type="text" value="{{ data['postal-uk-address-town'] }}"
+                                autocomplete="postal-uk-address-town">
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="postal-uk-address-county">
+                                County
+                            </label>
+                            <input class="govuk-input govuk-input--width-20" id="postal-uk-address-county"
+                                name="postal-uk-address-county" type="text"
+                                value="{{ data['postal-uk-address-county'] }}" autocomplete="postal-uk-address-county">
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="postal-uk-address-postcode">
+                                Post code
+                            </label>
+                            <input class="govuk-input govuk-input--width-10" id="postal-uk-address-postcode"
+                                name="postal-uk-address-postcode" type="text"
+                                value="{{ data['postal-uk-address-postcode'] }}"
+                                autocomplete="postal-uk-address-postcode">
+                        </div>
+
+                    </div>
+
+                    {% endif %}

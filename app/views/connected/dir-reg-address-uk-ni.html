@@ -40,69 +40,61 @@ Supplier`s information - GOV.UK
 
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    What is {{ data['connectedPerson'] }}`s address?
+                    Enter {{ data['connectedPerson'] }}’s address manually
                 </h1>
+                {% else %}
+                <h1 class="govuk-fieldset__heading">
+                    Address not found, enter {{ data['connectedPerson'] }}’s address manually
+                </h1>
+                {% endif %}
             </legend>
-
-
 
             <form class="form" method="post">
                 <div class="govuk-form-group">
 
                     <div class="govuk-form-group govuk-!-margin-top-3">
-                        <label class="govuk-label" for="directorAddressNi-address-line-1">
+                        <label class="govuk-label" for="dirRegAddressUkNi-address-line-1">
                             Address line 1
                         </label>
-                        <input class="govuk-input" id="directorAddressNi-address-line-1"
-                            name="directorAddressNi-address-line-1" type="text"
-                            autocomplete="directorAddressNi-address-line1">
+                        <input class="govuk-input" id="directorAdressUk-address-line-1"
+                            name="dirRegAddressUkNi-address-line-1" type="text"
+                            autocomplete="dirRegAddressUkNi-address-line1">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="directorAddressNi-address-line-2">
+                        <label class="govuk-label" for="directorAdressUk-address-line-2">
                             Address line 2 (optional)
                         </label>
-                        <input class="govuk-input" id="directorAddressNi-address-line-2"
-                            name="directorAddressNi-address-line-2" type="text"
-                            autocomplete="directorAddressNi-address-line-2">
+                        <input class="govuk-input" id="directorAdressUk-address-line-2"
+                            name="dirRegAddressUkNi-address-line-2" type="text"
+                            autocomplete="dirRegAddressUkNi-address-line-2">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="directorAddressNi-address-town">
+                        <label class="govuk-label" for="directorAdressUk-address-town">
                             Town or city
                         </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="directorAddressNi-address-town"
-                            name="directorAddressNi-address-town" type="text"
-                            autocomplete="directorAddressNi-address-town">
+                        <input class="govuk-input govuk-!-width-two-thirds" id="directorAdressUk-address-town"
+                            name="dirRegAddressUkNi-address-town" type="text"
+                            autocomplete="dirRegAddressUkNi-address-town">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="directorAddressNi-address-postcode">
-                            County, State or Province (optional)
+                        <label class="govuk-label" for="directorAdressUk-address-postcode">
+                            County (optional)
                         </label>
-                        <input class="govuk-input govuk-input--width-20" id="directorAddressNi-address-county"
-                            name="directorAddressNi-address-county" type="text"
-                            autocomplete="directorAddressNi-address-county">
+                        <input class="govuk-input govuk-input--width-20" id="directorAdressUk-address-county"
+                            name="dirRegAddressUkNi-address-county" type="text"
+                            autocomplete="dirRegAddressUkNi-address-county">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="directorAddressNi-address-postcode">
-                            Postal or Zip code
+                        <label class="govuk-label" for="dirRegAddressUkNi-address-postcode">
+                            Post code
                         </label>
-                        <input class="govuk-input govuk-input--width-10" id="directorAddressNi-address-postcode"
-                            name="directorAddressNi-address-postcode" type="text"
-                            autocomplete="directorAddressNi-postal-code">
+                        <input class="govuk-input govuk-input--width-10" id="directorAdressUk-address-postcode"
+                            name="dirRegAddressUkNi-address-postcode" type="text"
+                            autocomplete="dirRegAddressUkNi-postal-code">
                     </div>
-                    <label class="govuk-label govuk-!-margin-top-6" for="directorAddressNi-address-country">
-                        Country
-                    </label>
-
-                    <select class="govuk-input autocomplete" id="selectData" name="selectData">
-
-                        <option value=""></option>
-                        {% for country in countries %}
-                        <option value="{{ country.value }}">{{ country.value }}</option>
-                        {% endfor %}
-
-                    </select>
-
                 </div>
                 <div class="govuk-form-group">
                     <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">

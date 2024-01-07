@@ -8,8 +8,40 @@ const axios = require('axios');
 // Add your routes here - above the module.exports line
 
 router.post('/director-individual-ni', function (req, res) {
-  res.redirect('director-address-type-ni');
+  res.redirect('director-reg-address-type-ni');
 })
+
+router.post('/director-reg-address-type-ni', function (req, res) {
+
+  let addressTypeRegDirNi = req.session.data.addressTypeRegDirNi;
+
+  if (addressTypeRegDirNi == "No") {
+    res.redirect('dir-reg-address-ni');
+  } else {
+    res.redirect('find-reg-address-dir-ni');
+  }
+})
+
+router.get('/dir-reg-address-ni', function (req, res) {
+  res.render(path.resolve(__dirname, 'dir-reg-address-ni'), {
+    countries: require('../../data/data').countries
+  })
+})
+
+router.post('/dir-reg-address-ni', function (req, res) {
+  res.redirect('dir-address-same-ni');
+})
+
+router.post('/dir-address-same-ni', function (req, res) {
+
+  let addressSameDirNi = req.session.data.addressSameDirNi;
+  if (addressSameDirNi == "Yes") {
+    res.redirect('dir-law-register-ni');
+  } else {
+    res.redirect('director-address-type-ni');
+  }
+})
+
 
 router.post('/director-address-type-ni', function (req, res) {
 
@@ -790,6 +822,56 @@ router.post('/find-address-dir-ni', function (req, res) {
 
   } else {
     res.redirect('/find-address-dir-ni')
+  }
+
+})
+
+router.post('/select-reg-address-dir-ni', function (req, res) {
+  res.redirect('dir-address-same-ni');
+});
+
+router.post('/find-reg-address-dir-ni', function (req, res) {
+
+  var postcodeLookup = req.session.data['postcode']
+
+  const regex = RegExp('^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$');
+
+  if (postcodeLookup) {
+
+    if (regex.test(postcodeLookup) === true) {
+
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
+        .then(response => {
+          var dirRegNiAddresses = response.data.results.map(result => result.DPA.ADDRESS);
+
+          const titleCaseDirRegNiAddresses = dirRegNiAddresses.map(address => {
+            const parts = address.split(', ');
+            const formattedParts = parts.map((part, index) => {
+              if (index === parts.length - 1) {
+                // Preserve postcode (DL14 0DX) in uppercase
+                return part.toUpperCase();
+              }
+              return part
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ');
+            });
+            return formattedParts.join(', ');
+          });
+
+          req.session.data['dirRegNiAddresses'] = titleCaseDirRegNiAddresses;
+
+          res.redirect('select-reg-address-dir-ni')
+        })
+        .catch(error => {
+          console.log(error);
+          res.redirect('/connected/dir-reg-address-uk-ni')
+        });
+
+    }
+
+  } else {
+    res.redirect('/find-reg-address-dir-ni')
   }
 
 })

@@ -518,6 +518,39 @@ router.post('/psc-register-ni', function (req, res) {
 })
 
 router.post('/parent-sub', function (req, res) {
+  res.redirect('parent-reg-address-type');
+})
+
+router.post('/parent-reg-address-type', function (req, res) {
+
+  let addressRegTypeParent = req.session.data.addressRegTypeParent;
+
+  if (addressRegTypeParent == "No") {
+    res.redirect('parent-reg-address');
+  }
+  else {
+    res.redirect('find-reg-address-parent');
+  }
+})
+
+router.get('/parent-reg-address', function (req, res) {
+  res.render(path.resolve(__dirname, 'parent-reg-address'), {
+    countries: require('../../data/data').countries
+  })
+})
+
+router.post('/parent-address-same', function (req, res) {
+
+  let addressSameParent = req.session.data.addressSameParent;
+
+  if (addressSameParent == "Yes") {
+    res.redirect('parent-company-number-question');
+  } else {
+    res.redirect('parent-address-type');
+  }
+})
+
+router.post('/parent-reg-address', function (req, res) {
   res.redirect('parent-address-type');
 })
 
@@ -922,6 +955,56 @@ router.post('/find-address-parent', function (req, res) {
 
   } else {
     res.redirect('/find-address-parent')
+  }
+
+})
+
+router.post('/select-reg-address-parent', function (req, res) {
+  res.redirect('parent-address-same');
+});
+
+router.post('/find-reg-address-parent', function (req, res) {
+
+  var postcodeLookup = req.session.data['postcode']
+
+  const regex = RegExp('^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$');
+
+  if (postcodeLookup) {
+
+    if (regex.test(postcodeLookup) === true) {
+
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
+        .then(response => {
+          var parentRegAddresses = response.data.results.map(result => result.DPA.ADDRESS);
+
+          const titleCaseParentRegAddresses = parentRegAddresses.map(address => {
+            const parts = address.split(', ');
+            const formattedParts = parts.map((part, index) => {
+              if (index === parts.length - 1) {
+                // Preserve postcode (DL14 0DX) in uppercase
+                return part.toUpperCase();
+              }
+              return part
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ');
+            });
+            return formattedParts.join(', ');
+          });
+
+          req.session.data['parentRegAddresses'] = titleCaseParentRegAddresses;
+
+          res.redirect('select-reg-address-parent')
+        })
+        .catch(error => {
+          console.log(error);
+          res.redirect('/connected/parent-reg-address-uk')
+        });
+
+    }
+
+  } else {
+    res.redirect('/find-reg-address-parent')
   }
 
 })

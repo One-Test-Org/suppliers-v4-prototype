@@ -722,7 +722,7 @@ Supplier`s information - GOV.UK
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  PSC details:
+                  Parent or subsidiary details:
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data['connectedPerson'] }} </br>
@@ -734,6 +734,104 @@ Supplier`s information - GOV.UK
                   </a>
                 </dd>
               </div>
+
+              {% if data['addressRegTypeParent'] == "Yes" and data['parentRegAddress'] | length == "0" %}
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Registered or principal address:
+                </dt>
+                {% if data['connectedPersonsUkParent-address-line-2'] | length != "0" and
+                data['connectedPersonsUkParent-address-county'] | length != "0" %}
+                <dd class="govuk-summary-list__value">
+                  {{ data['connectedPersonsRegUkParent-address-line-1'] }} </br>
+                  {{ data['connectedPersonsRegUkParent-address-line-2'] }} </br>
+                  {{ data['connectedPersonsRegUkParent-address-town'] }} </br>
+                  {{ data['connectedPersonsRegUkParent-address-county'] }} </br>
+                  {{ data['connectedPersonsRegUkParent-address-postcode'] }} </br>
+                </dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">
+                  {{ data['connectedPersonsRegUkParent-address-line-1'] }} </br>
+                  {{ data['connectedPersonsRegUkParent-address-town'] }} </br>
+                  {{ data['connectedPersonsRegUkParent-address-postcode'] }} </br>
+                </dd>
+                {% endif %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="parent-reg-address-type">
+                    Change<span class="govuk-visually-hidden">
+                      the Organisation`s address</span>
+                  </a>
+                </dd>
+              </div>
+
+              {% elif data['addressRegTypeParent'] == "Yes" and data['parentRegAddress'] | length != "0" %}
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Registered or principal address:
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['parentRegAddress'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="parent-reg-address-type">
+                    Change<span class="govuk-visually-hidden"> Change</span>
+                  </a>
+                </dd>
+              </div>
+
+              {% else %}
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Registered or principal address:
+                </dt>
+                {% if data['connectedPersonsParent-address-line-2'] | length != "0" and
+                data['connectedPersonsParent-address-county'] | length != "0" %}
+                <dd class="govuk-summary-list__value">
+                  {{ data['connectedPersonsRegParent-address-line-1'] }} </br>
+                  {{ data['connectedPersonsRegParent-address-line-2'] }} </br>
+                  {{ data['connectedPersonsRegParent-address-town'] }} </br>
+                  {{ data['connectedPersonsRegParent-address-county'] }} </br>
+                  {{ data['connectedPersonsRegParent-address-postcode'] }} </br>
+                  {{ data['selectData'] }}
+                </dd>
+                {% else %}
+                <dd class="govuk-summary-list__value">
+                  {{ data['connectedPersonsRegParent-address-line-1'] }} </br>
+                  {{ data['connectedPersonsRegParent-address-town'] }} </br>
+                  {{ data['connectedPersonsRegParent-address-postcode'] }} </br>
+                  {{ data['selectData'] }}
+                </dd>
+                {% endif %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="parent-reg-address-type">
+                    Change<span class="govuk-visually-hidden">
+                      the person`s address</span>
+                  </a>
+                </dd>
+              </div>
+
+              {% endif %}
+
+              {% if data['addressSameParent'] == "Yes" %}
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Service address:
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['parentRegAddress'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="parent-reg-address-type">
+                    Change<span class="govuk-visually-hidden"> Change</span>
+                  </a>
+                </dd>
+              </div>
+
+              {% else %}
 
               {% if data['addressTypeParent'] == "Yes" and data['parentAddress'] | length == "0" %}
 
@@ -813,6 +911,7 @@ Supplier`s information - GOV.UK
                 </dd>
               </div>
 
+              {% endif %}
               {% endif %}
 
               <div class="govuk-summary-list__row">

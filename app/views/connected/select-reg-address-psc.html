@@ -45,8 +45,8 @@ Supplier`s information - GOV.UK
                 </h1>
             </legend>
 
-            <p>{{ data['pscAddresses'] | length }} {% if (data['pscAddresses'] | length > 1) %}pscAddresses{% else
-                %}pscAddress{%
+            <p>{{ data['pscRegAddresses'] | length }} {% if (data['pscRegAddresses'] | length > 1) %}Addresses{% else
+                %}Address{%
                 endif %} found for {{ data['postcode'] }}. <a href="find-address-psc">Search again</a></p>
 
             <form class="form" method="post">
@@ -54,12 +54,12 @@ Supplier`s information - GOV.UK
 
                     <div class="govuk-radios">
                         {# Note: this line was previously `for address in addresses` #}
-                        {% for pscAddress in data['pscAddresses'] %}
+                        {% for pscRegAddress in data['pscRegAddresses'] %}
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="pscAddress-{{ loop.index }}" name="pscAddress"
-                                type="radio" value="{{ pscAddress }}">
+                            <input class="govuk-radios__input" id="pscRegAddress-{{ loop.index }}" name="pscRegAddress"
+                                type="radio" value="{{ pscRegAddress }}">
                             <label class="govuk-label govuk-radios__label" for="address-{{ loop.index }}">
-                                {{ pscAddress }}
+                                {{ pscRegAddress }}
                             </label>
                         </div>
                         {% endfor %}

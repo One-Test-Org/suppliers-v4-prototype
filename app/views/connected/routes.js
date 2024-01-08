@@ -746,7 +746,15 @@ router.post('/right-nature-of-control', function (req, res) {
 })
 
 router.post('/right-date-registered', function (req, res) {
-  res.redirect('right-law-register');
+
+  let personQuestion = req.session.data.personQuestion;
+
+  if (personQuestion == "organisation") {
+    res.redirect('right-law-register');
+  }
+  else {
+    res.redirect('check-answers-connected-person');
+  }
 })
 
 router.post('/right-law-register', function (req, res) {

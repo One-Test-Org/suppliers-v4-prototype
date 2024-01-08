@@ -1732,7 +1732,7 @@ Supplier`s information - GOV.UK
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Director details:
+                    Director's details:
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {{ data['connectedPerson'] }} </br>
@@ -1749,7 +1749,7 @@ Supplier`s information - GOV.UK
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Director residency:
+                    Director's residency:
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {{ data['selectCountry'] }}
@@ -1761,6 +1761,104 @@ Supplier`s information - GOV.UK
                     </a>
                   </dd>
                 </div>
+
+                {% if data['addressRegTypeDir'] == "Yes" and data['dirRegAddress'] | length == "0" %}
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Registered or principal address:
+                  </dt>
+                  {% if data['directorAddressUk-address-line-2'] | length != "0" and
+                  data['directorAddressUk-address-county'] | length != "0" %}
+                  <dd class="govuk-summary-list__value">
+                    {{ data['directorAddressUk-address-line-1'] }} </br>
+                    {{ data['directorAddressUk-address-line-2'] }} </br>
+                    {{ data['directorAddressUk-address-town'] }} </br>
+                    {{ data['directorAddressUk-address-county'] }} </br>
+                    {{ data['directorAddressUk-address-postcode'] }} </br>
+                  </dd>
+                  {% else %}
+                  <dd class="govuk-summary-list__value">
+                    {{ data['directorAddressUk-address-line-1'] }} </br>
+                    {{ data['directorAddressUk-address-town'] }} </br>
+                    {{ data['directorAddressUk-address-postcode'] }} </br>
+                  </dd>
+                  {% endif %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="director-reg-address-type">
+                      Change<span class="govuk-visually-hidden">
+                        the Director`s address</span>
+                    </a>
+                  </dd>
+                </div>
+
+                {% elif data['addressRegTypeDir'] == "Yes" and data['dirRegAddress'] | length != "0" %}
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Registered or principal address:
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['dirRegAddress'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="address-reg-type">
+                      Change<span class="govuk-visually-hidden"> Change</span>
+                    </a>
+                  </dd>
+                </div>
+
+                {% else %}
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Registered or principal address:
+                  </dt>
+                  {% if data['directorAddress-address-line-2'] | length != "0" and
+                  data['directorAddress-address-county'] | length != "0" %}
+                  <dd class="govuk-summary-list__value">
+                    {{ data['directorAddress-address-line-1'] }} </br>
+                    {{ data['directorAddress-address-line-2'] }} </br>
+                    {{ data['directorAddress-address-town'] }} </br>
+                    {{ data['directorAddress-address-county'] }} </br>
+                    {{ data['directorAddress-address-postcode'] }} </br>
+                    {{ data['selectData'] }}
+                  </dd>
+                  {% else %}
+                  <dd class="govuk-summary-list__value">
+                    {{ data['directorAddress-address-line-1'] }} </br>
+                    {{ data['directorAddress-address-town'] }} </br>
+                    {{ data['directorAddress-address-postcode'] }} </br>
+                    {{ data['selectData'] }}
+                  </dd>
+                  {% endif %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="director-reg-address-type">
+                      Change<span class="govuk-visually-hidden">
+                        the person`s address</span>
+                    </a>
+                  </dd>
+                </div>
+
+                {% endif %}
+
+                {% if data['addressRegSameDir'] == "Yes" %}
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Service address:
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['dirRegAddress'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="address-reg-type">
+                      Change<span class="govuk-visually-hidden"> Change</span>
+                    </a>
+                  </dd>
+                </div>
+
+                {% else %}
 
                 {% if data['addressTypeDir'] == "Yes" and data['dirAddress'] | length == "0" %}
 
@@ -1840,6 +1938,7 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
+                {% endif %}
                 {% endif %}
 
                 {% elif data['connectedPersons'] == "A director or shadow director of the supplier (org)" %}

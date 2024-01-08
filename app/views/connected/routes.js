@@ -98,7 +98,48 @@ router.get('/director-residency', function (req, res) {
 })
 
 router.post('/director-residency', function (req, res) {
-  res.redirect('director-address-type');
+  res.redirect('director-reg-address-type');
+})
+
+router.post('/director-reg-address-type', function (req, res) {
+
+  let addressRegTypeDir = req.session.data.addressRegTypeDir;
+
+  if (addressRegTypeDir == "No") {
+    res.redirect('dir-reg-address');
+  }
+  else {
+    res.redirect('find-reg-address-dir');
+  }
+})
+
+router.get('/dir-reg-address', function (req, res) {
+  res.render(path.resolve(__dirname, 'dir-reg-address'), {
+    countries: require('../../data/data').countries
+  })
+})
+
+router.post('/dir-reg-address', function (req, res) {
+  res.redirect('dir-address-same');
+})
+
+router.post('/dir-address-same', function (req, res) {
+
+  let addressRegSameDir = req.session.data.addressRegSameDir;
+
+  if (addressRegSameDir == "Yes") {
+    res.redirect('check-answers-connected-person');
+  } else {
+    res.redirect('director-address-type');
+  }
+})
+
+router.post('/dir-reg-address', function (req, res) {
+  res.redirect('check-answers-connected-person');
+})
+
+router.post('/dir-reg-address-uk', function (req, res) {
+  res.redirect('check-answers-connected-person');
 })
 
 router.post('/director-address-type', function (req, res) {
@@ -876,6 +917,56 @@ router.post('/find-address-dir', function (req, res) {
 
   } else {
     res.redirect('/find-address-dir')
+  }
+
+})
+
+router.post('/select-reg-address-dir', function (req, res) {
+  res.redirect('dir-address-same');
+});
+
+router.post('/find-reg-address-dir', function (req, res) {
+
+  var postcodeLookup = req.session.data['postcode']
+
+  const regex = RegExp('^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$');
+
+  if (postcodeLookup) {
+
+    if (regex.test(postcodeLookup) === true) {
+
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
+        .then(response => {
+          var dirRegAddresses = response.data.results.map(result => result.DPA.ADDRESS);
+
+          const titleCaseDirRegAddresses = dirRegAddresses.map(address => {
+            const parts = address.split(', ');
+            const formattedParts = parts.map((part, index) => {
+              if (index === parts.length - 1) {
+                // Preserve postcode (DL14 0DX) in uppercase
+                return part.toUpperCase();
+              }
+              return part
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ');
+            });
+            return formattedParts.join(', ');
+          });
+
+          req.session.data['dirRegAddresses'] = titleCaseDirRegAddresses;
+
+          res.redirect('select-reg-address-dir')
+        })
+        .catch(error => {
+          console.log(error);
+          res.redirect('/connected/dir-reg-address-uk')
+        });
+
+    }
+
+  } else {
+    res.redirect('/find-reg-address-dir')
   }
 
 })

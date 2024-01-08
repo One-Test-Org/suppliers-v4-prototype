@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supplier`s information - GOV.UK
+{{ data['pageTitleAddOn' ]}}
+{% endblock %}
+
+{% block pageHead %}
+<!--[if gt IE 8]><!-->
+<link href="/public/stylesheets/accessible-autocomplete.css" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a prototype of a service in development.
+    </p>
+</div>
+
+
+<a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Connected persons
+        </h2>
+        <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                {% if data['postcode'] | length == "0" %}
+                <h1 class="govuk-fieldset__heading">
+                    Enter {{ data['connectedPerson'] }}’s address manually
+                </h1>
+                {% else %}
+                <h1 class="govuk-fieldset__heading">
+                    Address not found, enter {{ data['connectedPerson'] }}’s address manually
+                </h1>
+                {% endif %}
+            </legend>
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+
+                    <div class="govuk-form-group govuk-!-margin-top-3">
+                        <label class="govuk-label" for="connectedPersonsRegUkPred-address-line-1">
+                            Address line 1
+                        </label>
+                        <input class="govuk-input" id="connectedPersonsRegUkPred-address-line-1"
+                            name="connectedPersonsRegUkPred-address-line-1" type="text"
+                            autocomplete="connectedPersonsRegUkPred-address-line1">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="connectedPersonsRegUkPred-address-line-2">
+                            Address line 2 (optional)
+                        </label>
+                        <input class="govuk-input" id="connectedPersonsRegUkPred-address-line-2"
+                            name="connectedPersonsRegUkPred-address-line-2" type="text"
+                            autocomplete="connectedPersonsRegUkPred-address-line-2">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="connectedPersonsRegUkPred-address-town">
+                            Town or city
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="connectedPersonsRegUkPred-address-town"
+                            name="connectedPersonsRegUkPred-address-town" type="text"
+                            autocomplete="connectedPersonsRegUkPred-address-town">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="connectedPersonsRegUkPred-address-postcode">
+                            County (optional)
+                        </label>
+                        <input class="govuk-input govuk-input--width-20" id="connectedPersonsRegUkPred-address-county"
+                            name="connectedPersonsRegUkPred-address-county" type="text"
+                            autocomplete="connectedPersonsRegUkPred-address-county">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="connectedPersonsRegUkPred-address-postcode">
+                            Post code
+                        </label>
+                        <input class="govuk-input govuk-input--width-10" id="connectedPersonsRegUkPred-address-postcode"
+                            name="connectedPersonsRegUkPred-address-postcode" type="text"
+                            autocomplete="connectedPersonsRegUkPred-postal-code">
+                    </div>
+                </div>
+                <div class="govuk-form-group">
+                    <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+                        Save and continue
+                    </button>
+                </div>
+
+            </form>
+        </fieldset>
+
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/script.js"></script>
+<script src="/public/javascripts/data.js"></script>
+{% endblock %}

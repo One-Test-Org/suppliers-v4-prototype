@@ -597,7 +597,19 @@ router.get('/parent-address', function (req, res) {
 })
 
 router.post('/predecessor', function (req, res) {
-  res.redirect('pred-address-type');
+  res.redirect('pred-reg-address-type');
+})
+
+router.post('/pred-reg-address-type', function (req, res) {
+
+  let addressRegTypePred = req.session.data.addressRegTypePred;
+
+  if (addressRegTypePred == "No") {
+    res.redirect('pred-reg-address');
+  }
+  else {
+    res.redirect('find-reg-address-pred');
+  }
 })
 
 router.post('/pred-address-type', function (req, res) {
@@ -610,6 +622,25 @@ router.post('/pred-address-type', function (req, res) {
   else {
     res.redirect('find-address-pred');
   }
+})
+
+router.post('/pred-address-same', function (req, res) {
+
+  let addressSamePred = req.session.data.addressSamePred;
+
+  if (addressSamePred == "Yes") {
+    res.redirect('pred-company-number-question');
+  } else {
+    res.redirect('pred-address-type');
+  }
+})
+
+router.post('/pred-reg-address', function (req, res) {
+  res.redirect('pred-address-type');
+})
+
+router.post('/pred-reg-address-uk', function (req, res) {
+  res.redirect('pred-address-type');
 })
 
 router.post('/pred-address', function (req, res) {
@@ -1063,6 +1094,56 @@ router.post('/find-address-psc', function (req, res) {
 
   } else {
     res.redirect('/find-address-psc')
+  }
+
+})
+
+router.post('/select-reg-address-pred', function (req, res) {
+  res.redirect('pred-address-same');
+});
+
+router.post('/find-reg-address-pred', function (req, res) {
+
+  var postcodeLookup = req.session.data['postcode']
+
+  const regex = RegExp('^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$');
+
+  if (postcodeLookup) {
+
+    if (regex.test(postcodeLookup) === true) {
+
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
+        .then(response => {
+          var predRegAddresses = response.data.results.map(result => result.DPA.ADDRESS);
+
+          const titleCasePredRegAddresses = predRegAddresses.map(address => {
+            const parts = address.split(', ');
+            const formattedParts = parts.map((part, index) => {
+              if (index === parts.length - 1) {
+                // Preserve postcode (DL14 0DX) in uppercase
+                return part.toUpperCase();
+              }
+              return part
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ');
+            });
+            return formattedParts.join(', ');
+          });
+
+          req.session.data['predRegAddresses'] = titleCasePredRegAddresses;
+
+          res.redirect('select-reg-address-pred')
+        })
+        .catch(error => {
+          console.log(error);
+          res.redirect('/connected/pred-reg-address-uk')
+        });
+
+    }
+
+  } else {
+    res.redirect('/find-reg-address-pred')
   }
 
 })

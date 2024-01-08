@@ -45,7 +45,7 @@ Supplier`s information - GOV.UK
                 </h1>
             </legend>
 
-            <p>{{ data['predAddresses'] | length }} {% if (data['predAddresses'] | length > 1) %}Addresses{% else
+            <p>{{ data['predRegAddresses'] | length }} {% if (data['predRegAddresses'] | length > 1) %}Addresses{% else
                 %}Address{%
                 endif %} found for {{ data['postcode'] }}. <a href="find-address-pred">Search again</a></p>
 
@@ -54,12 +54,12 @@ Supplier`s information - GOV.UK
 
                     <div class="govuk-radios">
                         {# Note: this line was previously `for address in addresses` #}
-                        {% for predAddress in data['predAddresses'] %}
+                        {% for predRegAddress in data['predRegAddresses'] %}
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="predAddress-{{ loop.index }}" name="predAddress"
-                                type="radio" value="{{ predAddress }}">
-                            <label class="govuk-label govuk-radios__label" for="predAddress-{{ loop.index }}">
-                                {{ predAddress }}
+                            <input class="govuk-radios__input" id="predRegAddress-{{ loop.index }}"
+                                name="predRegAddress" type="radio" value="{{ predRegAddress }}">
+                            <label class="govuk-label govuk-radios__label" for="predRegAddress-{{ loop.index }}">
+                                {{ predRegAddress }}
                             </label>
                         </div>
                         {% endfor %}

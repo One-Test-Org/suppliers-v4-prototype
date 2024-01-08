@@ -580,6 +580,105 @@ Supplier`s information - GOV.UK
               </dd>
             </div>
 
+
+            {% if data['addressRegTypePred'] == "Yes" and data['predRegAddress'] | length == "0" %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Registered or principal address:
+              </dt>
+              {% if data['connectedPersonsRegUkPred-address-line-2'] | length != "0" and
+              data['connectedPersonsRegUkPred-address-county'] | length != "0" %}
+              <dd class="govuk-summary-list__value">
+                {{ data['connectedPersonsRegUkPred-address-line-1'] }} </br>
+                {{ data['connectedPersonsRegUkPred-address-line-2'] }} </br>
+                {{ data['connectedPersonsRegUkPred-address-town'] }} </br>
+                {{ data['connectedPersonsRegUkPred-address-county'] }} </br>
+                {{ data['connectedPersonsRegUkPred-address-postcode'] }} </br>
+              </dd>
+              {% else %}
+              <dd class="govuk-summary-list__value">
+                {{ data['connectedPersonsRegUkPred-address-line-1'] }} </br>
+                {{ data['connectedPersonsRegUkPred-address-town'] }} </br>
+                {{ data['connectedPersonsRegUkPred-address-postcode'] }} </br>
+              </dd>
+              {% endif %}
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="pred-reg-address-type">
+                  Change<span class="govuk-visually-hidden">
+                    the Organisation`s address</span>
+                </a>
+              </dd>
+            </div>
+
+            {% elif data['addressRegTypePred'] == "Yes" and data['predRegAddress'] | length != "0" %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Registered or principal address:
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['predRegAddress'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="pred-reg-address-type">
+                  Change<span class="govuk-visually-hidden"> Change</span>
+                </a>
+              </dd>
+            </div>
+
+            {% else %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Registered or principal address:
+              </dt>
+              {% if data['connectedPersonsPred-address-line-2'] | length != "0" and
+              data['connectedPersonsPred-address-county'] | length != "0" %}
+              <dd class="govuk-summary-list__value">
+                {{ data['connectedPersonsRegPred-address-line-1'] }} </br>
+                {{ data['connectedPersonsRegPred-address-line-2'] }} </br>
+                {{ data['connectedPersonsRegPred-address-town'] }} </br>
+                {{ data['connectedPersonsRegPred-address-county'] }} </br>
+                {{ data['connectedPersonsRegPred-address-postcode'] }} </br>
+                {{ data['selectData'] }}
+              </dd>
+              {% else %}
+              <dd class="govuk-summary-list__value">
+                {{ data['connectedPersonsRegPred-address-line-1'] }} </br>
+                {{ data['connectedPersonsRegPred-address-town'] }} </br>
+                {{ data['connectedPersonsRegPred-address-postcode'] }} </br>
+                {{ data['selectData'] }}
+              </dd>
+              {% endif %}
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="pred-reg-address-type">
+                  Change<span class="govuk-visually-hidden">
+                    the person`s address</span>
+                </a>
+              </dd>
+            </div>
+
+            {% endif %}
+
+            {% if data['addressSamePred'] == "Yes" %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Service address:
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['predRegAddress'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="pred-address-same">
+                  Change<span class="govuk-visually-hidden"> Change</span>
+                </a>
+              </dd>
+            </div>
+
+            {% else %}
+
             {% if data['addressTypePred'] == "Yes" and data['predAddress'] | length == "0" %}
 
             <div class="govuk-summary-list__row">
@@ -658,6 +757,7 @@ Supplier`s information - GOV.UK
               </dd>
             </div>
 
+            {% endif %}
             {% endif %}
 
             <div class="govuk-summary-list__row">

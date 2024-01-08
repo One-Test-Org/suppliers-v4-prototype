@@ -708,6 +708,12 @@ router.post('/pred-address-same', function (req, res) {
   }
 })
 
+router.get('/pred-reg-address', function (req, res) {
+  res.render(path.resolve(__dirname, 'pred-reg-address'), {
+    countries: require('../../data/data').countries
+  })
+})
+
 router.post('/pred-reg-address', function (req, res) {
   res.redirect('pred-address-type');
 })

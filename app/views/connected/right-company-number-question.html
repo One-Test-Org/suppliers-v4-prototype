@@ -29,12 +29,12 @@ Supplier`s information - GOV.UK
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
 
         <h2 class="govuk-heading-m" style="color: #1d70b8;">
             Connected persons
         </h2>
-        <span class="govuk-caption-l">Right to exercise control</span>
+        <span class="govuk-caption-l"> {{ data['connectedPersons'] }} </span>
 
         <form class="form" method="post">
             <div class="govuk-form-group">

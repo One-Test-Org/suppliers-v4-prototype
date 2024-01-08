@@ -29,13 +29,14 @@ Supplier`s information - GOV.UK
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
-        <form class="form" method="post">
+
+    <form class="form" method="post">
+        <div class="govuk-grid-column-three-quarters">
 
             <h2 class="govuk-heading-m" style="color: #1d70b8;">
                 Connected persons
             </h2>
-            <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
+            <span class="govuk-caption-l"> {{ data['connectedPersons'] }} </span>
 
             <fieldset class="govuk-fieldset" data-required data-error="Select the nature of control"
                 aria-required="true">
@@ -48,7 +49,8 @@ Supplier`s information - GOV.UK
                             </h1>
                         </legend>
                         <div id="controlNature-hint" class="govuk-hint">
-                            Select which of the specified conditions in Part 1 of Schedule 1A to the Companies Act 2006
+                            Select which of the specified conditions in Part 1 of Schedule 1A to the Companies Act
+                            2006
                             applies
                         </div>
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -102,10 +104,10 @@ Supplier`s information - GOV.UK
 
 
                 <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
-        </form>
+    </form>
 
-        </fieldset>
-    </div>
+    </fieldset>
+</div>
 </div>
 
 {% endblock %}

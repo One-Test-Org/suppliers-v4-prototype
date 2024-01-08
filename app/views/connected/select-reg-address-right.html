@@ -45,21 +45,22 @@ Supplier`s information - GOV.UK
                 </h1>
             </legend>
 
-            <p>{{ data['rightAddresses'] | length }} {% if (data['rightAddresses'] | length > 1) %}Addresses{% else
+            <p>{{ data['rightRegAddresses'] | length }} {% if (data['rightRegAddresses'] | length > 1) %}Addresses{%
+                else
                 %}Address{%
-                endif %} found for {{ data['postcode'] }}. <a href="find-address-right">Search again</a></p>
+                endif %} found for {{ data['postcode'] }}. <a href="find-reg-address-right">Search again</a></p>
 
             <form class="form" method="post">
                 <div class="govuk-form-group">
 
                     <div class="govuk-radios">
                         {# Note: this line was previously `for address in addresses` #}
-                        {% for rightAddress in data['rightAddresses'] %}
+                        {% for rightRegAddress in data['rightRegAddresses'] %}
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="rightAddress-{{ loop.index }}" name="rightAddress"
-                                type="radio" value="{{ rightAddress }}">
-                            <label class="govuk-label govuk-radios__label" for="rightAddress-{{ loop.index }}">
-                                {{ rightAddress }}
+                            <input class="govuk-radios__input" id="rightRegAddress-{{ loop.index }}"
+                                name="rightRegAddress" type="radio" value="{{ rightRegAddress }}">
+                            <label class="govuk-label govuk-radios__label" for="rightRegAddress-{{ loop.index }}">
+                                {{ rightRegAddress }}
                             </label>
                         </div>
                         {% endfor %}
@@ -68,7 +69,7 @@ Supplier`s information - GOV.UK
                 </div>
 
                 <p class="govuk-body govuk-!-margin-top-3">
-                    Or, add address<a href="right-address-uk" class="govuk-link"> manually</a>.
+                    Or, add address<a href="right-reg-address-uk" class="govuk-link"> manually</a>.
                 </p>
 
                 <div class="govuk-form-group">

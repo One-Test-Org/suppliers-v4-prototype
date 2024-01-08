@@ -761,7 +761,7 @@ router.post('/right', function (req, res) {
   let personQuestion = req.session.data.personQuestion;
 
   if (personQuestion == "organisation") {
-    res.redirect('right-address-type');
+    res.redirect('right-reg-address-type');
   }
   else {
     res.redirect('right-residency');
@@ -775,7 +775,44 @@ router.get('/right-residency', function (req, res) {
 })
 
 router.post('/right-residency', function (req, res) {
-  res.redirect('right-address-type');
+  res.redirect('right-reg-address-type');
+})
+
+router.post('/right-reg-address-type', function (req, res) {
+
+  let addressRegTypeRight = req.session.data.addressRegTypeRight;
+
+  if (addressRegTypeRight == "No") {
+    res.redirect('right-reg-address');
+  }
+  else {
+    res.redirect('find-reg-address-right');
+  }
+})
+
+router.get('/right-reg-address', function (req, res) {
+  res.render(path.resolve(__dirname, 'right-reg-address'), {
+    countries: require('../../data/data').countries
+  })
+})
+
+router.post('/right-reg-address', function (req, res) {
+  res.redirect('right-address-same');
+})
+
+router.post('/right-reg-address-uk', function (req, res) {
+  res.redirect('right-address-same');
+})
+
+router.post('/right-address-same', function (req, res) {
+
+  let addressSameRight = req.session.data.addressSameRight;
+
+  if (addressSameRight == "Yes") {
+    res.redirect('right-nature-of-control');
+  } else {
+    res.redirect('right-address-type');
+  }
 })
 
 router.post('/right-address-type', function (req, res) {
@@ -1567,6 +1604,56 @@ router.post('/find-address-right', function (req, res) {
 
   } else {
     res.redirect('/find-address-right')
+  }
+
+})
+
+router.post('/select-reg-address-right', function (req, res) {
+  res.redirect('right-address-same');
+});
+
+router.post('/find-reg-address-right', function (req, res) {
+
+  var postcodeLookup = req.session.data['postcode']
+
+  const regex = RegExp('^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$');
+
+  if (postcodeLookup) {
+
+    if (regex.test(postcodeLookup) === true) {
+
+      axios.get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
+        .then(response => {
+          var rightRegAddresses = response.data.results.map(result => result.DPA.ADDRESS);
+
+          const titleCaseRightRegAddresses = rightRegAddresses.map(address => {
+            const parts = address.split(', ');
+            const formattedParts = parts.map((part, index) => {
+              if (index === parts.length - 1) {
+                // Preserve postcode (DL14 0DX) in uppercase
+                return part.toUpperCase();
+              }
+              return part
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ');
+            });
+            return formattedParts.join(', ');
+          });
+
+          req.session.data['rightRegAddresses'] = titleCaseRightRegAddresses;
+
+          res.redirect('select-reg-address-right')
+        })
+        .catch(error => {
+          console.log(error);
+          res.redirect('/connected/right-reg-address-uk')
+        });
+
+    }
+
+  } else {
+    res.redirect('/find-reg-address-right')
   }
 
 })

@@ -39,68 +39,64 @@ Supplier`s information - GOV.UK
         <span class="govuk-caption-l"> {{ data['connectedPersons'] }} </span>
 
         <fieldset class="govuk-fieldset">
+
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    What is {{ data['connectedPerson'] }}`s address?
+                    Enter {{ data['connectedPerson'] }}’s address manually
                 </h1>
+                {% else %}
+                <h1 class="govuk-fieldset__heading">
+                    Address not found, enter {{ data['connectedPerson'] }}’s address manually
+                </h1>
+                {% endif %}
             </legend>
 
             <form class="form" method="post">
                 <div class="govuk-form-group">
 
                     <div class="govuk-form-group govuk-!-margin-top-3">
-                        <label class="govuk-label" for="connectedPersonsRight-address-line-1">
+                        <label class="govuk-label" for="connectedPersonsRegUkRight-address-line-1">
                             Address line 1
                         </label>
-                        <input class="govuk-input" id="connectedPersonsRight-address-line-1"
-                            name="connectedPersonsRight-address-line-1" type="text"
-                            autocomplete="connectedPersonsRight-address-line1">
+                        <input class="govuk-input" id="connectedPersonsRegUkRight-address-line-1"
+                            name="connectedPersonsRegUkRight-address-line-1" type="text"
+                            autocomplete="connectedPersonsRegUkRight-address-line1">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="connectedPersonsRight-address-line-2">
+                        <label class="govuk-label" for="connectedPersonsRegUkRight-address-line-2">
                             Address line 2 (optional)
                         </label>
-                        <input class="govuk-input" id="connectedPersonsRight-address-line-2"
-                            name="connectedPersonsRight-address-line-2" type="text"
-                            autocomplete="connectedPersonsRight-address-line-2">
+                        <input class="govuk-input" id="connectedPersonsRegUkRight-address-line-2"
+                            name="connectedPersonsRegUkRight-address-line-2" type="text"
+                            autocomplete="connectedPersonsRegUkRight-address-line-2">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="connectedPersonsRight-address-town">
+                        <label class="govuk-label" for="connectedPersonsRegUkRight-address-town">
                             Town or city
                         </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="connectedPersonsRight-address-town"
-                            name="connectedPersonsRight-address-town" type="text"
-                            autocomplete="connectedPersonsRight-address-town">
+                        <input class="govuk-input govuk-!-width-two-thirds" id="connectedPersonsRegUkRight-address-town"
+                            name="connectedPersonsRegUkRight-address-town" type="text"
+                            autocomplete="connectedPersonsRegUkRight-address-town">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="connectedPersonsRight-address-postcode">
-                            County, State or Province (optional)
+                        <label class="govuk-label" for="connectedPersonsRegUkRight-address-postcode">
+                            County (optional)
                         </label>
-                        <input class="govuk-input govuk-input--width-20" id="connectedPersonsRight-address-county"
-                            name="connectedPersonsRight-address-county" type="text"
-                            autocomplete="connectedPersonsRight-address-county">
+                        <input class="govuk-input govuk-input--width-20" id="connectedPersonsRegUkRight-address-county"
+                            name="connectedPersonsRegUkRight-address-county" type="text"
+                            autocomplete="connectedPersonsRegUkRight-address-county">
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="connectedPersonsRight-address-postcode">
-                            Postal or Zip code
+                        <label class="govuk-label" for="connectedPersonsRegUkRight-address-postcode">
+                            Post code
                         </label>
-                        <input class="govuk-input govuk-input--width-10" id="connectedPersonsRight-address-postcode"
-                            name="connectedPersonsRight-address-postcode" type="text"
-                            autocomplete="connectedPersonsRight-postal-code">
+                        <input class="govuk-input govuk-input--width-10"
+                            id="connectedPersonsRegUkRight-address-postcode"
+                            name="connectedPersonsRegUkRight-address-postcode" type="text"
+                            autocomplete="connectedPersonsRegUkRight-postal-code">
                     </div>
-                    <label class="govuk-label govuk-!-margin-top-6" for="connectedPersonsRight-address-country">
-                        Country
-                    </label>
-
-                    <select class="govuk-input autocomplete" id="selectData" name="selectData">
-
-                        <option value=""></option>
-                        {% for country in countries %}
-                        <option value="{{ country.value }}">{{ country.value }}</option>
-                        {% endfor %}
-
-                    </select>
-
                 </div>
                 <div class="govuk-form-group">
                     <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
@@ -114,6 +110,9 @@ Supplier`s information - GOV.UK
 
     </div>
 </div>
+
+
+
 
 {% endblock %}
 

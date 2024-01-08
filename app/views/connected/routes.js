@@ -250,7 +250,7 @@ router.post('/gov-reg-address-type', function (req, res) {
   let addressTypeGovReg = req.session.data.addressTypeGovReg;
 
   if (addressTypeGovReg == "No") {
-    res.redirect('gov-reg-service-address');
+    res.redirect('gov-reg-address');
   } else {
     res.redirect('find-reg-address-gov');
   }
@@ -268,7 +268,7 @@ router.post('/gov-address-type', function (req, res) {
 })
 
 router.get('/gov-reg-address', function (req, res) {
-  res.render(path.resolve(__dirname, 'gov-reg-service-address'), {
+  res.render(path.resolve(__dirname, 'gov-reg-address'), {
     countries: require('../../data/data').countries
   })
 })

@@ -834,8 +834,8 @@ Supplier`s information - GOV.UK
               <dt class="govuk-summary-list__key">
                 Registered or principal address:
               </dt>
-              {% if data['connectedPersonsPred-address-line-2'] | length != "0" and
-              data['connectedPersonsPred-address-county'] | length != "0" %}
+              {% if data['connectedPersonsRegPred-address-line-2'] | length != "0" and
+              data['connectedPersonsRegPred-address-county'] | length != "0" %}
               <dd class="govuk-summary-list__value">
                 {{ data['connectedPersonsRegPred-address-line-1'] }} </br>
                 {{ data['connectedPersonsRegPred-address-line-2'] }} </br>
@@ -1042,8 +1042,8 @@ Supplier`s information - GOV.UK
                 <dt class="govuk-summary-list__key">
                   Registered or principal address:
                 </dt>
-                {% if data['connectedPersonsUkParent-address-line-2'] | length != "0" and
-                data['connectedPersonsUkParent-address-county'] | length != "0" %}
+                {% if data['connectedPersonsRegUkParent-address-line-2'] | length != "0" and
+                data['connectedPersonsRegUkParent-address-county'] | length != "0" %}
                 <dd class="govuk-summary-list__value">
                   {{ data['connectedPersonsRegUkParent-address-line-1'] }} </br>
                   {{ data['connectedPersonsRegUkParent-address-line-2'] }} </br>
@@ -1088,8 +1088,8 @@ Supplier`s information - GOV.UK
                 <dt class="govuk-summary-list__key">
                   Registered or principal address:
                 </dt>
-                {% if data['connectedPersonsParent-address-line-2'] | length != "0" and
-                data['connectedPersonsParent-address-county'] | length != "0" %}
+                {% if data['connectedPersonsRegParent-address-line-2'] | length != "0" and
+                data['connectedPersonsRegParent-address-county'] | length != "0" %}
                 <dd class="govuk-summary-list__value">
                   {{ data['connectedPersonsRegParent-address-line-1'] }} </br>
                   {{ data['connectedPersonsRegParent-address-line-2'] }} </br>
@@ -1491,6 +1491,7 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
+
                 {% else %}
 
                 <div class="govuk-summary-list__row">
@@ -1523,7 +1524,7 @@ Supplier`s information - GOV.UK
 
                 {% endif %}
 
-                {% if data['serviceSame'] == "Yes" %}
+                {% if data['serviceSame'] == "Yes" and data['regGovAddress'] | length != "0" %}
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
@@ -1535,6 +1536,68 @@ Supplier`s information - GOV.UK
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="gov-service-same">
                       Change<span class="govuk-visually-hidden"> Change</span>
+                    </a>
+                  </dd>
+                </div>
+
+                {% elif data['serviceSame'] == "Yes" and data['govPublicReg-address-line-1'] | length != "0" %}
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Service address:
+                  </dt>
+                  {% if data['govPublicReg-address-line-2'] | length != "0" and
+                  data['govPublicReg-address-county'] | length != "0" %}
+                  <dd class="govuk-summary-list__value">
+                    {{ data['govPublicReg-address-line-1'] }} </br>
+                    {{ data['govPublicReg-address-line-2'] }} </br>
+                    {{ data['govPublicReg-address-town'] }} </br>
+                    {{ data['govPublicReg-address-postcode'] }} </br>
+                    {{ data['govPublicReg-address-county'] }} </br>
+                    {{ data['selectData'] }}
+                  </dd>
+                  {% else %}
+                  <dd class="govuk-summary-list__value">
+                    {{ data['govPublicReg-address-line-1'] }} </br>
+                    {{ data['govPublicReg-address-town'] }} </br>
+                    {{ data['govPublicReg-address-postcode'] }} </br>
+                    {{ data['selectData'] }}
+                  </dd>
+                  {% endif %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="gov-reg-address-type">
+                      Change<span class="govuk-visually-hidden">
+                        the Organisation`s address</span>
+                    </a>
+                  </dd>
+                </div>
+
+                {% elif data['serviceSame'] == "Yes" and data['govPublicUk-address-line-1'] | length != "0" %}
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Service address:
+                  </dt>
+                  {% if data['govPublicUk-address-line-2'] | length != "0" and data['govPublicUk-address-county'] |
+                  length != "0" %}
+                  <dd class="govuk-summary-list__value">
+                    {{ data['govPublicUk-address-line-1'] }} </br>
+                    {{ data['govPublicUk-address-line-2'] }} </br>
+                    {{ data['govPublicUk-address-town'] }} </br>
+                    {{ data['govPublicUk-address-county'] }} </br>
+                    {{ data['govPublicUk-address-postcode'] }} </br>
+                  </dd>
+                  {% else %}
+                  <dd class="govuk-summary-list__value">
+                    {{ data['govPublicUk-address-line-1'] }} </br>
+                    {{ data['govPublicUk-address-town'] }} </br>
+                    {{ data['govPublicUk-address-postcode'] }} </br>
+                  </dd>
+                  {% endif %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="gov-reg-address-type">
+                      Change<span class="govuk-visually-hidden">
+                        the Organisation`s address</span>
                     </a>
                   </dd>
                 </div>
@@ -1969,20 +2032,20 @@ Supplier`s information - GOV.UK
                   <dt class="govuk-summary-list__key">
                     Registered or principal address:
                   </dt>
-                  {% if data['directorAddressUk-address-line-2'] | length != "0" and
-                  data['directorAddressUk-address-county'] | length != "0" %}
+                  {% if data['directorRegAddressUk-address-line-2'] | length != "0" and
+                  data['directorRegAddressUk-address-county'] | length != "0" %}
                   <dd class="govuk-summary-list__value">
-                    {{ data['directorAddressUk-address-line-1'] }} </br>
-                    {{ data['directorAddressUk-address-line-2'] }} </br>
-                    {{ data['directorAddressUk-address-town'] }} </br>
-                    {{ data['directorAddressUk-address-county'] }} </br>
-                    {{ data['directorAddressUk-address-postcode'] }} </br>
+                    {{ data['directorRegAddressUk-address-line-1'] }} </br>
+                    {{ data['directorRegAddressUk-address-line-2'] }} </br>
+                    {{ data['directorRegAddressUk-address-town'] }} </br>
+                    {{ data['directorRegAddressUk-address-county'] }} </br>
+                    {{ data['directorRegAddressUk-address-postcode'] }} </br>
                   </dd>
                   {% else %}
                   <dd class="govuk-summary-list__value">
-                    {{ data['directorAddressUk-address-line-1'] }} </br>
-                    {{ data['directorAddressUk-address-town'] }} </br>
-                    {{ data['directorAddressUk-address-postcode'] }} </br>
+                    {{ data['directorRegAddressUk-address-line-1'] }} </br>
+                    {{ data['directorRegAddressUk-address-town'] }} </br>
+                    {{ data['directorRegAddressUk-address-postcode'] }} </br>
                   </dd>
                   {% endif %}
                   <dd class="govuk-summary-list__actions">

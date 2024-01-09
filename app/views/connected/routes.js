@@ -277,6 +277,10 @@ router.post('/gov-reg-address', function (req, res) {
   res.redirect('gov-service-same');
 })
 
+router.post('/gov-reg-address-uk', function (req, res) {
+  res.redirect('gov-service-same');
+})
+
 router.post('/gov-service-same', function (req, res) {
 
   let serviceSame = req.session.data.serviceSame;

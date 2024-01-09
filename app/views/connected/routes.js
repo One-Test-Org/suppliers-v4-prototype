@@ -817,8 +817,11 @@ router.post('/right-reg-address-uk', function (req, res) {
 router.post('/right-address-same', function (req, res) {
 
   let addressSameRight = req.session.data.addressSameRight;
+  let personQuestion = req.session.data.personQuestion;
 
-  if (addressSameRight == "Yes") {
+  if (addressSameRight == "Yes" && personQuestion == "organisation") {
+    res.redirect('right-company-number-question');
+  } else if (addressSameRight == "Yes") {
     res.redirect('right-nature-of-control');
   } else {
     res.redirect('right-address-type');
@@ -838,28 +841,28 @@ router.post('/right-address-type', function (req, res) {
 })
 
 router.post('/right-address', function (req, res) {
-  /*
-    let personQuestion = req.session.data.personQuestion;
-  
-    if (personQuestion == "organisation") {
-      res.redirect('right-company-number-question');
-    }
-    else {*/
-  res.redirect('right-nature-of-control');
-}
-)
+
+  let personQuestion = req.session.data.personQuestion;
+
+  if (personQuestion == "organisation") {
+    res.redirect('right-company-number-question');
+  }
+  else {
+    res.redirect('right-nature-of-control');
+  }
+})
 
 router.post('/right-address-uk', function (req, res) {
-  /*
-    let personQuestion = req.session.data.personQuestion;
-  
-    if (personQuestion == "organisation") {
-      res.redirect('right-company-number-question');
-    }
-    else {*/
-  res.redirect('right-nature-of-control');
-}
-)
+
+  let personQuestion = req.session.data.personQuestion;
+
+  if (personQuestion == "organisation") {
+    res.redirect('right-company-number-question');
+  }
+  else {
+    res.redirect('right-nature-of-control');
+  }
+})
 
 router.post('/right-company-number-question', function (req, res) {
 
@@ -875,9 +878,9 @@ router.post('/right-company-number-question', function (req, res) {
 
 router.post('/right-company-number-question-equiv', function (req, res) {
 
-  let rightNumberQuestionEquiv = req.session.data.rightNumberQuestionEquiv;
+  let numberQuestionEquiv = req.session.data.numberQuestionEquiv;
 
-  if (rightNumberQuestionEquiv == "Yes") {
+  if (numberQuestionEquiv == "Yes") {
     res.redirect('right-company-number-equiv');
   } else {
     res.redirect('right-nature-of-control');
@@ -1569,8 +1572,15 @@ router.post('/find-address-psc-ni', function (req, res) {
 })
 
 router.post('/select-address-right', function (req, res) {
-  res.redirect('right-nature-of-control');
-});
+  let personQuestion = req.session.data.personQuestion;
+
+  if (personQuestion == "organisation") {
+    res.redirect('right-company-number-question');
+  }
+  else {
+    res.redirect('right-nature-of-control');
+  }
+})
 
 router.post('/find-address-right', function (req, res) {
 

@@ -98,7 +98,7 @@ router.get('/director-residency', function (req, res) {
 })
 
 router.post('/director-residency', function (req, res) {
-  res.redirect('director-reg-address-type');
+  res.redirect('director-address-type');
 })
 
 router.post('/director-reg-address-type', function (req, res) {
@@ -475,7 +475,7 @@ router.get('/psc-individual', function (req, res) {
 })
 
 router.post('/psc-individual', function (req, res) {
-  res.redirect('address-reg-type');
+  res.redirect('address-type');
 })
 
 router.post('/address-reg-type', function (req, res) {
@@ -785,7 +785,7 @@ router.get('/right-residency', function (req, res) {
 })
 
 router.post('/right-residency', function (req, res) {
-  res.redirect('right-reg-address-type');
+  res.redirect('right-address-type');
 })
 
 router.post('/right-reg-address-type', function (req, res) {

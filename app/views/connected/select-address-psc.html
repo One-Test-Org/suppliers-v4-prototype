@@ -45,8 +45,8 @@ Supplier`s information - GOV.UK
                 </h1>
             </legend>
 
-            <p>{{ data['pscAddresses'] | length }} {% if (data['pscAddresses'] | length > 1) %}pscAddresses{% else
-                %}pscAddress{%
+            <p>{{ data['pscAddresses'] | length }} {% if (data['pscAddresses'] | length > 1) %}Addresses{% else
+                %}Address{%
                 endif %} found for {{ data['postcode'] }}. <a href="find-address-psc">Search again</a></p>
 
             <form class="form" method="post">

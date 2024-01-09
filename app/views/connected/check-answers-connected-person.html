@@ -423,7 +423,8 @@ Supplier`s information - GOV.UK
             </dd>
           </div>
 
-          {% if data['addressRegTypeRight'] == "No" %}
+          <!--
+           {% if data['addressRegTypeRight'] == "No" %}
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -502,7 +503,7 @@ Supplier`s information - GOV.UK
             </dd>
           </div>
 
-          {% endif %}
+          {% endif %}  -->
 
           {% if data['addressSameRight'] == "Yes" %}
 
@@ -1759,6 +1760,7 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
+                <!--
                 {% if data['addressRegType'] == "Yes" and data['pscRegAddress'] | length == "0" %}
 
                 <div class="govuk-summary-list__row">
@@ -1856,6 +1858,8 @@ Supplier`s information - GOV.UK
                 </div>
 
                 {% else %}
+
+              -->
 
                 {% if data['addressType'] == "Yes" and data['pscAddress'] | length == "0" %}
 
@@ -2026,6 +2030,7 @@ Supplier`s information - GOV.UK
                   </dd>
                 </div>
 
+                <!--
                 {% if data['addressRegTypeDir'] == "Yes" and data['dirRegAddress'] | length == "0" %}
 
                 <div class="govuk-summary-list__row">
@@ -2124,6 +2129,7 @@ Supplier`s information - GOV.UK
 
                 {% else %}
 
+                -->
                 {% if data['addressTypeDir'] == "Yes" and data['dirAddress'] | length == "0" %}
 
                 <div class="govuk-summary-list__row">

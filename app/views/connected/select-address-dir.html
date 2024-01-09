@@ -45,8 +45,8 @@ Supplier`s information - GOV.UK
                 </h1>
             </legend>
 
-            <p>{{ data['dirAddresses'] | length }} {% if (data['dirAddresses'] | length > 1) %}dirAddresses{% else
-                %}dirAddress{%
+            <p>{{ data['dirAddresses'] | length }} {% if (data['dirAddresses'] | length > 1) %}Addresses{% else
+                %}Address{%
                 endif %} found for {{ data['postcode'] }}. <a href="find-address-dir">Search again</a></p>
 
             <form class="form" method="post">

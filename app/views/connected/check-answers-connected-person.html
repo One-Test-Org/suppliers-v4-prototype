@@ -1755,7 +1755,8 @@ Supplier`s information - GOV.UK
 
               {% endif %}
 
-              {% if data['connectedPersons'] == "A person with significant control over the supplier" %}
+              {% if data['connectedPersons'] == "A person with significant control over the supplier" and
+              data['personQuestion'] == "person" %}
 
               <!-- PSC (Person of significant control) registerable  -->
 

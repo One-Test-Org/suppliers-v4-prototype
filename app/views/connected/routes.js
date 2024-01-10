@@ -904,9 +904,16 @@ router.post('/right-company-number', function (req, res) {
 })
 
 router.post('/right-nature-of-control', function (req, res) {
-  res.redirect('check-answers-connected-person');
-})
 
+  let personQuestion = req.session.data.personQuestion;
+
+  if (personQuestion == "organisation") {
+    res.redirect('right-date-registered');
+  }
+  else {
+    res.redirect('check-answers-connected-person');
+  }
+})
 router.post('/right-date-registered', function (req, res) {
 
   let personQuestion = req.session.data.personQuestion;

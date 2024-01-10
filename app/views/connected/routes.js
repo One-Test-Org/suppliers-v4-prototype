@@ -32,6 +32,10 @@ router.post('/dir-reg-address-ni', function (req, res) {
   res.redirect('dir-address-same-ni');
 })
 
+router.post('/dir-reg-address-uk-ni', function (req, res) {
+  res.redirect('dir-address-same-ni');
+})
+
 router.post('/dir-address-same-ni', function (req, res) {
 
   let addressSameDirNi = req.session.data.addressSameDirNi;

@@ -320,6 +320,10 @@ router.post('/nature-of-control-gov', function (req, res) {
 })
 
 router.post('/date-registered-gov', function (req, res) {
+  res.redirect('gov-register');
+})
+
+router.post('/gov-register', function (req, res) {
   res.redirect('check-answers-connected-person');
 })
 

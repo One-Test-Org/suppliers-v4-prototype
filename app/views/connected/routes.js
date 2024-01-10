@@ -727,11 +727,11 @@ router.get('/pred-reg-address', function (req, res) {
 })
 
 router.post('/pred-reg-address', function (req, res) {
-  res.redirect('pred-address-type');
+  res.redirect('pred-company-number-question');
 })
 
 router.post('/pred-reg-address-uk', function (req, res) {
-  res.redirect('pred-address-type');
+  res.redirect('pred-company-number-question');
 })
 
 router.post('/pred-address', function (req, res) {
@@ -1330,7 +1330,7 @@ router.post('/find-address-psc', function (req, res) {
 })
 
 router.post('/select-reg-address-pred', function (req, res) {
-  res.redirect('pred-address-same');
+  res.redirect('pred-company-number-question');
 });
 
 router.post('/find-reg-address-pred', function (req, res) {

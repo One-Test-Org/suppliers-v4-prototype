@@ -874,7 +874,7 @@ Supplier`s information - GOV.UK
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Registered or principal address:
+                Last known registered or principal address:
               </dt>
               {% if data['connectedPersonsRegUkPred-address-line-2'] | length != "0" and
               data['connectedPersonsRegUkPred-address-county'] | length != "0" %}
@@ -904,7 +904,7 @@ Supplier`s information - GOV.UK
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Registered or principal address:
+                Last known registered or principal address:
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['predRegAddress'] }}
@@ -920,7 +920,7 @@ Supplier`s information - GOV.UK
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Registered or principal address:
+                Last known registered or principal address:
               </dt>
               {% if data['connectedPersonsRegPred-address-line-2'] | length != "0" and
               data['connectedPersonsRegPred-address-county'] | length != "0" %}
@@ -949,6 +949,8 @@ Supplier`s information - GOV.UK
             </div>
 
             {% endif %}
+
+            <!--
 
             {% if data['addressSamePred'] == "Yes" %}
 
@@ -1048,6 +1050,9 @@ Supplier`s information - GOV.UK
 
             {% endif %}
             {% endif %}
+
+            -->
+
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">

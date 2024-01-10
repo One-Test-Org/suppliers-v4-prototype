@@ -306,7 +306,7 @@ Supplier`s information - GOV.UK
         {% endif %}
 
 
-
+        {% if data['numberQuestion'] == "Yes" %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -322,8 +322,6 @@ Supplier`s information - GOV.UK
             </a>
           </dd>
         </div>
-
-        {% if data['numberQuestion'] == "Yes" %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -354,7 +352,6 @@ Supplier`s information - GOV.UK
             </a>
           </dd>
         </div>
-
 
 
         <div class="govuk-summary-list__row">
@@ -389,8 +386,7 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
-        {% else %}
-
+        {% elif data['rightHouseNumberEquiv'] | length != "0" %}
 
 
         <div class="govuk-summary-list__row">
@@ -837,6 +833,8 @@ Supplier`s information - GOV.UK
           {% endif %}
 
           {% endif %}
+
+
 
 
 

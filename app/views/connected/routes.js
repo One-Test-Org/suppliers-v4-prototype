@@ -900,7 +900,7 @@ router.post('/right-company-number', function (req, res) {
 })
 
 router.post('/right-nature-of-control', function (req, res) {
-  res.redirect('right-date-registered');
+  res.redirect('right-law-register');
 })
 
 router.post('/right-date-registered', function (req, res) {

@@ -303,7 +303,8 @@ Supplier`s information - GOV.UK
         </div>
 
         {% endif %}
-        {% endif %}
+
+
 
 
         {% if data['numberQuestion'] == "Yes" %}
@@ -453,6 +454,7 @@ Supplier`s information - GOV.UK
           </dd>
         </div>
 
+        {% endif %}
         {% endif %}
 
         <!-- Right to exercise Person and Trust  -->
@@ -847,7 +849,8 @@ Supplier`s information - GOV.UK
 
           <!-- Predecessor  -->
 
-          {% if data['connectedPersons'] == "A predecessor company of the supplier" %}
+          {% if data['connectedPersons'] == "A predecessor company of the supplier" and data['predNumberQuestion'] |
+          length != "0" %}
 
           <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
 
@@ -1108,7 +1111,8 @@ Supplier`s information - GOV.UK
 
             <!-- Parent undertaking or a subsidiary undertaking  -->
 
-            {% if data['connectedPersons'] == "A parent undertaking or a subsidiary undertaking of the supplier" %}
+            {% if data['connectedPersons'] == "A parent undertaking or a subsidiary undertaking of the supplier" and
+            data['numberQuestion'] | length != "0" %}
 
             <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
             <h1 class="govuk-heading-l">Check your answers</h1>
@@ -1344,6 +1348,7 @@ Supplier`s information - GOV.UK
               {% endif %}
 
               {% if data['connectedPersons'] == "PSC (Person of significant control) organisation or Public Authority"
+              and data['pscLegalForm'] | length != "0"
               %}
 
               <!-- PSC (Person of significant control) organisation or Public Authority  -->
@@ -1515,7 +1520,8 @@ Supplier`s information - GOV.UK
 
               <!-- GOV / Public  -->
 
-              {% if data['connectedPersons'] == "A relevant legal entity (registrable)" %}
+              {% if data['connectedPersons'] == "A relevant legal entity (registrable)" and data['govPublicLaw'] |
+              length != "0" %}
 
               <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
@@ -1842,7 +1848,7 @@ Supplier`s information - GOV.UK
               {% endif %}
 
               {% if data['connectedPersons'] == "A person with significant control over the supplier" and
-              data['personQuestion'] == "person" %}
+              data['personQuestion'] == "person" and data['addressType'] | length != "0" %}
 
               <!-- PSC (Person of significant control) registerable  -->
 
@@ -2050,6 +2056,8 @@ Supplier`s information - GOV.UK
                 {% endif %}
                 {% endif %}
 
+                {% if data['pscIsRegistered'] == "Yes" %}
+
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Nature of Control:
@@ -2097,7 +2105,29 @@ Supplier`s information - GOV.UK
                 </div>
               </dl>
 
-              {% elif data['connectedPersons'] == "A director or shadow director of the supplier" %}
+              {% else %}
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Nature of Control:
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['controlNature'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="nature-of-control-psc">
+                    Change<span class="govuk-visually-hidden">
+                      the nature of control</span>
+                  </a>
+                </dd>
+              </div>
+
+              {% endif %}
+              {% endif %}
+
+
+              {% if data['connectedPersons'] == "A director or shadow director of the supplier" and
+              data['selectCountry'] | length != "0" %}
 
 
               <!-- Director or Shadow Director, Individual  -->
@@ -2319,7 +2349,8 @@ Supplier`s information - GOV.UK
                 {% endif %}
                 {% endif %}
 
-                {% elif data['connectedPersons'] == "A director or shadow director of the supplier (org)" %}
+                {% elif data['connectedPersons'] == "A director or shadow director of the supplier (org)" and
+                data['addressTypeRegDirNi'] | length != "0" %}
 
                 <!-- Director or Shadow Director, organisation  -->
 
